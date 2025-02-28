@@ -17,7 +17,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias / This project was de
 
 **💻 Projeto / Project**
 
-This is my personal website, visit on: [https://mathwz.melhorzin.com/](https://mathwz.melhorzin.com/)
+This is my personal website, visit on: https://mathpholio.vercel.app
 
 ---
 

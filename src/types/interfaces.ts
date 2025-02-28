@@ -39,6 +39,19 @@ export interface Services {
   description: string;
 }
 
+export interface TechSkillsProps {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export interface ServicesProps {
+  id: string;
+  title: string;
+  icon: string;
+  description: string;
+}
+
 export interface ReorderProps {
   data: Array<TechSkills>;
 }

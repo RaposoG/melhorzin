@@ -1,25 +1,30 @@
+import React from "react";
 import Image from "next/image";
 import { ImGithub } from "react-icons/im";
 import { FaLinkedin } from "react-icons/fa";
+import { MdEmail, MdHome } from "react-icons/md";
+import { BsChatFill } from "react-icons/bs";
 
-import { techs, services } from "@/variables/data";
 import * as interfaces from "@/types/interfaces";
+import { techs, services } from "@/variables/data";
 import myPicture from "../../public/assets/main-circle.png";
 
 import HeaderComponent from "@/components/Header/HeaderComponent";
-import TypewriterComponent from "@/components/Typewriter/TypewriterComponent";
+import TypewriterComponent from "@/components/Header/Typewriter/TypewriterComponent";
 import ButtonComponent from "@/components/Button/ButtonComponent";
 import ExperienceDescriptionComponent from "@/components/ExperienceDescription/ExperienceDescriptionComponent";
 import CarouselComponent from "@/components/Carousel/CarouselComponent";
 import { isLastTechsItem } from "@/utils/utils";
+import { FormComponent } from "@/components/Form/FormComponent";
+import { AccordionComponent } from "@/components/Accordion/AccordionComponent";
 
 export default function Home() {
   return (
     <>
       <HeaderComponent />
-      <main className="p-8 pb-16 xl:px-[9%]">
+      <main>
         <div className="m-auto flex flex-col lg:mt-8">
-          <section className="relative flex flex-col-reverse items-center xl:h-screen xl:flex-row">
+          <section className="hero-section relative flex flex-col-reverse items-center px-wrapper xl:h-screen xl:flex-row">
             <article className="flex w-1/2 flex-col items-center">
               <div className="sm:w-full">
                 <TypewriterComponent />
@@ -62,10 +67,10 @@ export default function Home() {
               </div>
             </aside>
           </section>
-          <div id="skills" className="h-8 lg:h-32" />
 
           <section className="mt-12">
-            <section>
+            <div id="skills" className="h-8" />
+            <section className="mobile relative px-wrapper">
               <h2 className="mb-6 text-center text-2xl leading-tight lg:hidden lg:text-2xl">
                 Revolutionizing Development
               </h2>
@@ -74,12 +79,12 @@ export default function Home() {
                 Expo, Jest, Git, and TypeScript for efficiency, scalability, and
                 innovation in software development.
               </p>
-              {techs.map((item: interfaces.TechSkills, index) => {
+              {techs.map((item: interfaces.TechSkillsProps, index) => {
                 if (index % 2 === 0) {
                   return (
                     <div
                       key={item.title}
-                      className="-ml-8 mt-8 flex h-52 w-[90vw] items-center rounded-r-[30px] bg-black p-4 dark:bg-color-four lg:hidden"
+                      className="absolute left-0 mt-8 flex h-52 w-[90vw] items-center rounded-r-[30px] bg-black p-4 dark:bg-color-four lg:hidden"
                     >
                       <article className="flex gap-4">
                         <div className="flex flex-col items-center justify-center text-center">
@@ -106,7 +111,7 @@ export default function Home() {
                   return (
                     <div
                       key={item.title}
-                      className="ml-[0.7rem] mt-8 flex h-52 w-[90vw] items-center rounded-l-[30px] bg-black p-4 dark:bg-color-four lg:hidden"
+                      className="-mb-4 mt-64 flex h-52 w-[90vw] items-center rounded-l-[30px] bg-black p-4 dark:bg-color-four lg:hidden"
                     >
                       <article className="flex flex-row-reverse gap-2">
                         <div className="flex flex-col items-center justify-center text-center">
@@ -136,8 +141,7 @@ export default function Home() {
                 }
               })}
             </section>
-
-            <section className="hidden items-center justify-between gap-8 before:absolute before:left-0 before:z-10 before:h-80 before:w-full before:bg-black before:content-[''] before:dark:bg-color-four lg:flex lg:w-full lg:items-center 2xl:gap-20">
+            <section className="my-10 hidden items-center justify-between gap-8 bg-color-seven px-wrapper py-12 dark:bg-color-four lg:flex lg:w-full lg:items-center 2xl:gap-20">
               <article className="z-20 text-white">
                 <h2 className="mb-6 w-4 text-4xl leading-tight lg:text-2xl">
                   Revolutionizing Development
@@ -148,7 +152,7 @@ export default function Home() {
                   scalability, and innovation in software development.
                 </p>
               </article>
-              {techs.map((item: interfaces.TechSkills, index) => (
+              {techs.map((item: interfaces.TechSkillsProps, index) => (
                 <aside
                   key={item.title}
                   className="z-20 flex flex-col items-center justify-center gap-4 text-center"
@@ -169,7 +173,7 @@ export default function Home() {
               ))}
             </section>
 
-            <section className="flex w-full flex-col gap-10 lg:mt-40 lg:flex lg:flex-row lg:items-center">
+            <section className="my-10 flex w-full flex-col gap-10 px-wrapper lg:flex lg:flex-row lg:items-center xl:mt-20">
               <article className="flex flex-col justify-center">
                 <h2
                   id="services"
@@ -185,7 +189,7 @@ export default function Home() {
                 </p>
               </article>
               <div className="flex w-full flex-col gap-8 lg:flex-row lg:justify-end lg:gap-4 2xl:gap-10">
-                {services.map((item: interfaces.Services) => (
+                {services.map((item: interfaces.ServicesProps) => (
                   <aside
                     key={item.id}
                     className="flex flex-col items-center justify-center gap-8 rounded-3xl bg-black p-10 dark:bg-color-four lg:h-auto lg:w-auto lg:text-center 2xl:h-[425px] 2xl:w-[350px]"
@@ -207,10 +211,10 @@ export default function Home() {
                 ))}
               </div>
             </section>
-            <div id="work-experience" className="h-2 lg:h-32" />
 
-            <section className="flex flex-col justify-center dark:text-white lg:text-white lg:before:absolute lg:before:left-0 lg:before:z-10 lg:before:w-full lg:before:bg-black lg:before:content-[''] lg:before:dark:bg-color-four xl:before:h-[1640px] 2xl:before:h-[1640px]">
-              <article className="relative z-20 mt-12 text-center xl:mt-8 xl:text-left 2xl:mb-20 2xl:mt-16">
+            <div id="work-experience" className="h-2" />
+            <section className="work-section my-10 flex w-auto flex-col justify-center bg-color-seven px-wrapper py-12 text-white dark:bg-color-four lg:text-white">
+              <article className="relative z-20 text-center xl:mt-8 xl:text-left 2xl:mb-20 2xl:mt-16">
                 <h2 className="mb-6 text-2xl leading-tight 2xl:text-4xl">
                   Building Solutions Across Technologies and Industries
                 </h2>
@@ -249,13 +253,15 @@ export default function Home() {
                   <strong>Azure DevOps</strong> to CI/CD and code repository
                   hosting service.
                 </li>
-                <li>Contribute to Code Reviews.</li>
+                <li>
+                  Contribute on Code Reviews to ensure quality deliveries.
+                </li>
               </ExperienceDescriptionComponent>
               <ExperienceDescriptionComponent
                 jobTitle="Software Developer"
                 company="Cognizant"
                 locality="São Paulo, SP, Brazil"
-                period="04/2022 - Current"
+                period="04/2022 - 06/2024"
               >
                 <li className="xl:w-3/4">
                   Implement features and layouts from Figma into a{" "}
@@ -404,12 +410,12 @@ export default function Home() {
               </ExperienceDescriptionComponent>
             </section>
 
-            <div className="h-8 xl:h-20" id="projects" />
-            <section>
+            <div id="projects" className="h-2" />
+            <section className="projects-section my-10 px-wrapper py-12">
               <article className="flex flex-col justify-center">
                 <h2
                   id="services"
-                  className="mx-auto mb-8 w-4/5 text-center text-2xl lg:mx-0 lg:text-left xl:mt-12 2xl:text-4xl 2xl:leading-tight"
+                  className="mx-auto mb-8 w-4/5 text-center text-2xl lg:mx-0 lg:text-left 2xl:text-4xl 2xl:leading-tight"
                 >
                   Expertise in Software Development with Diverse Projects and
                   Cutting-Edge Solutions
@@ -429,12 +435,61 @@ export default function Home() {
               </article>
               <CarouselComponent />
             </section>
+
+            <div id="contact" />
+            <section className="contact-section mt-10 flex flex-col justify-center gap-20 bg-color-seven px-wrapper py-12 text-color-eight dark:bg-color-four dark:text-white lg:flex-row lg:text-white">
+              <article className="relative z-20 flex flex-col gap-16 text-center lg:w-1/2 xl:mt-8 xl:text-left 2xl:mb-20 2xl:mt-16">
+                <section>
+                  <h2 className="mb-6 text-2xl leading-tight 2xl:text-4xl">
+                    Contact
+                  </h2>
+                  <p className="2xl:w-[660px] 2xl:text-2xl">
+                    Looking to enhance your team with top-notch talent or
+                    discuss exciting new opportunities? Reach out via email.
+                    I&apos;d love to connect and explore how we can collaborate!
+                  </p>
+                </section>
+                <section className="flex flex-col gap-10">
+                  <div className="flex items-center gap-4">
+                    <div className="max-w-fit rounded-xl bg-color-five p-4 dark:bg-black">
+                      <MdEmail size={32} fill="white" />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <h3 className="flex justify-start">Email address</h3>
+                      <p className="flex justify-start">
+                        matheuscoworking@outlook.com
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="max-w-fit rounded-xl bg-color-five p-4 dark:bg-black">
+                      <MdHome size={32} fill="white" />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <h3 className="flex justify-start">Country</h3>
+                      <p className="flex justify-start">Brazil</p>
+                    </div>
+                  </div>
+                </section>
+              </article>
+              <aside className="z-10 rounded-3xl lg:mt-12 lg:w-1/2 lg:bg-black lg:p-10">
+                <FormComponent />
+              </aside>
+            </section>
+
+            <section className="faq-section mt-10 items-center px-wrapper py-12">
+              <h2 className="mb-6 flex gap-2 text-4xl leading-tight xl:gap-4 xl:text-3xl 2xl:text-4xl">
+                Frequently Asked Questions{" "}
+                <BsChatFill className="h-16 w-16 xl:h-8 xl:w-8" />
+              </h2>
+              <AccordionComponent />
+            </section>
           </section>
         </div>
       </main>
-      <footer className="fixed bottom-0 w-full bg-black px-4 py-1 text-center text-color-six dark:bg-color-four lg:relative">
-        <p className="text-white dark:text-white">
-          Mathpholio™️, Copyright © 2025 by Matheus Souza
+      <footer className="fixed bottom-0 z-50 w-full bg-color-seven px-4 py-1 text-center text-color-seven dark:bg-color-four lg:relative">
+        <p className="text-color-eight dark:text-color-eight">
+          Mathpholio™️, Copyright © {new Date().getFullYear()} by Matheus Souza
         </p>
       </footer>
     </>
