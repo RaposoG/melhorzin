@@ -1,0 +1,28 @@
+.container {
+  width: min(95%, 1536px);
+  margin: 0 auto;
+  height: 100dvh;
+}
+
+.wrapper {
+  $margin-top: 6rem;
+  padding-top: $margin-top;
+  margin: 0 auto;
+  display: flex;
+  height: 95%;
+
+  align-items: center;
+  justify-content: center;
+
+  img {
+    max-height: 100%;
+    max-width: 100%;
+    aspect-ratio: 16/9;
+  }
+
+  @media screen and (max-width: 576px) {
+    img {
+      aspect-ratio: 4/3;
+    }
+  }
+}

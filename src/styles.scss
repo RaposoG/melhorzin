@@ -1,0 +1,96 @@
+@import './styles/reset.scss';
+@import './styles/colors.scss';
+@import './styles/font.scss';
+@import './styles/locomotive-scroll.scss';
+
+body {
+  background-color: $dark-purple-400;
+  font-family: $ff-primary;
+  font-weight: $fw-400;
+  color: white;
+}
+
+h2 {
+  font-size: $fs-800;
+  font-weight: $fw-700;
+  text-align: center;
+}
+
+h3 {
+  font-size: $fs-600;
+  font-weight: $fw-600;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.btn {
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.375rem;
+  font-size: $fs-400;
+  font-weight: $fw-400;
+  line-height: normal;
+}
+
+.btn-primary {
+  background-color: $purple-400;
+  &:hover {
+    filter: brightness(110%);
+  }
+}
+
+.btn-secondary {
+  border: 1px solid $light-grey;
+  &:hover {
+    filter: brightness(85%);
+  }
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  height: 7px;
+  width: 7px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 7px;
+  background-color: #11071f;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #11071f;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #11071f;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 7px;
+  background-color: #737988;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #737988;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #737988;
+}
+
+*::-webkit-scrollbar-button {
+  display: none;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #737988 #11071f;
+}

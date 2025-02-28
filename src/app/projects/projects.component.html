@@ -1,0 +1,15 @@
+<div
+  id="projects"
+  class="projects"
+  data-scroll
+  data-scroll-offset="10%, 10%"
+  data-scroll-class="c-scroll-opacity"
+>
+  <h2>Meus projetos</h2>
+
+  <div class="project-list">
+    @for(project of projects(); let odd = $odd; track project.id){
+    <app-project [project]="project" [ngClass]="{ odd: odd }" />
+    }
+  </div>
+</div>

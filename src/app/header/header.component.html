@@ -1,0 +1,50 @@
+<header>
+  <div class="heading-logo">
+    <a href="">
+      <img
+        class="img-fluid"
+        loading="lazy"
+        src="./assets/logo.png"
+        alt="Logo"
+      />
+    </a>
+  </div>
+  <div class="nav-pill">
+    <a
+      class="nav-item left"
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <div>Home</div>
+    </a>
+    <a
+      class="nav-item right"
+      routerLink="/infra"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <div>Infra</div>
+    </a>
+  </div>
+  <div class="heading-right">
+    <div class="heading-social-links">
+      <a href="https://www.linkedin.com/in/leogues" target="_blank">
+        <img
+          loading="lazy"
+          class="fluid"
+          src="./assets/linkedin.png"
+          alt="LinkedIn"
+        />
+      </a>
+      <a href="https://github.com/leogues" target="_blank">
+        <img
+          loading="lazy"
+          class="fluid"
+          src="./assets/github.png"
+          alt="GitHub"
+        />
+      </a>
+    </div>
+  </div>
+</header>

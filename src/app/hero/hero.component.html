@@ -1,0 +1,50 @@
+<section class="hero">
+  <div class="hero-left" data-scroll data-scroll-speed="0.25">
+    <div>
+      <div class="greeting-wrapper">
+        <span>Olá, eu sou</span>
+        <div class="polygon"></div>
+      </div>
+      <div class="developer-info">
+        <h1>Leonardo Rodrigues</h1>
+        <span>Um desenvolvedor Full Stack</span>
+      </div>
+      <div class="button-wrapper">
+        <a href="assets/documents/cv.pdf" download="cv.pdf">
+          <button class="btn btn-primary">Download CV</button>
+        </a>
+        <button (click)="handleProjects()" class="btn btn-secondary"
+          >Meus trabalhos</button
+        >
+      </div>
+    </div>
+  </div>
+  <div class="hero-right" data-scroll>
+    <div class="image-container">
+      <img
+        class="avatar"
+        ngSrc="./assets/leonardo2.png"
+        width="300"
+        height="400"
+        alt=""
+      />
+      <img
+        class="blur"
+        ngSrc="./assets/blur-about.png"
+        width="650"
+        height="650"
+        priority="true"
+        alt=""
+      />
+    </div>
+  </div>
+  <div class="scroll-down">
+    <img
+      src="./assets/arrow-down.svg"
+      loading="lazy"
+      alt="scroll"
+      data-scroll
+      data-scroll-speed="10"
+    />
+  </div>
+</section>

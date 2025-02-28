@@ -1,0 +1,138 @@
+{
+  "HTML": {
+    "name": "HTML",
+    "category": "frontend",
+    "image": "./assets/techs/html.svg",
+    "isDarkImage": false,
+    "link": "https://www.w3.org/html/",
+    "isRelevant": false
+  },
+  "CSS": {
+    "name": "CSS",
+    "category": "frontend",
+    "image": "./assets/techs/css.svg",
+    "isDarkImage": false,
+    "link": "https://www.w3.org/Style/CSS/",
+    "isRelevant": false
+  },
+  "Javascript": {
+    "name": "Javascript",
+    "category": "frontend",
+    "image": "./assets/techs/javascript.svg",
+    "isDarkImage": false,
+    "link": "https://www.javascript.com/",
+    "isRelevant": false
+  },
+  "Typescript": {
+    "name": "Typescript",
+    "category": "frontend",
+    "image": "./assets/techs/typescript.svg",
+    "isDarkImage": false,
+    "link": "https://www.typescriptlang.org/",
+    "isRelevant": true
+  },
+  "React": {
+    "name": "React",
+    "category": "frontend",
+    "image": "./assets/techs/react.svg",
+    "isDarkImage": false,
+    "link": "https://reactjs.org/",
+    "isRelevant": true
+  },
+  "Angular": {
+    "name": "Angular",
+    "category": "frontend",
+    "image": "./assets/techs/angular.svg",
+    "isDarkImage": false,
+    "link": "https://angular.dev/",
+    "isRelevant": true
+  },
+  "Tailwind": {
+    "name": "Tailwind",
+    "category": "frontend",
+    "image": "./assets/techs/tailwind.svg",
+    "isDarkImage": false,
+    "link": "https://tailwindcss.com/",
+    "isRelevant": true
+  },
+  "NodeJS": {
+    "name": "Node.js",
+    "category": "backend",
+    "image": "./assets/techs/nodejs.svg",
+    "isDarkImage": false,
+    "link": "https://nodejs.org/",
+    "isRelevant": true
+  },
+  "Go": {
+    "name": "Go",
+    "category": "backend",
+    "image": "./assets/techs/go.svg",
+    "isDarkImage": false,
+    "link": "https://golang.org/",
+    "isRelevant": true
+  },
+  "Express": {
+    "name": "Express Framework",
+    "category": "backend",
+    "image": "./assets/techs/express.svg",
+    "isDarkImage": true,
+    "link": "https://expressjs.com/",
+    "isRelevant": true
+  },
+  "Gin": {
+    "name": "Gin Framework",
+    "category": "backend",
+    "image": "./assets/techs/gin.png",
+    "isDarkImage": false,
+    "link": "https://gin-gonic.com/",
+    "isRelevant": true
+  },
+  "SocketIO": {
+    "name": "Socket.io",
+    "category": "backend",
+    "image": "./assets/techs/socketio.svg",
+    "isDarkImage": true,
+    "link": "https://socket.io/",
+    "isRelevant": true
+  },
+  "WebRTC": {
+    "name": "WebRTC",
+    "category": "backend",
+    "image": "./assets/techs/webrtc.svg",
+    "isDarkImage": false,
+    "link": "https://webrtc.org/",
+    "isRelevant": true
+  },
+  "Cloudflare": {
+    "name": "Cloudflare",
+    "category": "infra",
+    "image": "./assets/techs/cloudflare.svg",
+    "isDarkImage": false,
+    "link": "https://www.cloudflare.com/",
+    "isRelevant": true
+  },
+  "Docker": {
+    "name": "Docker",
+    "category": "infra",
+    "image": "./assets/techs/docker.svg",
+    "isDarkImage": false,
+    "link": "https://www.docker.com/",
+    "isRelevant": true
+  },
+  "NGINX": {
+    "name": "NGINX",
+    "category": "infra",
+    "image": "./assets/techs/nginx.svg",
+    "isDarkImage": false,
+    "link": "https://www.nginx.com/",
+    "isRelevant": true
+  },
+  "Actions": {
+    "name": "Github Actions",
+    "category": "infra",
+    "image": "./assets/techs/githubactions.svg",
+    "isDarkImage": false,
+    "link": "https://docs.github.com/pt/actions",
+    "isRelevant": true
+  }
+}

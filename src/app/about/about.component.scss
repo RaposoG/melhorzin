@@ -1,0 +1,47 @@
+@import '../../styles/font.scss';
+
+.developer-info {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 85%;
+  justify-content: space-evenly;
+  gap: 2rem;
+  min-height: 0;
+  margin: 0 auto;
+  margin-top: 4rem;
+  opacity: 0;
+
+  & > * {
+    flex: 1 0 300px;
+  }
+
+  .left {
+    margin: auto 0;
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      .avatar {
+        width: 100%;
+        max-width: 40%;
+      }
+
+      .blur {
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-height: 160%;
+      }
+    }
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+    max-width: 720px;
+  }
+}

@@ -1,0 +1,112 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2.5%;
+  margin-top: 2rem;
+  max-height: 4.5rem;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  .heading-logo {
+    width: 2rem;
+    height: 2rem;
+    &:hover {
+      filter: brightness(85%);
+    }
+  }
+
+  .nav-pill {
+    $padding: 0.3rem;
+    display: flex;
+    backdrop-filter: blur(3px);
+    background-color: rgba(242, 242, 242, 0.05);
+    border: 1px solid rgba(242, 242, 242, 0.1);
+    border-radius: 24px;
+    transition: box-shadow 1s cubic-bezier(0.23, 1, 0.32, 1),
+      border 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    padding: $padding;
+    &:hover {
+      background-color: rgba(242, 242, 242, 0.08);
+      border-color: rgba(242, 242, 242, 0.2);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    a {
+      cursor: pointer;
+      color: #f2f2f2;
+      padding: 0.45rem 1.5rem;
+      border-radius: 24px;
+      transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+      font-weight: 400;
+      font-size: 0.95rem;
+    }
+
+    .left {
+      &:hover {
+        background-image: linear-gradient(
+          270deg,
+          rgba(0, 0, 0, 0),
+          rgba(242, 242, 242, 0.05)
+        );
+      }
+    }
+
+    .right {
+      &:hover {
+        background-image: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0),
+          rgba(242, 242, 242, 0.05)
+        );
+      }
+    }
+
+    .active {
+      position: relative;
+      background-color: rgba(242, 242, 242, 0.075);
+
+      &:before {
+        $height: 0.1rem;
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: $height;
+        background-color: #f2f2f2;
+        top: -$height - $padding;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 24px 24px 0 0;
+        box-shadow: 0 2px 25px 2px #fff;
+      }
+    }
+  }
+
+  .heading-right {
+    display: flex;
+    gap: 2rem;
+
+    .heading-social-links {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      img {
+        height: 1.5rem;
+        width: 1.5rem;
+
+        &:hover {
+          filter: brightness(85%);
+        }
+      }
+    }
+
+    .heading-navigation {
+      width: 1.5rem;
+      height: 2.25rem;
+      &:hover {
+        filter: brightness(85%);
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+.c-scroll-opacity {
+  opacity: 1 !important;
+  transition: opacity 1s cubic-bezier(0.38, 0.005, 0.215, 1);
+}

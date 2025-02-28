@@ -1,0 +1,13 @@
+.container {
+  width: min(95%, 1536px);
+  margin: 0 auto;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.ng-hero {
+  flex-grow: 1;
+  min-height: 0;
+}

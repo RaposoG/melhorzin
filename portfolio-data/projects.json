@@ -1,0 +1,46 @@
+{
+  "projects": [
+    {
+      "id": 0,
+      "title": "Live Link",
+      "picture": "./assets/video-call-app.png",
+      "description": "O Live Link proporciona uma maneira prática de criar pequenas salas de reunião e conectar pessoas, permitindo comunicação através de texto, áudio e vídeo.",
+      "isWorkInProgress": false,
+      "isRelevant": true,
+      "github": "https://github.com/leogues/project-webrtc",
+      "demo": "https://live.leogues.com.br/login",
+      "techs": [
+        "Typescript",
+        "React",
+        "Tailwind",
+        "NodeJS",
+        "Express",
+        "SocketIO",
+        "WebRTC",
+        "Docker",
+        "NGINX",
+        "Actions"
+      ]
+    },
+    {
+      "id": 1,
+      "title": "MusicHub",
+      "picture": "./assets/musichub.png",
+      "description": "O Music Hub é uma plataforma que sincroniza sua biblioteca de músicas com diversos serviços de streaming. Ele permite criar smart links e transferir suas músicas entre diferentes serviços. Ainda está em construção.",
+      "isWorkInProgress": true,
+      "isRelevant": true,
+      "github": "https://github.com/leogues/MusicHub",
+      "demo": "https://music.leogues.com.br/",
+      "techs": [
+        "Typescript",
+        "Angular",
+        "Tailwind",
+        "Go",
+        "Gin",
+        "Docker",
+        "NGINX",
+        "Actions"
+      ]
+    }
+  ]
+}

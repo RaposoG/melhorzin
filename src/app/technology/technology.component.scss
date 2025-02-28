@@ -1,0 +1,40 @@
+@import '../../styles/colors.scss';
+
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: $dark-purple-100;
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.325rem;
+  &:hover {
+    filter: brightness(120%);
+  }
+
+  .image-container {
+    display: flex;
+    position: relative;
+    padding: 0.5rem;
+    overflow: hidden;
+    border-radius: 0.325rem;
+
+    .tech-image {
+      position: relative;
+      z-index: 10;
+    }
+
+    .tech-image-blur {
+      position: absolute;
+      inset: 0;
+      width: 125%;
+      object-fit: cover;
+      filter: blur(30px) brightness(80%) contrast(130%);
+      opacity: 0.8;
+    }
+  }
+  span {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: $light-grey;
+  }
+}

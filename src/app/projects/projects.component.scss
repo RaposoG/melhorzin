@@ -1,0 +1,13 @@
+.projects {
+  max-width: 85%;
+  margin: 5rem auto 0 auto;
+  padding: 0 0 2rem 0;
+  opacity: 0;
+
+  .project-list {
+    margin-top: 7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+  }
+}

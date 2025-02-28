@@ -1,0 +1,60 @@
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.tech {
+  margin: 10rem auto 0 auto;
+  max-width: 85%;
+  opacity: 0;
+
+  .category {
+    margin-top: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .technology-list {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 1.5rem;
+
+      @media (min-width: 500px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media (min-width: 1024px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      @media (min-width: 1280px) {
+        grid-template-columns: repeat(5, 1fr);
+      }
+
+      @media (min-width: 1536px) {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+  }
+
+  footer {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+
+    .show-more {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      span {
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    }
+  }
+}

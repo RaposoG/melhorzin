@@ -1,34 +1,53 @@
-# Melhorzin
+<h1 align="center" id="readme-top">
+  Portfolio
+</h1>
 
-## Sobre o Projeto
+## Sobre o projeto
 
-Melhorzin é uma plataforma colaborativa exclusiva para seus usuários, onde cada um pode expor seu portfólio de forma personalizada. Imagine subdomínios como `raposo.melhorzin.com` ou `lk.melhorzin.com`, onde cada um é um espaço próprio para mostrar trabalhos, habilidades e projetos.
+[![demo][demo-image]](https://www.leogues.com.br/)
 
-## Funcionalidades
+[demo-image]: https://github.com/leogues/portfolio/blob/main/src/assets/demo.png?raw=true
 
-- **Portfólios Personalizados:** Cada usuário tem seu subdomínio para um portfólio único.
-- **Projeto Colaborativo:** Junte-se aos amigos que estão moldando essa ideia com muita criatividade.
-- **Desenvolvido com Next.js:** Experiência moderna e rápida para aplicações React.
+## 🚀 Começando
 
-## Tecnologias Utilizadas
+Este guia fornecerá instruções detalhadas sobre como configurar e rodar o projeto "Portfolio" localmente. Siga os passos abaixo para ter uma cópia local instalada e funcionando.
 
-- [Next.js](https://nextjs.org/) para renderização e desenvolvimento do front-end.
-- Outras tecnologias (a definir).
+### Pre-requisites
 
-## Estrutura do Repositório
+Antes de começar, certifique-se de ter os seguintes softwares instalados:
 
-- `pages/` - Páginas do aplicativo Next.js.
-- `components/` - Componentes React reutilizáveis.
-- Outros diretórios e arquivos para suporte ao projeto.
+1. NPM: O gerenciador de pacotes do Node.js.
 
-## Como Contribuir
+```sh
+npm install npm@latest -g
+```
 
-1. Faça o fork do repositório.
-2. Crie uma nova branch com a sua feature: `git checkout -b minha-feature`.
-3. Commit suas mudanças: `git commit -m 'Adiciona nova feature'`.
-4. Envie ao repositório remoto: `git push origin minha-feature`.
-5. Abra um Pull Request.
+1. Angular CLI:
 
-## Licença
+```sh
+npm install -g @angular/cli@17
+```
 
-Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
+### Instalação
+
+Siga os passos abaixo para configurar o ambiente de desenvolvimento local:
+
+1. Clone o repositorio
+
+```sh
+git clone https://github.com/leogues/portfolio.git
+```
+
+2. Instale NPM packages
+
+```sh
+npm install
+```
+
+3. Execute o projeto
+
+```sh
+ng serve
+```
+
+<p align="right">(<a href="#readme-top">Voltar para o topo</a>)</p>
