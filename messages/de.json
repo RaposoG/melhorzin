@@ -1,0 +1,36 @@
+{
+  "HomePage": {
+    "title": "Startseite",
+    "aboutSection": {
+      "heading": "Über mich",
+      "description1": "Ich bin ein leidenschaftlicher Entwickler, der es liebt, schöne und funktionale Websites und Anwendungen zu erstellen. Wie das weite Universum ist auch meine Neugier unendlich, und ich erkunde ständig neue Technologien und Techniken.",
+      "description2": "Mit Fachkenntnissen in modernen Webtechnologien kreiere ich digitale Erlebnisse, die sowohl visuell beeindruckend als auch leistungsstark sind.",
+      "button": "Mehr erfahren"
+    },
+    "projectsSection": {
+      "heading": "Projekte",
+      "project1": "Kosmisches Dashboard",
+      "project1Desc": "Ein wunderschönes Analyse-Dashboard mit weltrauminspirierten Visualisierungen",
+      "project2": "Nebula Social",
+      "project2Desc": "Soziale Medienplattform mit einer einzigartigen, vom All inspirierten Benutzeroberfläche",
+      "project3": "Orbit CMS",
+      "project3Desc": "Content-Management-System mit revolutionärem UX-Design"
+    },
+    "skillsSection": {
+      "heading": "Fähigkeiten"
+    },
+    "contactSection": {
+      "heading": "Kontakt",
+      "subheading": "Kontakt aufnehmen",
+      "description": "Haben Sie ein Projekt im Sinn oder möchten Sie einfach nur hallo sagen? Zögern Sie nicht, uns zu kontaktieren!"
+    },
+    "footer": {
+      "copyright": "© {year} Space Portfolio. Alle Rechte vorbehalten."
+    }
+  },
+  "HeroSection": {
+    "title": "Willkommen in Meinem Weltraumportfolio",
+    "subtitle": "Het verkennen van het digitale universum met creatieve webontwikkeling en ontwerp. Stellaire ervaringen bouwen die niet van deze wereld zijn.",
+    "button": "Mehr Entdecken"
+  }
+}
