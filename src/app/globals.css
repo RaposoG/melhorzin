@@ -1,24 +1,128 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.hexagon-container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.hexagon-container::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.3), transparent 80%);
+  z-index: -1;
+  filter: blur(15px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.hexagon-image {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  --sb-track-color: #f0f0f0; /* Fundo claro */
+  --sb-thumb-color: #ff6b6b; /* Thumb vermelho claro */
+  --sb-size: 12px;
+}
+
+/* Scrollbar para Light Mode */
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+}
+
+/* Scrollbar para Dark Mode */
+.dark body {
+  --sb-track-color: #09090f; /* Fundo escuro */
+  --sb-thumb-color: #f53543; /* Thumb vermelho mais forte */
+}
+
+@layer base {
+  :root {
+    --background: 229 57% 100%;
+    --foreground: 229 63% 4%;
+    --muted: 229 12% 86%;
+    --muted-foreground: 229 10% 37%;
+    --popover: 0 0% 99%;
+    --popover-foreground: 229 63% 3%;
+    --card: 0 0% 99%;
+    --card-foreground: 229 63% 3%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --primary: 355.63 90.57% 58.43%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 229 20% 90%;
+    --secondary-foreground: 229 20% 30%;
+    --accent: 229 28% 85%;
+    --accent-foreground: 229 28% 25%;
+    --destructive: 3 100% 50%;
+    --destructive-foreground: 3 0% 100%;
+    --ring: 229 100% 62%;
+    --chart-1: 355.63 90.57% 58.43%;
+    --chart-2: 229 20% 90%;
+    --chart-3: 229 28% 85%;
+    --chart-4: 229 20% 93%;
+    --chart-5: 355.63 93.57% 58.43%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 229 41% 4%;
+    --foreground: 229 23% 99%;
+    --muted: 229 12% 14%;
+    --muted-foreground: 229 10% 63%;
+    --popover: 229 41% 5%;
+    --popover-foreground: 0 0% 100%;
+    --card: 229 41% 5%;
+    --card-foreground: 0 0% 100%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --primary: 355.63 90.57% 58.43%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 229 14% 8%;
+    --secondary-foreground: 229 14% 68%;
+    --accent: 229 23% 17%;
+    --accent-foreground: 229 23% 77%;
+    --destructive: 3 89% 54%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 229 100% 62%;
+    --chart-1: 355.63 90.57% 58.43%;
+    --chart-2: 229 14% 8%;
+    --chart-3: 229 23% 17%;
+    --chart-4: 229 14% 11%;
+    --chart-5: 355.63 93.57% 58.43%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
