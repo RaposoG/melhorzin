@@ -1,4 +1,3 @@
-import { Header } from '@/components/header/header'
 import { NavMenu } from '@/components/nav-menu/nav-menu'
 import { TopBanner } from '@/components/top-banner/top-banner'
 
@@ -11,7 +10,6 @@ export function HeaderView() {
         target="_self"
       />
       <NavMenu />
-      <Header />
     </header>
   )
 }
