@@ -21,6 +21,9 @@ module.exports = {
         "color-seven": "#000000",
         "color-eight": "#FFFFFF",
       },
+      padding: {
+        wrapper: "9%",
+      },
     },
   },
   plugins: [require("prettier-plugin-tailwindcss")],
