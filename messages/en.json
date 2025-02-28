@@ -1,5 +1,36 @@
 {
   "HomePage": {
-    "title": "Hello world!"
+    "title": "Homepage",
+    "aboutSection": {
+      "heading": "About Me",
+      "description1": "I'm a passionate developer with a love for creating beautiful, functional websites and applications. Just like the vast universe, my curiosity is endless and I'm always exploring new technologies and techniques.",
+      "description2": "With expertise in modern web technologies, I craft digital experiences that are both visually stunning and highly performant.",
+      "button": "Learn more"
+    },
+    "projectsSection": {
+      "heading": "Projects",
+      "project1": "Cosmic Dashboard",
+      "project1Desc": "A beautiful analytics dashboard with space-themed visualizations",
+      "project2": "Nebula Social",
+      "project2Desc": "Social media platform with a unique space-inspired interface",
+      "project3": "Orbit CMS",
+      "project3Desc": "Content management system with a revolutionary UX design"
+    },
+    "skillsSection": {
+      "heading": "Skills"
+    },
+    "contactSection": {
+      "heading": "Contact",
+      "subheading": "Get In Touch",
+      "description": "Have a project in mind or just want to say hello? Feel free to reach out!"
+    },
+    "footer": {
+      "copyright": "© {year} Space Portfolio. All rights reserved."
+    }
+  },
+  "HeroSection": {
+    "title": "Welcome to My Space Portfolio",
+    "subtitle": "Exploring the digital universe with creative web development and design. Building stellar experiences that are out of this world.",
+    "button": "Discover More"
   }
 }
