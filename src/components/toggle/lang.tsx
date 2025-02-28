@@ -30,7 +30,7 @@ export default function ToggleLanguage({ type = "icon" }: ToggleLanguageProps) {
   return (
     <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon" className="w-auto px-3 gap-2">
+        <Button variant="ghost" size="icon" className="w-auto px-3 gap-2">
           {type === "icon" ? (
             <>
               <currentLang.flag title={currentLang.name} className="h-4 w-6" />
@@ -40,7 +40,7 @@ export default function ToggleLanguage({ type = "icon" }: ToggleLanguageProps) {
           )}
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-48">
+      <DropdownMenuContent align="end" className="w-48 bg-background/1">
         {languages.map((language) => (
           <DropdownMenuItem key={language.code} className="flex items-center justify-between cursor-pointer" onClick={() => changeLanguage(language.code)}>
             <div className="flex items-center gap-2">
