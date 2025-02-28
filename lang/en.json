@@ -1,0 +1,48 @@
+{
+  "Index": {
+    "title": "Welcome to Vue.js"
+  },
+  "header": {
+    "pretitle": "Welcome to Portfolio",
+    "title": "FrontEnd Developer Specialized in React, React Native and Next.js",
+    "description": "Dedicated body and soul to the universe of technology and development, spending hours and hours improving my skills and knowledge in this area."
+  },
+  "features": {
+    "discover": {
+      "title": "Discover",
+      "subtitle": "Innovative Solutions",
+      "description": "At the beginning of each project, I believe in the importance of exploring widely. I dedicate myself to understanding your target audience and the challenges you face. By diving deep into the nuances of the problem, I can identify opportunities that many may miss."
+    },
+    "define": {
+      "title": "Define",
+      "subtitle": "Efficient Results",
+      "description": "After the discovery phase, I start to define the scope and contours of the solution. Here, we distill our extensive research into a clear and focused direction. By clearly defining the problem, I can ensure that we are building the right solution for the right needs."
+    },
+    "deliver": {
+      "title": "Deliver",
+      "subtitle": "Excellence and Impact",
+      "description": "Delivering does not mean simply launching a product or solution. For me, it means ensuring that what has been developed solves the problem in the most effective and elegant way possible. I closely follow the launch, ensuring that everything works perfectly."
+    }
+  },
+  "journey": {
+    "pretitle": "Journey",
+    "title": "Live the Journey",
+    "description": "Each company I've been through has been a new opportunity to grow and learn. My experience has taught me to value each step of the process, from discovery to delivery, ensuring that each solution is not only effective but also enriching",
+    "company_one": {
+      "name": "Freelancer",
+      "description": "As a freelancer, I have been working with pagebuilders, creating landing pages and websites using WordPress technology, as well as managing social media, including creating feeds, stories, and more, since 2019."
+    },
+    "company_two": {
+      "name": "Metodologia EAD",
+      "description": "At Metodologia EAD, I was responsible for developing a mobile app that became the company's main tool. I worked on developing programming solutions, including front-end, back-end, mobile development and UI/UX design, since 2021."
+    },
+    "company_three": {
+      "name": "Plus Saúde",
+      "description": "At Plus Saúde, I was responsible for developing a mobile app that became the company's main tool. I worked on developing programming solutions, including front-end, back-end, mobile development and UI/UX design, since 2021."
+    },
+    "company_four": {
+      "name": "Mútua Assessoria",
+      "description": "At Mútua Assessoria, I was responsible for developing a mobile app that became the company's main tool. I worked on developing programming solutions, including front-end, back-end, mobile development and UI/UX design, since 2021."
+    }
+  }
+}
