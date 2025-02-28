@@ -1,4 +1,9 @@
-import { MenuProps, TechSkills, Services } from "../types/interfaces";
+import {
+  MenuProps,
+  TechSkills,
+  Services,
+  QuestionsProps,
+} from "../types/interfaces";
 
 export const websiteLogo: string = "/assets/logo.png";
 export const menuLabels: Array<MenuProps> = [
@@ -78,5 +83,24 @@ export const techs: Array<TechSkills> = [
     title: "Jest",
     description:
       "Jest is a JavaScript testing framework designed to ensure correctness of any JavaScript codebase. It allows you to write tests with an approachable, familiar and feature-rich API that gives you results quickly.",
+  },
+];
+
+export const questions: Array<QuestionsProps> = [
+  {
+    title: "What is scope and how to choose the right one for my project?",
+    information:
+      "Scope in project management refers to the boundaries and extent of what the project will deliver. It includes the specific goals, tasks, deliverables, and deadlines that define the project's objectives. Scope helps to ensure that everyone involved in the project has a clear understanding of what needs to be accomplished and what is outside the project's boundaries. A project can have an open or closed scope.",
+  },
+  {
+    title: "Who does the payment process works?",
+    information:
+      "Depending on the project scope - open or closed - the payment process can vary. If the project scope is opened, the payment process will be based on hours worked per day/week. If the project scope is closed, the payment process will be based on a fixed value. Depending on the client, the platform and the method of payment in which these transactions will occur may vary.",
+  },
+  {
+    title:
+      "How to choose between a mobile, web, and backend project type for my case?",
+    information:
+      "Based on the project needs, choosing between a mobile, website, or backend application can be a decision to make beforehand. If your application is intended to be used mostly on a mobile device, then your project is suited to be a mobile application. Projects focused on developing business rules, and programming logic like data manipulation, authentication flows, resources, and endpoint supply, among others. A backend application can provide those needs. But, if the project is intended for a web browser like Google Chrome, Microsoft Edge, Opera, Safari, among others... A web application is perfect for that case!",
   },
 ];
