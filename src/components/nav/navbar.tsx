@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import ToggleLanguage from "../toggle/lang";
+import { ModeToggle } from "../toggle/theme";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,6 +58,9 @@ export function Navbar() {
             <li>
               <ToggleLanguage />
             </li>
+            <li>
+              <ModeToggle />
+            </li>
           </ul>
         </nav>
 
@@ -80,6 +84,12 @@ export function Navbar() {
                     </Link>
                   </li>
                 ))}
+                <li>
+                  <ToggleLanguage type="text" />
+                </li>
+                <li>
+                  <ModeToggle type="text" />
+                </li>
               </ul>
             </nav>
           </motion.div>
