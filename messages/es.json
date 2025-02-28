@@ -1,0 +1,36 @@
+{
+  "HomePage": {
+    "title": "Página principal",
+    "aboutSection": {
+      "heading": "Sobre mí",
+      "description1": "Soy un desarrollador apasionado por crear sitios webs y aplicaciones bellos y funcionales. Al igual que el vasto universo, mi curiosidad es infinita y siempre estoy explorando nuevas tecnologías y técnicas.",
+      "description2": "Con experiencia en tecnologías web modernas, creo experiencias digitales que son tanto visualmente impactantes como altamente eficientes.",
+      "button": "Más información"
+    },
+    "projectsSection": {
+      "heading": "Proyectos",
+      "project1": "Panel Cósmico",
+      "project1Desc": "Un hermoso dashboard analítico con visualizaciones de temática espacial",
+      "project2": "Social Nebuloso",
+      "project2Desc": "Plataforma de redes sociales con una interfaz única inspirada en el universo",
+      "project3": "Orbit CMS",
+      "project3Desc": "Sistema de gestión de contenido con una experiencia de usuario revolucionaria"
+    },
+    "skillsSection": {
+      "heading": "Habilidades"
+    },
+    "contactSection": {
+      "heading": "Contacto",
+      "subheading": "Ponte en contacto",
+      "description": "¿Tienes un proyecto en mente o solo quieres saludar? ¡No dudes en ponerte en contacto!"
+    },
+    "footer": {
+      "copyright": "© {year} Space Portfolio. Todos los derechos reservados."
+    }
+  },
+  "HeroSection": {
+    "title": "Bienvenido a Mi Portafolio Espacial",
+    "subtitle": "Explorando el universo digital con desarrollo y diseño web creativo. Construyendo experiencias estelares que están fuera de este mundo.",
+    "button": "Descubrir Más"
+  }
+}
