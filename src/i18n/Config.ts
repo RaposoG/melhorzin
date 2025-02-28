@@ -31,12 +31,6 @@ export const languages: Language[] = [
     region: "France",
   },
   {
-    code: "de",
-    name: "Deutsch",
-    flag: "🇩🇪",
-    region: "Deutschland",
-  },
-  {
     code: "ko",
     name: "한국어",
     flag: "🇰🇷",

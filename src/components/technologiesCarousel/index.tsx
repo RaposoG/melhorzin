@@ -1,9 +1,8 @@
 "use client";
 
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
-
 import { useTheme } from "next-themes";
 import {
   HoverCard,
@@ -17,13 +16,32 @@ function TechnologiesCarousel() {
   const { theme } = useTheme();
   const isDarkMode = theme === "dark";
   const t = useTranslations("technologiesCarousel.description");
+  const [isMobile, setIsMobile] = useState(false);
+  const [openCardId, setOpenCardId] = useState<number | null>(null);
+
+  // Verifica se está em uma tela mobile
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkIsMobile();
+    window.addEventListener("resize", checkIsMobile);
+
+    return () => window.removeEventListener("resize", checkIsMobile);
+  }, []);
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, watchFocus: false, active: true },
+    {
+      loop: true,
+      watchFocus: false,
+      active: true,
+      dragFree: isMobile,
+    },
     [
       AutoScroll({
         startDelay: 2,
-        speed: 2,
+        speed: isMobile ? 1 : 2,
       }),
     ]
   );
@@ -45,59 +63,91 @@ function TechnologiesCarousel() {
     autoScroll.play();
   }, [emblaApi]);
 
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (openCardId !== null) {
+        const target = e.target as Element;
+        if (!target.closest("[data-hover-card]")) {
+          setOpenCardId(null);
+          emblaApi?.plugins()?.autoScroll?.play();
+        }
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [emblaApi, openCardId]);
+
   return (
     <>
       <div className="w-full p-2">
-        <div className="overflow-hidden h-[600px]" ref={emblaRef}>
+        <div
+          className={`overflow-hidden ${isMobile ? "h-[300px]" : "h-[600px]"}`}
+          ref={emblaRef}
+        >
           <div className="flex">
             {icon.map((item, index) => {
               const IconComponent = item.IconComponent;
               return (
                 <div
                   key={index}
-                  className="flex-[0_0_10%] min-w-0 px-4"
-                  onMouseLeave={handleMouseLeave}
-                  onMouseEnter={handleMouseEnter}
+                  className="flex-[0_0_auto] min-w-0 px-4 md:flex-[0_0_10%]"
+                  onMouseLeave={isMobile ? undefined : handleMouseLeave}
+                  onMouseEnter={isMobile ? undefined : handleMouseEnter}
                 >
-                  <HoverCard>
-                    <HoverCardTrigger asChild>
-                      <div className="flex flex-col items-center">
-                        <p className="text-foreground select-none">
-                          {item.name}
-                        </p>
+                  <div data-hover-card>
+                    <HoverCard
+                      open={isMobile ? openCardId === index : undefined}
+                    >
+                      <HoverCardTrigger asChild>
                         <div
-                          className="w-20 h-20 flex items-center justify-center bg-background/30 rounded-full shadow-lg"
-                          style={{
-                            filter: `drop-shadow(0 0 8px ${
-                              isDarkMode ? item.colorDark : item.colorLight
-                            }40)`,
-                          }}
+                          className="flex flex-col items-center"
+                          onClick={
+                            isMobile
+                              ? () =>
+                                  setOpenCardId(
+                                    openCardId === index ? null : index
+                                  )
+                              : undefined
+                          }
                         >
-                          <IconComponent
-                            size={40}
-                            color={
-                              isDarkMode ? item.colorDark : item.colorLight
-                            }
-                          />
+                          <p className="text-foreground select-none text-xs md:text-base">
+                            {item.name}
+                          </p>
+                          <div
+                            className="w-12 h-12 md:w-20 md:h-20 flex items-center justify-center bg-background/30 rounded-full shadow-lg"
+                            style={{
+                              filter: `drop-shadow(0 0 8px ${
+                                isDarkMode ? item.colorDark : item.colorLight
+                              }40)`,
+                            }}
+                          >
+                            <IconComponent
+                              size={isMobile ? 24 : 40}
+                              color={
+                                isDarkMode ? item.colorDark : item.colorLight
+                              }
+                            />
+                          </div>
                         </div>
-                      </div>
-                    </HoverCardTrigger>
-                    <HoverCardContent className="flex flex-col gap-2 left-0 top-full p-4 bg-background shadow-lg  w-96 ">
-                      <h2 className="text-1xl text-foreground">
-                        Minha experiência com{" "}
-                        <span className="text-primary">{item.name}</span>
-                      </h2>
-                      <p>
-                        {(() => {
-                          const key: any = item.name
-                            .toLowerCase()
-                            .replace(/\s/g, "_")
-                            .replace(/\./g, "");
-                          return t(key) || t("default");
-                        })()}
-                      </p>
-                    </HoverCardContent>
-                  </HoverCard>
+                      </HoverCardTrigger>
+                      <HoverCardContent className="flex flex-col gap-2 left-0 top-full p-4 bg-background shadow-lg w-64 md:w-96">
+                        <h2 className="text-sm md:text-xl text-foreground">
+                          Minha experiência com{" "}
+                          <span className="text-primary">{item.name}</span>
+                        </h2>
+                        <p className="text-xs md:text-base">
+                          {(() => {
+                            const key: any = item.name
+                              .toLowerCase()
+                              .replace(/\s/g, "_")
+                              .replace(/\./g, "");
+                            return t(key) || t("default");
+                          })()}
+                        </p>
+                      </HoverCardContent>
+                    </HoverCard>
+                  </div>
                 </div>
               );
             })}

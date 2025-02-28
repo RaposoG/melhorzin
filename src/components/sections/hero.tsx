@@ -14,40 +14,43 @@ export default function Hero() {
   const t = useTranslations("hero");
 
   return (
-    <section id="home" className="h-screen flex items-center relative ">
+    <section id="home" className="h-screen flex items-center relative mt-10">
       <div className="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
         <div>
-          <h1 className="text-5xl font-bold mb-4 text-foreground">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 md:mb-4 text-foreground">
             Giovani souza
           </h1>
-          <h2 className="text-2xl mb-6 text-foreground ">
+          <h2 className="text-xl sm:text-2xl mb-3 md:mb-6 text-foreground">
             {t("iAm")}
-            <span className="text-primary"> Full-stack Developer</span>
+            <span className="text-primary"> {t("position")}</span>
           </h2>
-          <p className="text-gray-400 mb-8 max-w-xl">{t("description")}</p>
+          <p className="text-gray-400 mb-4 md:mb-8 max-w-xl">
+            {t("description")}
+          </p>
 
-          <div className="flex gap-4 mb-8">
+          <div className="flex gap-3 md:gap-4 mb-6 md:mb-8">
             {socialLinks.map((Icon, index) => (
               <a
                 key={index}
                 href={Icon.likes}
-                className="w-10 h-10 rounded-full border border-primary/80 flex items-center justify-center hover:bg-foreground/20 transition-colors text-foreground "
+                className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-primary/80 flex items-center justify-center hover:bg-foreground/20 transition-colors text-foreground"
                 target="_blank"
+                rel="noopener noreferrer"
               >
-                <Icon.Icon className="w-5 h-5" />
+                <Icon.Icon className="w-4 h-4 md:w-5 md:h-5" />
               </a>
             ))}
           </div>
           <div className="flex gap-4">
-            <Button className="bg-primary hover:bg-primary/70 text-background">
+            <Button className="bg-primary hover:bg-primary/70 text-background text-sm md:text-base">
               Download CV
             </Button>
           </div>
         </div>
-        <div className="flex justify-center items-center hexagon-container">
-          <Avatar className="w-[400px] h-[400px]">
-            <AvatarImage src="./eu.jpg" alt="@shadcn" />
-            <AvatarFallback>CN</AvatarFallback>
+        <div className="flex justify-center items-center ">
+          <Avatar className="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px]">
+            <AvatarImage src="./eu.jpg" alt="Giovani Souza" />
+            <AvatarFallback>GS</AvatarFallback>
           </Avatar>
         </div>
       </div>

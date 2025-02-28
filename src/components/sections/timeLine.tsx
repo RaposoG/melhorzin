@@ -38,13 +38,19 @@ const TimelineEvent = ({ event, index }: any) => {
     <motion.div
       ref={ref}
       style={{ opacity, scale, x }}
-      className={`mb-16  flex justify-between items-center w-full ${
-        index % 2 === 0 ? "flex-row-reverse left-timeline" : "right-timeline"
-      }`}
+      className={`mb-16 gap-2 flex items-center w-full
+        ${
+          index % 2 === 0
+            ? "md:flex-row-reverse md:justify-between sm:justify-end"
+            : "md:justify-between sm:justify-end"
+        }
+        flex-col sm:flex-row
+      `}
     >
-      <div className="order-1 w-5/12"></div>
+      {/* Hide this div on mobile */}
+      <div className="order-1 w-5/12 hidden md:block"></div>
       <motion.div
-        className=" z-20 flex items-center order-1 bg-primary shadow-xl w-12 h-12 rounded-full "
+        className="z-20 flex items-center order-1 bg-primary shadow-xl w-12 h-12 rounded-full sm:mx-0 mx-auto mb-3 sm:mb-0"
         whileHover={{ scale: 1.2, rotate: 360 }}
         transition={{ type: "spring", stiffness: 260, damping: 20 }}
       >
@@ -53,7 +59,7 @@ const TimelineEvent = ({ event, index }: any) => {
       <HoverCard openDelay={50} closeDelay={50}>
         <HoverCardTrigger asChild>
           <motion.div
-            className="order-1 bg-primary/10 dark:bg-primary/20 rounded-lg shadow-xl w-5/12 px-6 py-4 backdrop-blur-sm bg-opacity-80"
+            className="order-1 bg-primary/10 dark:bg-primary/20 rounded-lg shadow-xl md:w-5/12 w-full sm:w-10/12 px-6 py-4 backdrop-blur-sm bg-opacity-80"
             whileHover={{
               scale: 1.05,
               boxShadow: "0 0 20px rgba(183, 36, 73, 10)",
@@ -77,12 +83,12 @@ const TimelineEvent = ({ event, index }: any) => {
           <HoverCardContent
             align="center"
             side="bottom"
-            className="w-[600px] bg-accent/20"
+            className="w-full max-w-[600px] bg-accent/20"
           >
-            <div>
-              {event.specification.map((string: string) => {
+            <div key={event.title}>
+              {event.specification.map((string: string, idx: number) => {
                 return (
-                  <div>
+                  <div key={idx}>
                     <h1>{string}</h1>
                   </div>
                 );
@@ -111,6 +117,7 @@ export default function PortfolioTimeline() {
     title: string;
     description: string;
     icon?: string;
+    specification?: string[];
   }>;
 
   // Map icons to events (these are hardcoded since they're not part of translations)
@@ -133,9 +140,10 @@ export default function PortfolioTimeline() {
         >
           {t("title")}
         </motion.h2>
-        <div className="relative wrap overflow-hidden p-10 h-full">
+        <div className="relative wrap overflow-hidden p-4 sm:p-10 h-full">
+          {/* Desktop timeline vertical line - only visible on md screens and up */}
           <motion.div
-            className="border-2-2 absolute border-primary h-full border"
+            className="border-2-2 absolute border-primary hidden md:block"
             style={{
               left: "50%",
               top: "10%",

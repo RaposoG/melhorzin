@@ -11,6 +11,7 @@
   "hero": {
     "about": "À propos de moi",
     "iAm": "Je suis",
+    "position": "Full-stack Developer",
     "description": "Je suis un développeur full-stack passionné par la création de systèmes robustes et évolutifs, particulièrement avec Golang et Node.js. Bien que j'aie également de l'expérience en développement front-end avec React et Next.js, mon focus principal est sur le back-end, assurant l'efficacité, la performance et l'évolutivité des applications que je développe."
   },
   "about-me": {
