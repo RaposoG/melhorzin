@@ -14,4 +14,4 @@ FROM nginx:alpine3.19
 COPY --from=builder /app/dist/portfolio/browser /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-EXPOSE 4200
+EXPOSE 3000

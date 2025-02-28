@@ -2,4 +2,4 @@ services:
   app:
     build: .
     ports:
-      - '4100:4200'
+      - '3000:3000'
