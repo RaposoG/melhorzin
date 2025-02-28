@@ -1,34 +1,35 @@
-# Melhorzin
+![](./public/readme/mathpholio-cover.jpg)
 
-## Sobre o Projeto
+**👨‍💻 Tecnologias / Technologies**
 
-Melhorzin é uma plataforma colaborativa exclusiva para seus usuários, onde cada um pode expor seu portfólio de forma personalizada. Imagine subdomínios como `raposo.melhorzin.com` ou `lk.melhorzin.com`, onde cada um é um espaço próprio para mostrar trabalhos, habilidades e projetos.
+Esse projeto foi desenvolvido com as seguintes tecnologias / This project was developed with the following technologies:
 
-## Funcionalidades
+- [Next.js](https://nextjs.org/)
+- [React](https://react.dev/)
+- [Typescript](https://www.typescriptlang.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Vitest](https://vitest.dev/)
+- [Mock Service Worker](https://mswjs.io/)
+- [Husky](https://typicode.github.io/husky/)
 
-- **Portfólios Personalizados:** Cada usuário tem seu subdomínio para um portfólio único.
-- **Projeto Colaborativo:** Junte-se aos amigos que estão moldando essa ideia com muita criatividade.
-- **Desenvolvido com Next.js:** Experiência moderna e rápida para aplicações React.
 
-## Tecnologias Utilizadas
+---
 
-- [Next.js](https://nextjs.org/) para renderização e desenvolvimento do front-end.
-- Outras tecnologias (a definir).
+**💻 Projeto / Project**
 
-## Estrutura do Repositório
+This is my personal website, visit on: https://mathpholio.vercel.app
 
-- `pages/` - Páginas do aplicativo Next.js.
-- `components/` - Componentes React reutilizáveis.
-- Outros diretórios e arquivos para suporte ao projeto.
+---
 
-## Como Contribuir
+📖 **Documentation** 
 
-1. Faça o fork do repositório.
-2. Crie uma nova branch com a sua feature: `git checkout -b minha-feature`.
-3. Commit suas mudanças: `git commit -m 'Adiciona nova feature'`.
-4. Envie ao repositório remoto: `git push origin minha-feature`.
-5. Abra um Pull Request.
+[https://www.notion.so/mathpholio](https://www.notion.so/Portfolio-Website-c2d58629e0204d8abaa895ec3d0996d0?pvs=4)
 
-## Licença
+---
 
-Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
+**🧑🏾‍💻 Autor / Author**
+
+**Matheus Gomes de Souza**
+
+LinkedIn: https://www.linkedin.com/in/matheus-gomes-de-souza/ <br/>
+E-mail: matheusg_souza@outlook.com

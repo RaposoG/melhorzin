@@ -1,0 +1,4 @@
+{
+  "remote.autoForwardPortsFallback": 0,
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
