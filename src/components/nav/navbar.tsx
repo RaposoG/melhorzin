@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import ToggleLanguage from "../toggle/lang";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,7 +46,7 @@ export function Navbar() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:block">
-          <ul className="flex space-x-8">
+          <ul className="flex space-x-8  items-center">
             {navLinks.map((link) => (
               <li key={link.label}>
                 <Link href={link.href} className="text-gray-300 transition-colors hover:text-white">
@@ -53,6 +54,9 @@ export function Navbar() {
                 </Link>
               </li>
             ))}
+            <li>
+              <ToggleLanguage />
+            </li>
           </ul>
         </nav>
 
