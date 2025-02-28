@@ -119,6 +119,33 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-black text-foreground;
+  background-image: radial-gradient(circle at center, oklch(0.2 0.01 240 / 0.7) 0%, oklch(0.1 0 0 / 1) 100%);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: oklch(0 0 0 / 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: oklch(0.6 0.15 280 / 0.5);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.6 0.15 280 / 0.8);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
