@@ -37,7 +37,7 @@ const CarouselComponent = memo(function CarouselComponent() {
   }, []);
 
   return (
-    <div key={repos.length}>
+    <div>
       <article
         ref={sliderRef}
         className="keen-slider mt-20"
