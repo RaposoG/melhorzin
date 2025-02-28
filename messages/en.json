@@ -32,5 +32,10 @@
     "title": "Welcome to My Space Portfolio",
     "subtitle": "Exploring the digital universe with creative web development and design. Building stellar experiences that are out of this world.",
     "button": "Discover More"
+  },
+  "theme": {
+    "dark": "Dark Mode",
+    "light": "Light Mode",
+    "system": "System Default"
   }
 }

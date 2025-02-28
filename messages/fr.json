@@ -32,5 +32,10 @@
     "title": "Bienvenue sur Mon Portefeuille Spatial",
     "subtitle": "Exploration de l'univers numérique avec le développement et la conception Web créatifs. Construire des expériences stellaires qui sont hors de ce monde.",
     "button": "Découvrir Plus"
+  },
+  "theme": {
+    "dark": "Mode sombre",
+    "light": "Mode léger",
+    "system": "Par défaut du système"
   }
 }

@@ -32,5 +32,10 @@
     "title": "Bienvenido a Mi Portafolio Espacial",
     "subtitle": "Explorando el universo digital con desarrollo y diseño web creativo. Construyendo experiencias estelares que están fuera de este mundo.",
     "button": "Descubrir Más"
+  },
+  "theme": {
+    "dark": "Modo oscuro",
+    "light": "Modo de luz",
+    "system": "Valor predeterminado del sistema"
   }
 }

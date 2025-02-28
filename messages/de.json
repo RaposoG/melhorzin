@@ -32,5 +32,10 @@
     "title": "Willkommen in Meinem Weltraumportfolio",
     "subtitle": "Het verkennen van het digitale universum met creatieve webontwikkeling en ontwerp. Stellaire ervaringen bouwen die niet van deze wereld zijn.",
     "button": "Mehr Entdecken"
+  },
+  "theme": {
+    "dark": "Donkere modus",
+    "light": "Lichtmodus",
+    "system": "Standaard systeem"
   }
 }
