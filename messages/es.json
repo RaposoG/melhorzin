@@ -1,0 +1,125 @@
+{
+  "header": {
+    "nav": {
+      "home": "Início",
+      "about": "Sobre mi",
+      "technologies": "Tecnologias",
+      "services": "Cronología",
+      "contact": "Contacto"
+    }
+  },
+  "hero": {
+    "about": "Sobre mí",
+    "iAm": "Yo soy",
+    "description": "Soy un desarrollador full-stack apasionado por crear sistemas robustos y escalables, especialmente usando Golang y Node.js. Aunque también tengo experiencia en desarrollo front-end con React y Next.js, mi enfoque principal es el back-end, asegurando eficiencia, rendimiento y escalabilidad en las aplicaciones que desarrollo."
+  },
+  "about-me": {
+    "title": "Sobre Mí",
+    "title2": "Hola, soy",
+    "description1": "Desarrollador full-stack con experiencia en back-end y DevOps, enfocado en construir sistemas escalables y de alto rendimiento. Trabajo principalmente con Golang y Node.js, con experiencia adicional en desarrollo front-end usando React y Next.js.",
+    "description2": "En desarrollo back-end, he trabajado en proyectos que van desde aplicaciones CRUD simples hasta sistemas complejos, aplicando optimización de consultas en bases de datos, particularmente en MySQL (usando NoCQL cuando es necesario). Tengo experiencia en varias arquitecturas, incluyendo MVC, Hexagonal y Microservicios.",
+    "description3": "En DevOps, me especializo en construir y mantener soluciones basadas en AWS, con experiencia en implementar arquitecturas serverless tanto en Golang como en Node.js, aprovechando Lambda, DynamoDB, API Gateway y S3 para garantizar escalabilidad y alta disponibilidad.",
+    "title3": "Mis Habilidades Incluyen"
+  },
+  "technologiesCarousel": {
+    "title": "Tecnologías",
+    "description": {
+      "default": "No encontrado",
+      "react": "Tengo experiencia con React en la creación de landing pages y páginas web complejas. Trabajé con la componentización utilizando ShadCN para una interfaz moderna y Framer Motion para animaciones. Desarrollé gráficos interactivos con Chart.js, Recharts y D3.js y creé formularios dinámicos con validación usando React Hook Form y Zod. Siempre busco buenas prácticas y optimización para mejorar el rendimiento y la usabilidad de las aplicaciones.",
+      "go": "Un lenguaje eficiente y conciso para sistemas de alto rendimiento, con excelente concurrencia.",
+      "javascript": "Un lenguaje de programación ampliamente utilizado para el desarrollo web. Soporta programación asíncrona y es esencial para crear interfaces dinámicas e interactivas tanto en el frontend como en el backend.",
+      "typescript": "Un superconjunto de JavaScript que agrega tipado estático y características avanzadas de desarrollo, haciendo que el código sea más seguro y fácil de mantener.",
+      "nextjs": "Un framework de React que permite renderización híbrida (SSR y SSG), enrutamiento avanzado y optimizaciones para un mejor rendimiento y SEO.",
+      "nodejs": "Un entorno de ejecución de JavaScript asíncrono y basado en eventos, ideal para el desarrollo de backends escalables, API REST y aplicaciones en tiempo real.",
+      "aws_lambda": "Servicio de computación sin servidor de AWS que permite ejecutar código sin gestionar servidores, cobrando solo por el tiempo de ejecución.",
+      "amazon_s3": "Servicio de almacenamiento de objetos escalable y seguro de AWS, utilizado para almacenar archivos, copias de seguridad y contenido estático.",
+      "dynamodb": "Base de datos NoSQL de AWS con alta disponibilidad y escalabilidad, optimizada para el almacenamiento distribuido de datos y el rendimiento.",
+      "postgresql": "Base de datos relacional de código abierto con fuerte soporte para SQL, conocida por su fiabilidad, extensibilidad y rendimiento.",
+      "mysql": "Una base de datos relacional popular, ampliamente utilizada en aplicaciones web y sistemas que requieren almacenamiento estructurado y transacciones ACID.",
+      "redis": "Una base de datos en memoria extremadamente rápida, utilizada para almacenamiento en caché, colas y sesiones para mejorar el rendimiento de las aplicaciones.",
+      "rust": "Un lenguaje de programación enfocado en la seguridad, el rendimiento y la concurrencia, ampliamente utilizado en sistemas de bajo nivel y aplicaciones de alto rendimiento.",
+      "python": "Un lenguaje versátil y fácil de aprender, utilizado para desarrollo web, ciencia de datos, automatización e inteligencia artificial."
+    }
+  },
+  "timeline": {
+    "title": "Mi Trayectoria Profesional",
+    "events": [
+      {
+        "date": "Febrero 2022 - Noviembre 2023",
+        "title": "Grado en Análisis y Desarrollo de Sistemas",
+        "description": "Completé mi grado en la Universidade Católica de Brasília.",
+        "specification": [
+          "• Conocimientos en metodologías ágiles, como Scrum y desarrollo ágil.",
+          "• Fundamentos de Administración de Bases de Datos (DBA).",
+          "• Algoritmos y estructuras de datos.",
+          "• Programación Orientada a Objetos (POO).",
+          "• Principios de Ingeniería de Software y buenas prácticas de desarrollo."
+        ],
+        "icon": "graduation"
+      },
+      {
+        "date": "Septiembre 2023 - Diciembre 2024",
+        "title": "Ingeniero de Software - Rizzo Dev",
+        "description": "Trabajé como desarrollador full-stack en Rizzo Dev, creando soluciones escalables y eficientes.",
+        "specification": [
+          "• Creación, integración y mantenimiento de páginas web con React y Next.js.",
+          "• Desarrollo y optimización del backend con Express y Prisma.",
+          "• Creación de microservicios en Golang para cálculos estadísticos complejos.",
+          "• Desarrollo de bots para Telegram.",
+          "• Web scraping utilizando Playwright.",
+          "• Creación de paneles interactivos con gráficos y tablas responsivas.",
+          "• Desarrollo de front-end con características en tiempo real utilizando WebSockets y otras tecnologías."
+        ],
+        "icon": "briefcase"
+      },
+      {
+        "date": "Septiembre 2024 - Presente",
+        "title": "Ingeniero de Software - Inside Code",
+        "description": "Trabajando en desarrollo backend y DevOps, creando servicios escalables y arquitecturas eficientes.",
+        "specification": [
+          "• Desarrollo de backend, creando servicios y APIs escalables en Golang.",
+          "• Implementación y mantenimiento de bases de datos MySQL y DynamoDB.",
+          "• Construcción de pipelines de CI/CD para automatización de despliegues.",
+          "• Desarrollo de soluciones serverless con AWS Lambda.",
+          "• Configuración de API Gateway, S3, EC2 y CloudFront para optimizar el rendimiento y la seguridad.",
+          "• Monitoreo y optimización de infraestructuras en AWS."
+        ],
+        "icon": "briefcase"
+      },
+      {
+        "date": "Enero 2024 - Junio 2025",
+        "title": "Posgrado - MBA en Arquitectura Full Cycle",
+        "description": "Estudios avanzados sobre arquitectura de software y sistemas escalables.",
+        "specification": [
+          "• Diseño e implementación de arquitecturas escalables y distribuidas.",
+          "• Patrones de arquitectura de software, como microservicios y arquitectura basada en eventos.",
+          "• Mejores prácticas en DevOps, CI/CD y automatización.",
+          "• Gestión y optimización de infraestructura en la nube.",
+          "• Estrategias de escalabilidad y seguridad en aplicaciones modernas."
+        ],
+        "icon": "graduation"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contacto",
+    "logoAlt": "Logotipo",
+    "description": "Soy un desarrollador full-stack profesional con experiencia en crear aplicaciones web robustas. Con experiencia en tecnologías frontend y backend, puedo ayudar a dar vida a sus ideas digitales con soluciones eficientes y escalables.",
+    "phone": "Teléfono",
+    "email": "gmail",
+    "linkedin": "LinkedIn",
+    "git": "GitHub",
+    "form": {
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "phone": "Teléfono",
+      "subject": "Asunto",
+      "email": "Correo electrónico",
+      "message": "Mensaje",
+      "submit": "Enviar",
+      "submitting": "Enviando...",
+      "successMessage": "Gracias por tu mensaje. Me pondré en contacto contigo pronto.",
+      "errorMessage": "Algo salió mal. Por favor, inténtalo de nuevo."
+    }
+  }
+}

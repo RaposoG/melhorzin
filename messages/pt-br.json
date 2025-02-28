@@ -1,0 +1,125 @@
+{
+  "header": {
+    "nav": {
+      "home": "Início",
+      "about": "Sobre mim",
+      "technologies": "Tecnologias",
+      "services": "Linha do tempo",
+      "contact": "Contato"
+    }
+  },
+  "hero": {
+    "about": "Sobre mim",
+    "iAm": "Eu sou",
+    "description": " Sou um desenvolvedor full-stack apaixonado por criar sistemasrobustos e escaláveis, especialmente utilizando Golang e Node.js.Embora também tenha experiência no desenvolvimento front-end com React e Next.js, minha principal atuação é no back-end, garantindo eficiência, performance e escalabilidade nas aplicações qudesenvolvo."
+  },
+  "about-me": {
+    "title": "Sobre mim",
+    "title2": "Olá, eu sou",
+    "description1": "Desenvolvedor full-stack com experiência em back-end e DevOps, atuando no desenvolvimento de sistemas escaláveis e de alta performance. Trabalho principalmente com Golang e Node.js, além de possuir conhecimento em front-end com React e Next.js.",
+    "description2": "No back-end, desenvolvi desde CRUDs simples até sistemas complexos, aplicando otimização de queries em bancos de dados, especialmente no MySQL (usando NoCQL quando necessário). Tenho experiência com diversas arquiteturas, incluindo MVC, Hexagonal e Microsserviços.",
+    "description3": "Em DevOps, atuo na criação e manutenção de soluções em AWS, com experiência na implementação de arquiteturas serverless tanto em Golang quanto em Node.js, utilizando Lambda, DynamoDB, API Gateway e S3, garantindo escalabilidade e alta disponibilidade.",
+    "title3": "Minhas habilidades incluem"
+  },
+  "technologiesCarousel": {
+    "title": "Tecnologias",
+    "description": {
+      "default": "Não encontrado",
+      "react": "Tenho experiência com React criando sites landing pages e páginas complexas Trabalhei com componentização utilizando ShadCN para UI moderna e Framer Motion para animações Desenvolvi gráficos interativos com Chartjs Recharts e D3js e criei formulários dinâmicos com validação usando React Hook Form e Zod Busco sempre boas práticas e otimização para melhorar a performance e usabilidade das aplicações",
+      "go": "Linguagem eficiente e concisa para sistemas de alta performance, com excelente concorrência",
+      "javascript": "Linguagem de programação amplamente utilizada para desenvolvimento web. Possui suporte a programação assíncrona e é essencial para criar interfaces dinâmicas e interativas no frontend e backend.",
+      "typescript": "Superset do JavaScript que adiciona tipagem estática e recursos avançados de desenvolvimento, tornando o código mais seguro e fácil de manter.",
+      "nextjs": "Framework para React que permite renderização híbrida (SSR e SSG), roteamento avançado e otimizações para melhor performance e SEO.",
+      "nodejs": "Runtime JavaScript assíncrono e baseado em eventos, ideal para desenvolvimento backend escalável, APIs REST e aplicações em tempo real.",
+      "aws_lambda": "Serviço de computação serverless da AWS que permite executar código sem gerenciar servidores, cobrando apenas pelo tempo de execução.",
+      "amazon_s3": "Serviço de armazenamento de objetos escalável e seguro da AWS, usado para armazenar arquivos, backups e conteúdo estático.",
+      "dynamodb": "Banco de dados NoSQL da AWS com alta disponibilidade e escalabilidade, utilizado para armazenar dados de forma distribuída e otimizada para performance.",
+      "postgresql": "Banco de dados relacional open-source com forte suporte a SQL, conhecido por sua confiabilidade, extensibilidade e desempenho.",
+      "mysql": "Banco de dados relacional popular, amplamente usado para aplicações web e sistemas que exigem armazenamento estruturado e transações ACID.",
+      "redis": "Banco de dados em memória extremamente rápido, utilizado para caching, filas e armazenamento de sessão para melhorar a performance de aplicações.",
+      "rust": "Linguagem de programação focada em segurança, desempenho e concorrência, muito utilizada em sistemas de baixo nível e aplicações de alta performance.",
+      "python": "Linguagem versátil e de fácil aprendizado, usada para desenvolvimento web, ciência de dados, automação e inteligência artificial."
+    }
+  },
+  "timeline": {
+    "title": "Minha Jornada Profissional",
+    "events": [
+      {
+        "date": "fevereiro 2022 - Novembro 2023",
+        "title": "Graduação em Análise e Desenvolvimento de Sistemas",
+        "description": "Concluí minha graduação na Universidade Católica de Brasília.",
+        "specification": [
+          "• Conhecimento em metodologias ágeis, como Scrum e desenvolvimento ágil.",
+          "• Fundamentos de Banco de Dados e administração (DBA).",
+          "• Algoritmos e estrutura de dados.",
+          "• Programação Orientada a Objetos (POO).",
+          "• Princípios de Engenharia de Software e boas práticas de desenvolvimento."
+        ],
+        "icon": "graduation"
+      },
+      {
+        "date": "Setembro 2023 - Dezembro 2024",
+        "title": "Software Engineer - Rizzo Dev",
+        "description": "Atuei como desenvolvedor full stack na Rizzo Dev, criando soluções escaláveis e eficientes.",
+        "specification": [
+          "• Criação, integração e manutenção de páginas web com React e Next.js.",
+          "• Desenvolvimento e otimização do back-end com Express e Prisma.",
+          "• Criação de microserviços em Golang para cálculos pesados de estatísticas.",
+          "• Desenvolvimento de bots para Telegram.",
+          "• Scraping de páginas web utilizando Playwright.",
+          "• Criação de dashboards interativos com gráficos e tabelas responsivas.",
+          "• Desenvolvimento de front-ends com bastante real-time utilizando WebSockets e outras tecnologias."
+        ],
+        "icon": "briefcase"
+      },
+      {
+        "date": "Setembro 2024 - Presente",
+        "title": "Software Engineer - Inside Code",
+        "description": "Atuando no desenvolvimento back-end e DevOps, criando serviços escaláveis e arquiteturas eficientes.",
+        "specification": [
+          "• Desenvolvimento de back-end, criando serviços e APIs escaláveis em Golang.",
+          "• Implementação e manutenção de bancos de dados MySQL e DynamoDB.",
+          "• Construção de pipelines de CI/CD para automação de deploys.",
+          "• Desenvolvimento de soluções serverless com AWS Lambda.",
+          "• Configuração de API Gateway, S3, EC2 e CloudFront para otimizar desempenho e segurança.",
+          "• Monitoramento e otimização de infraestruturas na AWS."
+        ],
+        "icon": "briefcase"
+      },
+      {
+        "date": "Janeiro 2024 - Junho 2025",
+        "title": "Pós-Graduação - MBA em Arquitetura Full Cycle",
+        "description": "Estudos avançados sobre arquitetura de software e sistemas escaláveis.",
+        "specification": [
+          "• Design e implementação de arquiteturas escaláveis e distribuídas.",
+          "• Padrões de arquitetura de software, como microservices e event-driven architecture.",
+          "• Melhores práticas em DevOps, CI/CD e automação.",
+          "• Gerenciamento e otimização de infraestrutura em nuvem.",
+          "• Estratégias de escalabilidade e segurança em aplicações modernas."
+        ],
+        "icon": "graduation"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contato",
+    "logoAlt": "Logo",
+    "description": "Entre em contato",
+    "phone": "Telefone",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "git": "GitHub",
+    "form": {
+      "firstName": "Nome",
+      "lastName": "Sobrenome",
+      "phone": "Telefone",
+      "subject": "Assunto",
+      "email": "Email",
+      "message": "Mensagem",
+      "submit": "Enviar",
+      "submitting": "Enviando...",
+      "successMessage": "Obrigado pela sua mensagem. Entrarei em contato em breve!",
+      "errorMessage": "Algo deu errado. Por favor, tente novamente."
+    }
+  }
+}
