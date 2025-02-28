@@ -1,0 +1,36 @@
+{
+  "HomePage": {
+    "title": "Page d'accueil",
+    "aboutSection": {
+      "heading": "À propos de moi",
+      "description1": "Je suis un développeur passionné par la création de sites web et d'applications beaux et fonctionnels. Tout comme l'immensité de l'univers, ma curiosité est sans fin et j'explore toujours de nouvelles technologies et techniques.",
+      "description2": "Avec une expertise dans les technologies web modernes, je crée des expériences digitales à la fois esthétiques et performantes.",
+      "button": "En savoir plus"
+    },
+    "projectsSection": {
+      "heading": "Projets",
+      "project1": "Tableau de bord cosmique",
+      "project1Desc": "Un tableau de bord analytique élégant avec des visualisations inspirées de l'espace",
+      "project2": "Social Nebuleux",
+      "project2Desc": "Plateforme de médias sociaux avec une interface unique inspirée de l'univers",
+      "project3": "Orbit CMS",
+      "project3Desc": "Système de gestion de contenu doté d'une UX révolutionnaire"
+    },
+    "skillsSection": {
+      "heading": "Compétences"
+    },
+    "contactSection": {
+      "heading": "Contact",
+      "subheading": "Entrer en contact",
+      "description": "Un projet en tête ou vous souhaitez simplement dire bonjour ? N'hésitez pas à nous contacter !"
+    },
+    "footer": {
+      "copyright": "© {year} Space Portfolio. Tous droits réservés."
+    }
+  },
+  "HeroSection": {
+    "title": "Bienvenue sur Mon Portefeuille Spatial",
+    "subtitle": "Exploration de l'univers numérique avec le développement et la conception Web créatifs. Construire des expériences stellaires qui sont hors de ce monde.",
+    "button": "Découvrir Plus"
+  }
+}
