@@ -1,0 +1,181 @@
+{
+  "common": {
+    "navbar": {
+      "about": "About",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+
+    "kbar": {
+      "start": {
+        "mobile": "Tap to start →",
+        "desktop": "Press <kbd>{{cmd}}</kbd> <kbd>{{key}}</kbd> to start →"
+      },
+
+      "actions": {
+        "copy": "Copy URL",
+        "email": "Send Email",
+        "source": "View Source",
+        "home": "Home",
+        "about": "About",
+        "projects": "Projects"
+      },
+
+      "sections": {
+        "general": "General",
+        "goto": "Go To",
+        "follow": "Follow"
+      },
+      "toast": {
+        "title": "Copied :D",
+        "description": "You can now share it with anyone."
+      }
+    }
+  },
+
+  "pages": {
+    "home": {
+      "title": "Michel Domingos",
+      "meta": {
+        "1": "Software Engineer.",
+        "2": "Fullstack Software Engineer."
+      },
+      "description": "A guy who loves helping people and making the world a better place."
+    },
+    "about": {
+      "title": "About | Michel Domingos",
+      "description": "Software Developer, passionate about using technology as a means of solving problems that make life easier for the user. My goal is to keep improving my skills, creating high quality, testable, easy to use, visually appealing software combining intuitive design with great functionality for a better user experience. Always looking to stay up to date with the latest web technologies, I have a strong understanding of web development principles such as SEO, accessibility and responsive design. I'm collaborative, I like to help people by sharing knowledge about the technologies I know best.",
+
+      "tagline": "<span>From Recife to as far as there is cheese!</span> 🧀",
+      "career": "Career"
+    },
+    "projects": {
+      "tagline": "<span>Apps, Challenges and more</span>",
+      "title": "Projects | Michel Domingos",
+      "description": "Side projects are a way to convert your <strong>thoughts and personality</strong> into code. Here you can see the different <strong>{{totalProjects}}</strong> projects I've been working on.",
+      "featured": "Featured Projects",
+      "all": "All Projects",
+
+      "portfolio": {
+        "title": "Portfolio",
+        "description": "My portfolio (Repository of this site)",
+        "links": {
+          "github": "https://github.com/micheldslive/micode.dev"
+        },
+        "icon": "assignment"
+      },
+      "jsm": {
+        "title": "JSM",
+        "description": "Project carried out for a Front-End challenge using turborepo.",
+        "links": {
+          "github": "https://github.com/micheldslive/jsm-challenge",
+          "web": "https://jsm.mi-code.dev/"
+        },
+        "icon": "jsm"
+      },
+      "mui": {
+        "title": "Micode UI",
+        "description": "React Powered Component UI, accessible by default and built on top of Radix. Micode UI is open source and made to be easy to use.",
+        "links": {
+          "github": "https://github.com/micheldslive/micode-ui",
+          "web": "https://ui.mi-code.dev/"
+        },
+        "icon": "mui"
+      },
+      "dog-and-pony": {
+        "title": "Dog and Pony",
+        "description": "Project carried out to create a Jobs registration form, saving them in Localstorage.",
+        "links": {
+          "github": "https://github.com/micheldslive/dog-and-pony-challenge",
+          "web": "https://dog-and-pony.mi-code.dev/"
+        },
+        "icon": "dog-and-pony"
+      },
+      "opea": {
+        "title": "Opea",
+        "description": "Project carried out to create a CRUD using provided API.",
+        "links": {
+          "github": "https://github.com/micheldslive/opea-challenge",
+          "web": "https://opea.mi-code.dev/"
+        },
+        "icon": "opea"
+      },
+      "books": {
+        "title": "Books",
+        "description": "Project carried out to create an authentication environment.",
+        "links": {
+          "github": "https://github.com/micheldslive/books-challenge",
+          "web": "https://books.mi-code.dev/"
+        },
+        "icon": "book"
+      },
+      "weather": {
+        "title": "Weather",
+        "description": "Project carried out to read weather information when choosing a specific city.",
+        "links": {
+          "github": "https://github.com/micheldslive/weather-challenge",
+          "web": "https://weater.mi-code.dev/"
+        },
+        "icon": "weather"
+      },
+      "movies": {
+        "title": "Movies",
+        "description": "Project carried out to consume data from the TMDB api and create a store with a list of products.",
+        "links": {
+          "github": "https://github.com/micheldslive/movies-challenge",
+          "web": "https://movies.mi-code.dev/"
+        },
+        "icon": "movies"
+      },
+      "calendar": {
+        "title": "mi-calendar",
+        "description": "Nextjs case study project + react-scheduler.",
+        "links": {
+          "github": "https://github.com/micheldslive/mi-calendar",
+          "web": "https://calendar.mi-code.dev/"
+        },
+        "icon": "calendar"
+      },
+      "pomodoro-app": {
+        "title": "pomodoro-app",
+        "description": "A pomodoro app built using front-end mentor layout",
+        "links": {
+          "github": "https://github.com/micheldslive/pomodoro-app",
+          "web": "https://pomodoro.mi-code.dev/"
+        },
+        "icon": "calendar"
+      }
+    },
+    "contact": {
+      "title": "Contact | Michel Domingos",
+      "tagline": "<span>Email me. As in the good old days.</span>",
+      "description": "<strong>I love talking</strong> with other developers, students, and newbies. <strong>I'm a pretty busy guy</strong> so I can't promise that I'll answer your email on time, but I'll do my best to get back to you ASAP.",
+      "email": "Send an email",
+      "href": "mailto:micheldslive@gmail.com",
+
+      "toast": {
+        "success": {
+          "title": "Email sent :P",
+          "description": "Thanks for taking the time to write it."
+        },
+        "fail": {
+          "title": "Error :(",
+          "description": "Something wrong happened. Try again later."
+        }
+      },
+
+      "labels": {
+        "name": "name",
+        "email": "email",
+        "message": "message",
+        "button": "Send"
+      },
+      "placeholders": {
+        "name": "Your Name",
+        "email": "email@example.com",
+        "message": "Your message here :D"
+      },
+      "send": "Send"
+    }
+  }
+}

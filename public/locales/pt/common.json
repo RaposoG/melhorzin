@@ -1,0 +1,181 @@
+{
+  "common": {
+    "navbar": {
+      "about": "Sobre",
+      "projects": "Projetos",
+      "contact": "Contato"
+    },
+
+    "kbar": {
+      "start": {
+        "mobile": "Toque para começar →",
+        "desktop": "Pressione <kbd>{{cmd}}</kbd> <kbd>{{key}}</kbd> para começar →"
+      },
+
+      "actions": {
+        "copy": "Copiar Link",
+        "email": "Enviar Email",
+        "source": "Ver Código Fonte",
+        "home": "Início",
+        "about": "Sobre",
+        "projects": "Projetos"
+      },
+
+      "sections": {
+        "general": "Geral",
+        "goto": "Ir Para",
+        "follow": "Seguir"
+      },
+      "toast": {
+        "title": "Copiado :D",
+        "description": "Agora você pode compartilhar com seus amigos."
+      }
+    }
+  },
+
+  "pages": {
+    "home": {
+      "title": "Michel Domingos",
+      "meta": {
+        "1": "Engenheiro de Software.",
+        "2": "Engenheiro de Software Fullstack."
+      },
+      "description": "Um cara que ama ajudar as pessoas e tornar o mundo um lugar melhor."
+    },
+    "about": {
+      "title": "Sobre | Michel Domingos",
+      "description": "Desenvolvedor de Software, apaixonado por utilizar a tecnologia como meio de solução de problemas que facilitem a vida das pessoas. Minha meta é continuar aprimorando minhas habilidades, criando softwares de alta qualidade, testáveis, fáceis de usar, visualmente atraentes combinando um design intuitivo com uma ótima funcionalidade para uma melhor experiência do usuário.Sempre busco me manter atualizado com as mais recentes tecnologias da web, possuo forte compreensão dos princípios de desenvolvimento web como SEO, acessibilidade e design responsivo.Sou colaborativo, gosto de ajudar pessoas compartilhando conhecimentos sobre as tecnologias que mais conheço.",
+      "tagline": "<span>De Recife até onde houver queijo!</span> 🧀",
+      "career": "Carreira"
+    },
+    "projects": {
+      "tagline": "<span>Apps, desafios entre outros</span>",
+      "title": "Projetos | Michel Domingos",
+      "description": "Projetos paralelos são uma forma de converter seus <strong>pensamentos e personalidade</strong> em código. Aqui você pode ver os <strong>{{totalProjects}} diferentes</strong> projetos em que tenho trabalhado.",
+      "featured": "Projetos em Destaque",
+      "all": "Todos os projetos",
+
+      "portfolio": {
+        "title": "Portfólio",
+        "description": "Meu portfólio (Repositório deste site)",
+        "links": {
+          "github": "https://github.com/micheldslive/micode.dev"
+        },
+        "icon": "assignment"
+      },
+      "jsm": {
+        "title": "JSM",
+        "description": "Projeto realizado para um desafio Front-End utilizando turborepo.",
+        "links": {
+          "github": "https://github.com/micheldslive/jsm-challenge",
+          "web": "https://jsm.mi-code.dev/"
+        },
+        "icon": "jsm"
+      },
+      "mui": {
+        "title": "Micode UI",
+        "description": "UI de componentes com tecnologia React, acessível por padrão e construída usando o Radix. A Micode UI é de código aberto e fácil de usar.",
+        "links": {
+          "github": "https://github.com/micheldslive/micode-ui",
+          "web": "https://ui.mi-code.dev/"
+        },
+        "icon": "mui"
+      },
+      "dog-and-pony": {
+        "title": "Dog and Pony",
+        "description": "Projeto realizado para criar um formulário de cadastro de Jobs, salvando-s no Localstorage.",
+        "links": {
+          "github": "https://github.com/micheldslive/dog-and-pony-challenge",
+          "web": "https://dog-and-pony.mi-code.dev/"
+        },
+        "icon": "dog-and-pony"
+      },
+      "opea": {
+        "title": "Opea",
+        "description": "Projeto realizado para criação de um CRUD utilizando API fornecida.",
+        "links": {
+          "github": "https://github.com/micheldslive/opea-challenge",
+          "web": "https://opea.mi-code.dev/"
+        },
+        "icon": "opea"
+      },
+      "books": {
+        "title": "Books",
+        "description": "Projeto realizado para criação de ambiente de autenticação.",
+        "links": {
+          "github": "https://github.com/micheldslive/books-challenge",
+          "web": "https://books.mi-code.dev/"
+        },
+        "icon": "book"
+      },
+      "weather": {
+        "title": "Weather",
+        "description": "Projeto realizado para ler as informações do clima ao escolher uma cidade especifica.",
+        "links": {
+          "github": "https://github.com/micheldslive/weather-challenge",
+          "web": "https://weater.mi-code.dev/"
+        },
+        "icon": "weather"
+      },
+      "movies": {
+        "title": "Movies",
+        "description": "Projeto realizado para consumir dados da api do TMDB e criar uma loja com lista de produtos.",
+        "links": {
+          "github": "https://github.com/micheldslive/movies-challenge",
+          "web": "https://movies.mi-code.dev/"
+        },
+        "icon": "movies"
+      },
+      "calendar": {
+        "title": "mi-calendar",
+        "description": "Projeto de estudo de caso do nextjs + react-scheduler.",
+        "links": {
+          "github": "https://github.com/micheldslive/mi-calendar",
+          "web": "https://calendar.mi-code.dev/"
+        },
+        "icon": "calendar"
+      },
+      "pomodoro-app": {
+        "title": "pomodoro-app",
+        "description": "Um aplicativo pomodoro criado usando layout de mentor front-end.",
+        "links": {
+          "github": "https://github.com/micheldslive/pomodoro-app",
+          "web": "https://pomodoro.mi-code.dev/"
+        },
+        "icon": "pomodoro"
+      }
+    },
+    "contact": {
+      "title": "Contato | Michel Domingos",
+      "tagline": "<span>Manda um email. Como nos velhos tempos.</span>",
+      "description": "<strong>Amo conversar</strong> com outros desenvolvedores, estudantes e iniciantes no ramo. <strong>Sou um cara bastante ocupado</strong>, então não posso prometer que vou responder seu e-mail na hora, mas vou dar o meu melhor para responder o mais rápido possível.",
+      "email": "Mande um email",
+      "href": "mailto:micheldslive@gmail.com",
+
+      "toast": {
+        "success": {
+          "title": "Email enviado :P",
+          "description": "Obrigado por separar um tempo para escrever."
+        },
+        "fail": {
+          "title": "Erro :(",
+          "description": "Algo deu errado. Tente novamente mais tarde."
+        }
+      },
+
+      "labels": {
+        "name": "nome",
+        "email": "email",
+        "message": "mensagem",
+        "button": "Enviar"
+      },
+      "placeholders": {
+        "name": "Seu nome",
+        "email": "email@exemplo.com",
+        "message": "Sua mensagem aqui :D"
+      },
+
+      "send": "Enviar"
+    }
+  }
+}

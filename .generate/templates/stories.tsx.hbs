@@ -1,0 +1,16 @@
+import type { StoryFn } from '@storybook/react';
+import { {{pascalCase name}} } from '.';
+
+export default {
+  title: 'Components/{{pascalCase name}}',
+  component: {{pascalCase name}}
+};
+
+const Template: StoryFn = () => {
+  return <{{pascalCase name}} />;
+};
+
+export const Default = Template.bind({});
+
+Default.args = {};
+
