@@ -32,3 +32,6 @@ Melhorzin é uma plataforma colaborativa exclusiva para seus usuários, onde cad
 ## Licença
 
 Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
+
+
+
