@@ -2,7 +2,7 @@
 
 ## Sobre o Projeto
 
-Melhorzin é uma plataforma colaborativa onde cada usuário pode expor seu portfólio de forma personalizada. Imagine subdomínios como `raposo.melhorzin.com` ou `lk.melhorzin.com`, onde cada um é um espaço próprio para mostrar trabalhos, habilidades e projetos.
+Melhorzin é uma plataforma colaborativa exclusiva para seus usuários, onde cada um pode expor seu portfólio de forma personalizada. Imagine subdomínios como `raposo.melhorzin.com` ou `lk.melhorzin.com`, onde cada um é um espaço próprio para mostrar trabalhos, habilidades e projetos.
 
 ## Funcionalidades
 
@@ -32,6 +32,3 @@ Melhorzin é uma plataforma colaborativa onde cada usuário pode expor seu portf
 ## Licença
 
 Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
-
-
-
