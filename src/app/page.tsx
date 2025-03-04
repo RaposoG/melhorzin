@@ -13,7 +13,7 @@ import HeaderComponent from "@/components/Header/HeaderComponent";
 import TypewriterComponent from "@/components/Header/Typewriter/TypewriterComponent";
 import ButtonComponent from "@/components/Button/ButtonComponent";
 import ExperienceDescriptionComponent from "@/components/ExperienceDescription/ExperienceDescriptionComponent";
-import CarouselComponent from "@/components/Carousel/CarouselComponent";
+import { CarouselComponent } from "@/components/Carousel/CarouselComponent";
 import { isLastTechsItem } from "@/utils/utils";
 import { FormComponent } from "@/components/Form/FormComponent";
 import { AccordionComponent } from "@/components/Accordion/AccordionComponent";

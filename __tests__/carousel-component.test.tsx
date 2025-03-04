@@ -1,6 +1,6 @@
 import { afterEach, expect, test, describe, beforeAll, afterAll } from "vitest";
 import { render, screen } from "@testing-library/react";
-import Carousel from "../src/components/Carousel/CarouselComponent";
+import { CarouselComponent } from "../src/components/Carousel/CarouselComponent";
 import { setupServer } from "msw/node";
 import { http, HttpResponse } from "msw";
 
@@ -532,7 +532,7 @@ describe("Carousel component", () => {
   afterEach(() => server.resetHandlers());
 
   test("if component has an carousel child component", async () => {
-    render(<Carousel />);
+    render(<CarouselComponent />);
     // mock the API response
     expect(screen.findByRole("slider")).toBeDefined();
   });
