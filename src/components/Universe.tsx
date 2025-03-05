@@ -98,6 +98,16 @@ const portfolios = [
     orbitRadius: 100,
     orbitSpeed: 0.006,
   },
+  {
+    id: 9,
+    name: "Thales Gonçalves",
+    subdomain: "thalesgoncalves",
+    description: "pinto",
+    color: "#20B2AA",
+    size: 1.4,
+    orbitRadius: 100,
+    orbitSpeed: 0.006,
+  },
 ];
 
 function BackgroundStars() {
