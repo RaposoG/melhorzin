@@ -90,7 +90,7 @@ const portfolios = [
   },
   {
     id: 9,
-    name: "Bruno",
+    name: "Raposo",
     subdomain: "raposo",
     description: "pinto",
     color: "#20B2AA",
@@ -109,6 +109,58 @@ const portfolios = [
     orbitSpeed: 0.006,
   },
 ];
+
+function generateRandomColor(existingColors: string[]): string {
+  let color;
+  do {
+    color = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  } while (existingColors.includes(color) || isColorTooDark(color) || isColorTooLight(color) || isColorTooClose(color, existingColors));
+  return color;
+}
+
+function isColorTooDark(color: string): boolean {
+  const rgb = parseInt(color.slice(1), 16);
+  const r = (rgb >> 16) & 0xff;
+  const g = (rgb >> 8) & 0xff;
+  const b = (rgb >> 0) & 0xff;
+  const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+  return brightness < 50;
+}
+
+function isColorTooLight(color: string): boolean {
+  const rgb = parseInt(color.slice(1), 16);
+  const r = (rgb >> 16) & 0xff;
+  const g = (rgb >> 8) & 0xff;
+  const b = (rgb >> 0) & 0xff;
+  const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+  return brightness > 205;
+}
+
+function isColorTooClose(color: string, existingColors: string[]): boolean {
+  const threshold = 100;
+  const [r1, g1, b1] = hexToRgb(color);
+  return existingColors.some((existingColor) => {
+    const [r2, g2, b2] = hexToRgb(existingColor);
+    const distance = Math.sqrt(Math.pow(r2 - r1, 2) + Math.pow(g2 - g1, 2) + Math.pow(b2 - b1, 2));
+    return distance < threshold;
+  });
+}
+
+function hexToRgb(hex: string): [number, number, number] {
+  const bigint = parseInt(hex.slice(1), 16);
+  const r = (bigint >> 16) & 255;
+  const g = (bigint >> 8) & 255;
+  const b = bigint & 255;
+  return [r, g, b];
+}
+
+const existingColors: string[] = [];
+
+portfolios.forEach((portfolio) => {
+  const color = generateRandomColor(existingColors);
+  portfolio.color = color;
+  existingColors.push(color);
+});
 
 function BackgroundStars() {
   const { scene } = useThree();
