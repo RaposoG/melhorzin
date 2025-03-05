@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Os Melhorzin",
   description: "O melhor site do mundo",
   icons: {
-    icon: "/icon.png",
+    icon: "/icon.svg",
   },
 };
 
