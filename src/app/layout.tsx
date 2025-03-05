@@ -4,6 +4,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Os Melhorzin",
   description: "O melhor site do mundo",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({
