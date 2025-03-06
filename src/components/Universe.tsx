@@ -6,7 +6,6 @@ import { Sun } from "./Sun";
 import { Planet } from "./Planet";
 import * as THREE from "three";
 import { useMemo, useRef, useState, useEffect } from "react";
-import { PlanetSidebar } from "./PlanetSidebar";
 
 function shuffleArray<T>(array: T[]): T[] {
   return array.sort(() => Math.random() - 0.5);
@@ -120,8 +119,26 @@ const portfolios = shuffleArray([
   },
   {
     id: 11,
-    name: "Thales Gonçalves",
-    subdomain: "thalesgoncalves",
+    name: "Erick Marllon",
+    subdomain: "ErickMarllon",
+    description: "Visionário tech que constrói o futuro, um commit de cada vez.",
+    color: "#20B2AA",
+    orbitRadius: 540,
+    orbitSpeed: 0.006,
+  },
+  {
+    id: 12,
+    name: "Brayan",
+    subdomain: "strilgui",
+    description: "Visionário tech que constrói o futuro, um commit de cada vez.",
+    color: "#20B2AA",
+    orbitRadius: 540,
+    orbitSpeed: 0.006,
+  },
+  {
+    id: 13,
+    name: "Rossado",
+    subdomain: "rossado",
     description: "Visionário tech que constrói o futuro, um commit de cada vez.",
     color: "#20B2AA",
     orbitRadius: 540,
@@ -166,7 +183,6 @@ interface CameraControllerProps {
   portfolios: Portfolio[];
 }
 
-// Controlador de câmera para focar nos planetas
 function CameraController({ focusTarget, portfolios }: CameraControllerProps) {
   const { camera, scene } = useThree();
   const controlsRef = useRef<any>(null);
@@ -178,14 +194,12 @@ function CameraController({ focusTarget, portfolios }: CameraControllerProps) {
         const position = new THREE.Vector3();
         planetMesh.getWorldPosition(position);
 
-        // Definir a posição da câmera para focar no planeta
         const portfolio = portfolios.find((p) => p.id === focusTarget);
         if (portfolio) {
           const distance = portfolio.size * 10;
           position.x += distance;
           position.y += distance / 2;
 
-          // Animar a movimentação da câmera
           controlsRef.current.target.copy(position);
           camera.position.set(position.x + distance, position.y + distance, position.z + distance);
           controlsRef.current.update();
