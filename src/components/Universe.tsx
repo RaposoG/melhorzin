@@ -113,7 +113,7 @@ const portfolios = shuffleArray([
     name: "Thales Gonçalves",
     subdomain: "thalesgoncalves",
     description: "Visionário tech que constrói o futuro, um commit de cada vez.",
-    color: "#20B2AA",
+    color: "#C9B2AA",
     orbitRadius: 540,
     orbitSpeed: 0.006,
   },
@@ -122,7 +122,7 @@ const portfolios = shuffleArray([
     name: "Erick Marllon",
     subdomain: "ErickMarllon",
     description: "Visionário tech que constrói o futuro, um commit de cada vez.",
-    color: "#20B2AA",
+    color: "#B0AA",
     orbitRadius: 620,
     orbitSpeed: 0.006,
   },
@@ -131,7 +131,7 @@ const portfolios = shuffleArray([
     name: "Brayan",
     subdomain: "strilgui",
     description: "Visionário tech que constrói o futuro, um commit de cada vez.",
-    color: "#20B2AA",
+    color: "#20b",
     orbitRadius: 680,
     orbitSpeed: 0.006,
   },
@@ -140,15 +140,15 @@ const portfolios = shuffleArray([
     name: "Rossado",
     subdomain: "rossado",
     description: "Visionário tech que constrói o futuro, um commit de cada vez.",
-    color: "#20B2AA",
+    color: "#7000cc",
     orbitRadius: 740,
     orbitSpeed: 0.006,
   },
 ]).map((portfolio, index) => ({
   ...portfolio,
   size: getRandomSize(),
-  orbitRadius: 30 + index * 20, // Reduzi a distância inicial e o espaçamento entre órbitas
-  orbitSpeed: 0.05 - index * 0.003, // Ajustei a velocidade para órbitas mais próximas
+  orbitRadius: 30 + index * 20,
+  orbitSpeed: 0.05 - index * 0.003,
 }));
 
 function BackgroundStars() {
@@ -160,8 +160,7 @@ function BackgroundStars() {
     const vertices = [];
 
     for (let i = 0; i < 5000; i++) {
-      // Reduzi número de estrelas para melhor performance
-      const x = (Math.random() - 0.5) * 1000; // Reduzi a dispersão das estrelas
+      const x = (Math.random() - 0.5) * 1000;
       const y = (Math.random() - 0.5) * 1000;
       const z = (Math.random() - 0.5) * 1000;
       vertices.push(x, y, z);
@@ -171,7 +170,7 @@ function BackgroundStars() {
 
     const material = new THREE.PointsMaterial({
       color: 0xffffff,
-      size: 0.5, // Estrelas menores
+      size: 0.5,
       sizeAttenuation: true,
     });
 
@@ -199,31 +198,19 @@ function CameraController({ focusTarget, portfolios }: CameraControllerProps) {
 
         const portfolio = portfolios.find((p) => p.id === focusTarget);
         if (portfolio) {
-          const distance = portfolio.size * 8; // Reduzi o fator de distância
+          const distance = portfolio.size * 8;
           position.x += distance;
           position.y += distance / 2;
 
           controlsRef.current.target.copy(position);
-          camera.position.lerp(
-            new THREE.Vector3(position.x + distance, position.y + distance, position.z + distance),
-            0.1 // Suaviza a transição da câmera
-          );
+          camera.position.lerp(new THREE.Vector3(position.x + distance, position.y + distance, position.z + distance), 0.1);
           controlsRef.current.update();
         }
       }
     }
   }, [focusTarget, camera, scene, portfolios]);
 
-  return (
-    <OrbitControls
-      ref={controlsRef}
-      enableZoom={true}
-      enablePan={true}
-      enableRotate={true}
-      minDistance={20} // Adicionei distância mínima
-      maxDistance={500} // Adicionei distância máxima
-    />
-  );
+  return <OrbitControls ref={controlsRef} enableZoom={true} enablePan={true} enableRotate={true} minDistance={20} maxDistance={500} />;
 }
 
 export default function Universe() {
