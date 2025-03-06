@@ -29,7 +29,7 @@ export function Sun() {
       }}
       onClick={() => window.open("https://github.com/RaposoG/melhorzin", "_blank")}
     >
-      <Sphere args={[25, 64, 64]}>
+      <Sphere args={[15, 64, 64]}>
         <meshStandardMaterial color={new THREE.Color("#FDB813")} emissive={new THREE.Color("#FDB813")} emissiveIntensity={1} />
       </Sphere>
       <pointLight color="#FDB813" intensity={1.5} distance={100} decay={2} />
