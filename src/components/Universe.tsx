@@ -12,7 +12,7 @@ function shuffleArray<T>(array: T[]): T[] {
 }
 
 function getRandomSize() {
-  return Math.random() * (12.0 - 4.0) + 4.0;
+  return Math.random() * (8 - 3.0) + 3.0; // Tamanhos ligeiramente menores
 }
 
 interface Portfolio {
@@ -144,23 +144,26 @@ const portfolios = shuffleArray([
     orbitRadius: 740,
     orbitSpeed: 0.006,
   },
-]).map((portfolio) => ({
+]).map((portfolio, index) => ({
   ...portfolio,
   size: getRandomSize(),
+  orbitRadius: 30 + index * 20, // Reduzi a distância inicial e o espaçamento entre órbitas
+  orbitSpeed: 0.05 - index * 0.003, // Ajustei a velocidade para órbitas mais próximas
 }));
 
 function BackgroundStars() {
   const { scene } = useThree();
   const starsRef = useRef<THREE.Points>(null!);
 
-  const [geometry, material, vertices] = useMemo(() => {
+  const [geometry, material] = useMemo(() => {
     const geometry = new THREE.BufferGeometry();
     const vertices = [];
 
-    for (let i = 0; i < 10000; i++) {
-      const x = (Math.random() - 0.5) * 2000;
-      const y = (Math.random() - 0.5) * 2000;
-      const z = (Math.random() - 0.5) * 2000;
+    for (let i = 0; i < 5000; i++) {
+      // Reduzi número de estrelas para melhor performance
+      const x = (Math.random() - 0.5) * 1000; // Reduzi a dispersão das estrelas
+      const y = (Math.random() - 0.5) * 1000;
+      const z = (Math.random() - 0.5) * 1000;
       vertices.push(x, y, z);
     }
 
@@ -168,11 +171,11 @@ function BackgroundStars() {
 
     const material = new THREE.PointsMaterial({
       color: 0xffffff,
-      size: 0.7,
+      size: 0.5, // Estrelas menores
       sizeAttenuation: true,
     });
 
-    return [geometry, material, vertices];
+    return [geometry, material];
   }, []);
 
   return <points ref={starsRef} geometry={geometry} material={material} />;
@@ -196,19 +199,31 @@ function CameraController({ focusTarget, portfolios }: CameraControllerProps) {
 
         const portfolio = portfolios.find((p) => p.id === focusTarget);
         if (portfolio) {
-          const distance = portfolio.size * 10;
+          const distance = portfolio.size * 8; // Reduzi o fator de distância
           position.x += distance;
           position.y += distance / 2;
 
           controlsRef.current.target.copy(position);
-          camera.position.set(position.x + distance, position.y + distance, position.z + distance);
+          camera.position.lerp(
+            new THREE.Vector3(position.x + distance, position.y + distance, position.z + distance),
+            0.1 // Suaviza a transição da câmera
+          );
           controlsRef.current.update();
         }
       }
     }
   }, [focusTarget, camera, scene, portfolios]);
 
-  return <OrbitControls ref={controlsRef} enableZoom={true} enablePan={true} enableRotate={true} />;
+  return (
+    <OrbitControls
+      ref={controlsRef}
+      enableZoom={true}
+      enablePan={true}
+      enableRotate={true}
+      minDistance={20} // Adicionei distância mínima
+      maxDistance={500} // Adicionei distância máxima
+    />
+  );
 }
 
 export default function Universe() {
@@ -216,15 +231,14 @@ export default function Universe() {
 
   return (
     <div className="flex h-screen w-screen bg-black overflow-hidden">
-      {/* Barra lateral */}
-      {/* <PlanetSidebar portfolios={portfolios} onSelectPlanet={setFocusPlanetId} /> */}
-
-      {/* Universo 3D */}
       <div className="flex-1">
-        <Canvas camera={{ position: [0, 50, 150], fov: 60 }}>
+        <Canvas
+          camera={{ position: [0, 40, 100], fov: 60 }} // Ajustei posição inicial da câmera
+          gl={{ antialias: true }} // Adicionei antialiasing
+        >
           <color attach="background" args={["#000000"]} />
-          <ambientLight intensity={0.1} />
-          <pointLight position={[10, 10, 10]} intensity={1} />
+          <ambientLight intensity={0.2} /> // Aumentei ligeiramente a luz ambiente
+          <pointLight position={[0, 0, 0]} intensity={1.5} /> // Centralizei a luz no sol
           <BackgroundStars />
           <Sun />
           {portfolios.map((portfolio) => (
