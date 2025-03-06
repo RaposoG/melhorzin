@@ -123,7 +123,7 @@ const portfolios = shuffleArray([
     subdomain: "ErickMarllon",
     description: "Visionário tech que constrói o futuro, um commit de cada vez.",
     color: "#20B2AA",
-    orbitRadius: 540,
+    orbitRadius: 620,
     orbitSpeed: 0.006,
   },
   {
@@ -132,7 +132,7 @@ const portfolios = shuffleArray([
     subdomain: "strilgui",
     description: "Visionário tech que constrói o futuro, um commit de cada vez.",
     color: "#20B2AA",
-    orbitRadius: 540,
+    orbitRadius: 680,
     orbitSpeed: 0.006,
   },
   {
@@ -141,7 +141,7 @@ const portfolios = shuffleArray([
     subdomain: "rossado",
     description: "Visionário tech que constrói o futuro, um commit de cada vez.",
     color: "#20B2AA",
-    orbitRadius: 540,
+    orbitRadius: 740,
     orbitSpeed: 0.006,
   },
 ]).map((portfolio) => ({
