@@ -12,7 +12,7 @@ function shuffleArray<T>(array: T[]): T[] {
 }
 
 function getRandomSize() {
-  return Math.random() * (8 - 3.0) + 3.0; // Tamanhos ligeiramente menores
+  return Math.random() * (8 - 3.0) + 3.0;
 }
 
 interface Portfolio {
