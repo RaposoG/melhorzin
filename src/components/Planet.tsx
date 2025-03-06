@@ -6,6 +6,7 @@ import { Sphere, Html } from "@react-three/drei";
 import * as THREE from "three";
 
 interface PlanetProps {
+  id: number;
   name: string;
   subdomain: string;
   description: string;
@@ -16,7 +17,7 @@ interface PlanetProps {
   initialRotation: number;
 }
 
-export function Planet({ name, subdomain, description, color, size, orbitRadius, orbitSpeed, initialRotation }: PlanetProps) {
+export function Planet({ id, name, subdomain, description, color, size, orbitRadius, orbitSpeed, initialRotation }: PlanetProps) {
   const meshRef = useRef<THREE.Mesh>(null!);
   const [hovered, setHovered] = useState(false);
 
@@ -35,6 +36,7 @@ export function Planet({ name, subdomain, description, color, size, orbitRadius,
   return (
     <mesh
       ref={meshRef}
+      name={`planet-${id}`}
       onPointerOver={() => {
         setHovered(true);
         document.body.style.cursor = "pointer";
