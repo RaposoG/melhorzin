@@ -84,7 +84,7 @@ const portfolios = [
     subdomain: "railsinho",
     description: "Especialista em Rails que entrega soluções rápidas e escaláveis.",
     color: "#9370DB",
-    size: 4.5, // 1.5 * 3
+    size: 9.5, // 1.5 * 3
     orbitRadius: 180,
     orbitSpeed: 0.008,
   },
