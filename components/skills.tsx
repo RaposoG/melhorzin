@@ -2,10 +2,9 @@
 
 import type React from "react"
 
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
+import { motion, useInView } from "framer-motion"
 import { useRef, useState } from "react"
-import { Cloud, Code, Database, Globe, Layers, Server, Smartphone } from "lucide-react"
+import { Cloud, Code, Database, Layers, Smartphone } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 
 interface Skill {
@@ -123,7 +122,9 @@ export default function Skills() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
   const [activeSkill, setActiveSkill] = useState<Skill | null>(null)
+  const [isLoaded, setIsLoaded] = useState<boolean>(false)
   const { t } = useLanguage()
+
 
   // Agrupar habilidades por categoria
   const categories = skills.reduce(
@@ -196,7 +197,7 @@ export default function Skills() {
                   key={skill.name}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.1, delay: 0.1 * index }}
+                  transition={{ duration: 0.1, delay: isLoaded ? 0 : 0.1 * index }}
                   whileHover={{
                     scale: 1.05,
                     boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
@@ -204,6 +205,7 @@ export default function Skills() {
                   className="relative group"
                   onMouseEnter={() => setActiveSkill(skill)}
                   onMouseLeave={() => setActiveSkill(null)}
+                  onAnimationComplete={() => index === skills.length - 1 ? setIsLoaded(true) : null}
                 >
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 h-full border border-blue-100 transition-all duration-300 hover:border-blue-300">
                     <div
@@ -222,8 +224,7 @@ export default function Skills() {
                             className="h-full bg-gradient-to-r from-blue-400 to-blue-600"
                             initial={{ width: 0 }}
                             animate={isInView ? { width: `${(skill.year / yearsOfExperience) * 100}%` } : {}}
-                            transition={{ duration: 1, delay: 0.3 + 0.1 * index }}
-                          />
+                            transition={{ duration: 1, delay: 0.3 + 0.1 * index }}/>
                         </div>
 
                         {/* Skill Years progress bar */}
@@ -271,7 +272,7 @@ export default function Skills() {
                       <div
                         className="h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full"
                         style={{ width: `${(activeSkill.year / yearsOfExperience) * 100}%` }}
-                        
+
                       />
                     </div>
                     <div className="text-right text-xs text-slate-500 mt-1">{activeSkill.year} {t("untilYear")}</div>
