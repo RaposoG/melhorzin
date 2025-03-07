@@ -3,7 +3,7 @@
 import type React from "react"
 import { motion, useInView } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
-import { Cloud, Code, Database, Layers, Smartphone } from "lucide-react"
+import { Cloud, Code, Database, ExternalLink, Layers, Smartphone, Star } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 import { GithubRepository } from "@/models/github-repository"
 
@@ -121,23 +121,23 @@ const skills: Skill[] = [
 const fetchRepos = async () => {
   // setIsLoadingRepos(true)
   // setError(null)
-  
+
   try {
     // Substitua "vinirossado" pelo seu usuário do GitHub ou use uma variável de ambiente
     const response = await fetch("https://api.github.com/users/vinirossado/repos?per_page=100")
-    
+
     if (!response.ok) {
       const errorData = await response.json()
       throw new Error(errorData.message || "Erro ao buscar repositórios")
     }
-    
+
     const data: GithubRepository[] = await response.json()
     console.dir(data, { depth: null })
     // setRepos(data)
-    
+
     // Inicialmente, exibir todos os repositórios
     // setFilteredRepos(data)
-    
+
   } catch (err) {
     console.error("Erro ao buscar repositórios:", err)
     // setError(err instanceof Error ? err.message : "Erro desconhecido")
@@ -153,12 +153,34 @@ export default function Skills() {
   const isInView = useInView(ref, { once: true, amount: 0.2 })
   const [activeSkill, setActiveSkill] = useState<Skill | null>(null)
   const [isLoaded, setIsLoaded] = useState<boolean>(false)
-  const { t } = useLanguage()
+  const [repos, setRepos] = useState<any[]>([])
+  const [isLoading, setIsLoading] = useState(false)
 
+  const { t } = useLanguage()
   useEffect(() => {
+    const fetchRepos = async () => {
+      if (activeSkill?.category === "Linguagens") {
+        setIsLoading(true)
+        try {
+          const response = await fetch(`https://api.github.com/users/vinirossado/repos?sort=updated&per_page=100`)
+          const data = await response.json()
+          setRepos(data)
+        } catch (error) {
+          console.error("Error fetching repos:", error)
+          setRepos([])
+        } finally {
+          setIsLoading(false)
+        }
+      } else {
+        setRepos([])
+      }
+    }
+
     fetchRepos()
-  }, [])
-  
+  }, [activeSkill])
+
+  const filteredRepos = repos.filter((repo) => repo.language === activeSkill?.name)
+
   // Agrupar habilidades por categoria
   const categories = skills.reduce(
     (acc: Record<string, Skill[]>, skill: Skill) => {
@@ -170,9 +192,9 @@ export default function Skills() {
     },
     {} as Record<string, Skill[]>,
   )
- 
+
   return (
-    
+
     <section id="skills" className="py-20 px-4 md:px-8 relative overflow-hidden">
       {/* Background grid pattern */}
       <div className="absolute inset-0 bg-blue-50 opacity-70">
@@ -238,8 +260,8 @@ export default function Skills() {
                   }}
                   className="relative group"
                   onClick={() => setActiveSkill(skill)}
-                  onMouseEnter={() => setActiveSkill(skill)}
-                  onMouseLeave={() => setActiveSkill(null)}
+                  // onMouseEnter={() => setActiveSkill(skill)}
+                  // onMouseLeave={() => setActiveSkill(null)}
                   onAnimationComplete={() => index === skills.length - 1 ? setIsLoaded(true) : null}
                 >
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 h-full border border-blue-100 transition-all duration-300 hover:border-blue-300">
@@ -302,23 +324,132 @@ export default function Skills() {
                   </div>
 
                   <div>
+                    <div className="text-sm text-slate-600 mb-2">{t("proficiencyLevel")}</div>
+                    <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full"
+                        style={{ width: `${(activeSkill.year / yearsOfExperience) * 100}%` }}
+                      />
+                    </div>
+                    <div className="text-right text-xs text-slate-500 mt-1">{activeSkill.year} {t('untilYear')}</div>
+                  </div>
+
+                  <div>
                     <div className="text-sm text-slate-600 mb-1">{t("description")}</div>
                     <p className="text-sm text-slate-700">{activeSkill.description}</p>
                   </div>
-                </motion.div>
+                  {activeSkill.category === "Linguagens" && (
+                    <div className="mt-4">
+                      <h5 className="text-sm font-semibold text-slate-700 mb-2 flex items-center justify-between">
+                        <span>
+                          {t("Related Repos")} ({filteredRepos.length})
+                        </span>
+                        {filteredRepos.length > 0 && (
+                          <a
+                            href={`https://github.com/vinirossado?tab=repositories&q=&language=${activeSkill.name}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs text-blue-600 hover:underline flex items-center"
+                          >
+                            Ver todos <ExternalLink size={12} className="ml-1" />
+                          </a>
+                        )}
+                      </h5>
 
+                      {isLoading ? (
+                        <div className="flex justify-center items-center py-6 space-x-2">
+                          <div
+                            className="w-2 h-2 rounded-full bg-blue-400 animate-bounce"
+                            style={{ animationDelay: "0ms" }}
+                          ></div>
+                          <div
+                            className="w-2 h-2 rounded-full bg-blue-400 animate-bounce"
+                            style={{ animationDelay: "150ms" }}
+                          ></div>
+                          <div
+                            className="w-2 h-2 rounded-full bg-blue-400 animate-bounce"
+                            style={{ animationDelay: "300ms" }}
+                          ></div>
+                        </div>
+                      ) : filteredRepos.length > 0 ? (
+                        <div className="space-y-3 max-h-64 overflow-y-auto pr-1 custom-scrollbar">
+                          {filteredRepos.slice(0, 5).map((repo) => (
+                            <motion.div
+                              key={repo.id}
+                              initial={{ opacity: 0, y: 10 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.3 }}
+                              className="bg-gradient-to-br from-white to-blue-50 rounded-lg shadow-sm border border-blue-100 overflow-hidden hover:shadow-md transition-all"
+                            >
+                              <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="block p-3">
+                                <div className="flex items-start justify-between">
+                                  <h6 className="text-sm font-medium text-blue-700 hover:text-blue-800 transition-colors line-clamp-1">
+                                    {repo.name}
+                                  </h6>
+                                  <div className="flex items-center text-xs text-slate-500 whitespace-nowrap ml-2">
+                                    <Star size={12} className="text-amber-400 mr-1" />
+                                    <span>{repo.stargazers_count}</span>
+                                  </div>
+                                </div>
+
+                                {repo.description && (
+                                  <p className="text-xs text-slate-600 mt-1.5 line-clamp-2 min-h-[2rem]">
+                                    {repo.description}
+                                  </p>
+                                )}
+
+                                <div className="mt-2 flex items-center justify-between text-xs">
+                                  <div className="flex items-center">
+                                    <div className="w-2 h-2 rounded-full bg-blue-500 mr-1.5"></div>
+                                    <span className="text-slate-600">{repo.language || activeSkill.name}</span>
+                                  </div>
+                                  <span className="text-slate-500 text-[10px]">
+                                    {new Date(repo.updated_at).toLocaleDateString(undefined, {
+                                      year: "2-digit",
+                                      month: "short",
+                                      day: "numeric",
+                                    })}
+                                  </span>
+                                </div>
+                              </a>
+                            </motion.div>
+                          ))}
+
+                          {filteredRepos.length > 5 && (
+                            <a
+                              href={`https://github.com/vinirossado?tab=repositories&q=&language=${activeSkill.name}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block text-center text-xs text-blue-600 hover:text-blue-800 py-2 bg-blue-50 rounded-md border border-blue-100 hover:bg-blue-100 transition-colors"
+                            >
+                              Ver mais {filteredRepos.length - 5} repositórios
+                            </a>
+                          )}
+                        </div>
+                      ) : (
+                        <div className="bg-blue-50/50 rounded-lg p-4 text-center">
+                          <p className="text-sm text-slate-600">{t("noReposFound")}</p>
+                          <a
+                            href={`https://github.com/vinirossado`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block mt-2 text-xs text-blue-600 hover:underline"
+                          >
+                            Ver todos os repositórios
+                          </a>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </motion.div>
               ) : (
                 <div className="h-full flex items-center justify-center text-center p-4">
-                  <p className="text-slate-500 text-sm">{t("clickSkill")}</p>
-
-              
+                  <p className="text-slate-500 text-sm">{t("hoverSkill")}</p>
                 </div>
-
               )}
             </motion.div>
           </div>
         </div>
-
         {/* Skill categories */}
         <motion.div
           className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4"
