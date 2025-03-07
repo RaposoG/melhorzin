@@ -44,8 +44,13 @@ export default function Hero({ name, title, photoUrl }: HeroProps) {
       color: string
 
       constructor() {
-        this.x = Math.random() * canvas.width
-        this.y = Math.random() * canvas.height
+        if (canvas) {
+          this.x = Math.random() * canvas.width
+          this.y = Math.random() * canvas.height
+        } else {
+          this.x = 0
+          this.y = 0
+        }
         this.size = Math.random() * 3 + 1
         this.speedX = Math.random() * 1 - 0.5
         this.speedY = Math.random() * 1 - 0.5
@@ -56,10 +61,12 @@ export default function Hero({ name, title, photoUrl }: HeroProps) {
         this.x += this.speedX
         this.y += this.speedY
 
-        if (this.x > canvas.width) this.x = 0
-        if (this.x < 0) this.x = canvas.width
-        if (this.y > canvas.height) this.y = 0
-        if (this.y < 0) this.y = canvas.height
+        if (canvas) {
+          if (this.x > canvas.width) this.x = 0
+          if (this.x < 0) this.x = canvas.width
+          if (this.y > canvas.height) this.y = 0
+          if (this.y < 0) this.y = canvas.height
+        }
       }
 
       draw() {
@@ -105,7 +112,9 @@ export default function Hero({ name, title, photoUrl }: HeroProps) {
 
     function animate() {
       if (!ctx) return
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      if (canvas) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+      }
 
       for (const particle of particles) {
         particle.update()

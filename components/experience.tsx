@@ -7,26 +7,53 @@ import { Calendar, MapPin } from "lucide-react"
 
 const experiences = [
   {
-    title: "Senior Frontend Developer",
-    company: "Tech Solutions Inc.",
-    location: "São Paulo, Brasil",
-    period: "2021 - Presente",
+    id: 1,
+    title: "Senior Software Engineer",
+    company: "Riverty",
+    location: "Tallinn, Estonia",
+    period: "2022 - Presente",
     description:
       "Desenvolvimento de aplicações web com React e Next.js. Implementação de design systems e otimização de performance.",
   },
   {
-    title: "Senior Software Engineer",
-    company: "Digital Innovations",
-    location: "Rio de Janeiro, Brasil",
-    period: "2018 - 2021",
+    id: 2,
+    title: "Software Engineer",
+    company: "Arvato Financial Solutions Tech Center",
+    location: "Tallinn, Estonia",
+    period: "2022 - 2022",
     description:
-      "Desenvolvimento full-stack com Node.js e React. Criação de APIs RESTful e integração com serviços de terceiros.",
+      "Desenvolvimento de aplicações web com React e Next.js. Implementação de design systems e otimização de performance.",
   },
   {
-    title: "Web Developer",
-    company: "Creative Agency",
-    location: "Belo Horizonte, Brasil",
-    period: "2016 - 2018",
+    id: 3,
+    title: "Full Stack Developer",
+    company: "MAGIT IT PARTNER",
+    location: "Ribeirão Preto, Brasil",
+    period: "2020 - 2022",
+    description: "Desenvolvimento de sites responsivos e landing pages para clientes de diversos setores.",
+  },
+  {
+    id: 4,
+    title: "Full Stack Developer",
+    company: "GooWe",
+    location: "Ribeirão Preto, Brasil",
+    period: "2019 - 2020",
+    description: "Desenvolvimento de sites responsivos e landing pages para clientes de diversos setores.",
+  },
+  {
+    id: 5,
+    title: "Full Stack Developer",
+    company: "Kezz IT",
+    location: "Ribeirão Preto, Brasil",
+    period: "2019 - 2019",
+    description: "Desenvolvimento de sites responsivos e landing pages para clientes de diversos setores.",
+  },
+  {
+    id: 6,
+    title: "Full Stack Developer",
+    company: "Onsoft Web",
+    location: "Ribeirão Preto, Brasil",
+    period: "2018 - 2019",
     description: "Desenvolvimento de sites responsivos e landing pages para clientes de diversos setores.",
   },
 ]
@@ -55,13 +82,12 @@ export default function Experience() {
           {/* Timeline items */}
           {experiences.map((exp, index) => (
             <motion.div
-              key={exp.title}
+              key={exp.id}
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 * index }}
-              className={`relative mb-12 md:mb-24 ${
-                index % 2 === 0 ? "md:pr-12 md:text-right md:ml-0 md:mr-auto" : "md:pl-12 md:ml-auto md:mr-0"
-              } md:w-1/2 pl-10 md:pl-0`}
+              className={`relative mb-12 md:mb-24 ${index % 2 === 0 ? "md:pr-12 md:text-right md:ml-0 md:mr-auto" : "md:pl-12 md:ml-auto md:mr-0"
+                } md:w-1/2 pl-10 md:pl-0`}
             >
               {/* Timeline dot */}
               <div className="absolute left-0 md:left-auto md:right-0 top-0 w-4 h-4 rounded-full bg-blue-400 shadow-md md:transform md:translate-x-2"></div>

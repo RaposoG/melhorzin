@@ -8,7 +8,6 @@ export default function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage()
   const [isOpen, setIsOpen] = useState(false)
 
-  console.log(language,"LanguageSwitcher")
   const languages = [
     { code: "pt", label: "PT", name: "Português" },
     { code: "en", label: "EN", name: "English" },
@@ -35,7 +34,7 @@ export default function LanguageSwitcher() {
               <button
                 key={lang.code}
                 onClick={() => {
-                  setLanguage(lang.code as any)
+                  setLanguage(lang.code as 'pt' | 'en' | 'ru' | 'et')
                   setIsOpen(false)
                 }}
                 className={`w-full text-left px-3 py-2 text-sm ${

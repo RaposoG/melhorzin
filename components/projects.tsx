@@ -9,6 +9,7 @@ import { useLanguage } from "@/components/language-provider"
 
 const projects = [
   {
+    id: 1,
     title: "E-commerce Platform",
     description: "Uma plataforma completa de e-commerce com painel administrativo, pagamentos e gestão de produtos.",
     image: "/placeholder.svg?height=600&width=800",
@@ -23,6 +24,7 @@ const projects = [
     ],
   },
   {
+    id: 2,
     title: "Task Management App",
     description: "Aplicativo de gerenciamento de tarefas com recursos de colaboração em tempo real e notificações.",
     image: "/placeholder.svg?height=600&width=800",
@@ -32,6 +34,42 @@ const projects = [
     features: ["Colaboração em tempo real", "Notificações", "Filtros avançados", "Integração com calendário"],
   },
   {
+    id: 3,
+    title: "Portfolio Website",
+    description: "Site de portfolio responsivo com animações suaves e design moderno.",
+    image: "/placeholder.svg?height=600&width=800",
+    tags: ["React", "Framer Motion", "Tailwind CSS"],
+    liveUrl: "#",
+    githubUrl: "#",
+    features: ["Animações suaves", "Design responsivo", "Modo escuro", "Formulário de contato"],
+  },
+  {
+    id: 4,
+    title: "E-commerce Platform",
+    description: "Uma plataforma completa de e-commerce com painel administrativo, pagamentos e gestão de produtos.",
+    image: "/placeholder.svg?height=600&width=800",
+    tags: ["React", "Node.js", "MongoDB", "Stripe"],
+    liveUrl: "#",
+    githubUrl: "#",
+    features: [
+      "Painel administrativo",
+      "Processamento de pagamentos",
+      "Carrinho de compras",
+      "Autenticação de usuários",
+    ],
+  },
+  {
+    id: 5,
+    title: "Task Management App",
+    description: "Aplicativo de gerenciamento de tarefas com recursos de colaboração em tempo real e notificações.",
+    image: "/placeholder.svg?height=600&width=800",
+    tags: ["Next.js", "Firebase", "Tailwind CSS"],
+    liveUrl: "#",
+    githubUrl: "#",
+    features: ["Colaboração em tempo real", "Notificações", "Filtros avançados", "Integração com calendário"],
+  },
+  {
+    id: 6,
     title: "Portfolio Website",
     description: "Site de portfolio responsivo com animações suaves e design moderno.",
     image: "/placeholder.svg?height=600&width=800",
@@ -74,7 +112,7 @@ export default function Projects() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
-              key={project.title}
+              key={project.id}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 * index }}
@@ -192,7 +230,7 @@ export default function Projects() {
             href="https://github.com/vinirossado"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-lg font-medium transition-all shadow-lg"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-lg font-medium transition-all shadow-lg hover:shadow-xl "
           >
             <Github size={18} />
             <span>{t("seeMoreGithub")}</span>

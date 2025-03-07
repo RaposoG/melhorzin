@@ -5,114 +5,115 @@ import type React from "react"
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef, useState } from "react"
-import { Code, Database, Globe, Layers, Server, Smartphone } from "lucide-react"
+import { Cloud, Code, Database, Globe, Layers, Server, Smartphone } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 
 interface Skill {
   name: string
-  level: number
+  year: number
   icon: React.ReactNode
   category: string
   description: string
 }
+const yearsOfExperience = new Date().getFullYear() - 2017
 
 const skills: Skill[] = [
   {
     name: "C#",
-    level: 75,
-    icon: <Server className="w-6 h-6" />,
+    year: yearsOfExperience,
+    icon: <Code className="w-6 h-6" />,
     category: "Linguagens",
     description: "Criação de APIs RESTful e serviços escaláveis",
   },
   {
     name: "Go",
-    level: 75,
-    icon: <Server className="w-6 h-6" />,
+    year: yearsOfExperience - 6,
+    icon: <Code className="w-6 h-6" />,
     category: "Linguagens",
     description: "Criação de APIs RESTful e serviços escaláveis",
   },
   {
     name: "TypeScript",
-    level: 80,
+    year: yearsOfExperience,
     icon: <Code className="w-6 h-6" />,
     category: "Linguagens",
     description: "Tipagem estática para desenvolvimento mais seguro e produtivo",
   },
   {
     name: "Angular",
-    level: 85,
+    year: yearsOfExperience,
     icon: <Layers className="w-6 h-6" />,
     category: "Frontend",
     description: "Desenvolvimento de interfaces modernas com hooks e componentes reutilizáveis",
   },
   {
     name: "Ionic",
-    level: 70,
+    year: yearsOfExperience - 5,
     icon: <Smartphone className="w-6 h-6" />,
     category: "Mobile",
     description: "Criação de aplicativos móveis multiplataforma",
   },
   {
     name: "SwiftUI",
-    level: 30,
+    year: yearsOfExperience - 7.5,
     icon: <Smartphone className="w-6 h-6" />,
     category: "Mobile",
     description: "Criação de aplicativos móveis nativos para iOS",
   },
   {
     name: "StencilJS",
-    level: 80,
-    icon: <Globe className="w-6 h-6" />,
+    year: yearsOfExperience - 5,
+    icon: <Layers className="w-6 h-6" />,
     category: "Frontend",
     description: "Desenvolvimento de aplicações React com SSR e SSG",
   },
   {
     name: "MongoDB",
-    level: 65,
+    year: yearsOfExperience - 5,
     icon: <Database className="w-6 h-6" />,
     category: "Banco de Dados",
     description: "Modelagem de dados NoSQL e operações de CRUD",
   },
   {
     name: "SqlServer",
-    level: 65,
+    year: yearsOfExperience - 2,
     icon: <Database className="w-6 h-6" />,
     category: "Banco de Dados",
     description: "Modelagem de dados SQL e operações de CRUD",
   },
   {
     name: "Oracle",
-    level: 40,
+    year: yearsOfExperience - 6,
     icon: <Database className="w-6 h-6" />,
     category: "Banco de Dados",
     description: "Modelagem de dados SQL e operações de CRUD",
   },
   {
     name: "Docker",
-    level: 30,
-    icon: <Smartphone className="w-6 h-6" />,
+    year: yearsOfExperience - 4,
+    icon: <Cloud className="w-6 h-6" />,
     category: "DevOps",
     description: "Criação de ambientes de desenvolvimento e produção isolados",
   },
   {
     name: "Kubernetes",
-    level: 30,
-    icon: <Smartphone className="w-6 h-6" />,
+    year: yearsOfExperience - 7,
+    icon: <Cloud className="w-6 h-6" />,
     category: "DevOps",
     description: "Orquestração de contêineres e escalabilidade de aplicações",
   },
 
   {
     name: "Bicep",
-    level: 30,
-    icon: <Smartphone className="w-6 h-6" />,
+    year: yearsOfExperience - 7,
+    icon: <Cloud className="w-6 h-6" />,
     category: "Cloud",
     description: "Criação de infraestrutura como código para Azure",
   },
   {
     name: "Terraform",
-    level: 30,
-    icon: <Smartphone className="w-6 h-6" />,
+    year: yearsOfExperience - 6,
+    icon: <Cloud className="w-6 h-6" />,
     category: "Cloud",
     description: "Criação de infraestrutura como código para Cloud",
   },
@@ -188,50 +189,54 @@ export default function Skills() {
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Skill hexagon grid */}
-          <div className="lg:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-4">
-            {skills.map((skill, index) => (
-              <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.4, delay: 0.1 * index }}
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-                }}
-                className="relative group"
-                onMouseEnter={() => setActiveSkill(skill)}
-                onMouseLeave={() => setActiveSkill(null)}
-              >
-                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 h-full border border-blue-100 transition-all duration-300 hover:border-blue-300">
-                  <div
-                    className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600 rounded-t-xl"
-                    style={{ opacity: skill.level / 100 }}
-                  ></div>
+          <div className="lg:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-4 ">
+            {skills.sort((a, b) => b.year - a.year)
+              .map((skill, index) => (
+                <motion.div
+                  key={skill.name}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ duration: 0.1, delay: 0.1 * index }}
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                  }}
+                  className="relative group"
+                  onMouseEnter={() => setActiveSkill(skill)}
+                  onMouseLeave={() => setActiveSkill(null)}
+                >
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 h-full border border-blue-100 transition-all duration-300 hover:border-blue-300">
+                    <div
+                      className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600 rounded-t-xl"
+                      style={{ opacity: skill.year }}
+                    ></div>
 
-                  <div className="flex flex-col items-center text-center h-full">
-                    <div className="mb-3 p-3 rounded-full bg-blue-100/50 text-blue-600">{skill.icon}</div>
-                    <h3 className="font-bold text-slate-800 mb-1">{skill.name}</h3>
-                    <div className="text-xs text-slate-500 mb-3">{skill.category}</div>
+                    <div className="flex flex-col items-center text-center h-full">
+                      <div className="mb-3 p-3 rounded-full bg-blue-100/50 text-blue-600">{skill.icon}</div>
+                      <h3 className="font-bold text-slate-800 mb-1">{skill.name}</h3>
+                      <div className="text-xs text-slate-500 mb-3">{skill.category}</div>
 
-                    <div className="mt-auto pt-3 w-full">
-                      <div className="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden">
-                        <motion.div
-                          className="h-full bg-gradient-to-r from-blue-400 to-blue-600"
-                          initial={{ width: 0 }}
-                          animate={isInView ? { width: `${skill.level}%` } : {}}
-                          transition={{ duration: 1, delay: 0.3 + 0.1 * index }}
-                        />
-                      </div>
-                      <div className="flex justify-between mt-1 text-xs text-slate-500">
-                        <span>{t("beginnerLevel")}</span>
-                        <span>{t("advancedLevel")}</span>
+                      <div className="mt-auto pt-3 w-full">
+                        <div className="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden">
+                          <motion.div
+                            className="h-full bg-gradient-to-r from-blue-400 to-blue-600"
+                            initial={{ width: 0 }}
+                            animate={isInView ? { width: `${(skill.year / yearsOfExperience) * 100}%` } : {}}
+                            transition={{ duration: 1, delay: 0.3 + 0.1 * index }}
+                          />
+                        </div>
+
+                        {/* Skill Years progress bar */}
+                        <div className="flex justify-between mt-1 text-xs text-slate-500">
+                          <span>{t("fromYear")}</span>
+                          <span>{yearsOfExperience} {t("untilYear")}</span>
+                        </div>
+
                       </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
           </div>
 
           {/* Skill details panel */}
@@ -260,16 +265,17 @@ export default function Skills() {
                     </div>
                   </div>
 
-                  {/* <div>
+                  <div>
                     <div className="text-sm text-slate-600 mb-2">{t("proficiencyLevel")}</div>
                     <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
                       <div
                         className="h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full"
-                        style={{ width: `${activeSkill.level}%` }}
+                        style={{ width: `${(activeSkill.year / yearsOfExperience) * 100}%` }}
+                        
                       />
                     </div>
-                    <div className="text-right text-xs text-slate-500 mt-1">{activeSkill.level}%</div>
-                  </div> */}
+                    <div className="text-right text-xs text-slate-500 mt-1">{activeSkill.year} {t("untilYear")}</div>
+                  </div>
 
                   <div>
                     <div className="text-sm text-slate-600 mb-1">{t("description")}</div>
@@ -293,7 +299,7 @@ export default function Skills() {
           transition={{ duration: 0.6, delay: 0.7 }}
         >
           {Object.entries(categories).map(([category, categorySkills], index) => (
-            <div key={category} className="bg-white/70 backdrop-blur-sm rounded-xl p-5 border border-blue-100">
+            <div key={category} className="bg-white/70 backdrop-blur-sm shadow-xl rounded-xl p-5 border border-blue-100">
               <h3 className="font-bold text-slate-800 mb-3">{category}</h3>
               <div className="space-y-2">
                 {categorySkills.map((skill) => (
@@ -303,7 +309,7 @@ export default function Skills() {
                       <span className="text-sm text-slate-700">{skill.name}</span>
                     </div>
                     <span className="text-xs font-medium px-2 py-1 bg-blue-100 text-blue-700 rounded-full">
-                      {skill.level}%
+                      {skill.year} {t("untilYear")}
                     </span>
                   </div>
                 ))}
