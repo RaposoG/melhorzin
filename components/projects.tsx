@@ -50,43 +50,6 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-20 px-4 md:px-8 bg-gradient-to-b from-white to-blue-50 relative">
-      {/* Tech pattern background */}
-      <div className="absolute inset-0 overflow-hidden opacity-5">
-        <div className="absolute h-full w-full">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute text-blue-900 font-mono opacity-10"
-              style={{
-                fontSize: `${Math.random() * 20 + 10}px`,
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                transform: `rotate(${Math.random() * 360}deg)`,
-              }}
-            >
-              {
-                [
-                  "<div>",
-                  "</div>",
-                  "<span>",
-                  "{code}",
-                  "()",
-                  "=>",
-                  "&&",
-                  "||",
-                  "0101",
-                  "function()",
-                  "return",
-                  "const",
-                  "let",
-                  "import",
-                  "export",
-                ][Math.floor(Math.random() * 15)]
-              }
-            </div>
-          ))}
-        </div>
-      </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.h2
