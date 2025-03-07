@@ -3,7 +3,6 @@ import About from "@/components/about"
 import Skills from "@/components/skills"
 import Projects from "@/components/projects"
 import Experience from "@/components/experience"
-import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 import LanguageSwitcher from "@/components/language-switcher"
 
@@ -16,7 +15,6 @@ export default function Home() {
       <Skills />
       <Projects />
       <Experience />
-      {/* <Contact /> */}
       <Footer />
     </main>
   )

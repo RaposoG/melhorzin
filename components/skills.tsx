@@ -1,11 +1,11 @@
 "use client"
 
 import type React from "react"
-
 import { motion, useInView } from "framer-motion"
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Cloud, Code, Database, Layers, Smartphone } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
+import { GithubRepository } from "@/models/github-repository"
 
 interface Skill {
   name: string
@@ -14,6 +14,7 @@ interface Skill {
   category: string
   description: string
 }
+
 const yearsOfExperience = new Date().getFullYear() - 2017
 
 const skills: Skill[] = [
@@ -117,6 +118,36 @@ const skills: Skill[] = [
   },
 ]
 
+const fetchRepos = async () => {
+  // setIsLoadingRepos(true)
+  // setError(null)
+  
+  try {
+    // Substitua "vinirossado" pelo seu usuário do GitHub ou use uma variável de ambiente
+    const response = await fetch("https://api.github.com/users/vinirossado/repos?per_page=100")
+    
+    if (!response.ok) {
+      const errorData = await response.json()
+      throw new Error(errorData.message || "Erro ao buscar repositórios")
+    }
+    
+    const data: GithubRepository[] = await response.json()
+    console.dir(data, { depth: null })
+    // setRepos(data)
+    
+    // Inicialmente, exibir todos os repositórios
+    // setFilteredRepos(data)
+    
+  } catch (err) {
+    console.error("Erro ao buscar repositórios:", err)
+    // setError(err instanceof Error ? err.message : "Erro desconhecido")
+  } finally {
+    // setIsLoadingRepos(false)
+  }
+}
+
+
+
 export default function Skills() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
@@ -124,6 +155,10 @@ export default function Skills() {
   const [isLoaded, setIsLoaded] = useState<boolean>(false)
   const { t } = useLanguage()
 
+  useEffect(() => {
+    fetchRepos()
+  }, [])
+  
   // Agrupar habilidades por categoria
   const categories = skills.reduce(
     (acc: Record<string, Skill[]>, skill: Skill) => {
@@ -135,8 +170,9 @@ export default function Skills() {
     },
     {} as Record<string, Skill[]>,
   )
-
+ 
   return (
+    
     <section id="skills" className="py-20 px-4 md:px-8 relative overflow-hidden">
       {/* Background grid pattern */}
       <div className="absolute inset-0 bg-blue-50 opacity-70">
@@ -202,13 +238,14 @@ export default function Skills() {
                   }}
                   className="relative group"
                   onClick={() => setActiveSkill(skill)}
-                  // onMouseLeave={() => setActiveSkill(null)}
+                  onMouseEnter={() => setActiveSkill(skill)}
+                  onMouseLeave={() => setActiveSkill(null)}
                   onAnimationComplete={() => index === skills.length - 1 ? setIsLoaded(true) : null}
                 >
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 h-full border border-blue-100 transition-all duration-300 hover:border-blue-300">
                     <div
                       className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600 rounded-t-xl"
-                      style={{ opacity: skill.year }}
+                      style={{ opacity: skill.year / yearsOfExperience }}
                     ></div>
 
                     <div className="flex flex-col items-center text-center h-full">
@@ -265,25 +302,18 @@ export default function Skills() {
                   </div>
 
                   <div>
-                    <div className="text-sm text-slate-600 mb-2">{t("proficiencyLevel")}</div>
-                    <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full"
-                        style={{ width: `${(activeSkill.year / yearsOfExperience) * 100}%` }}
-                      />
-                    </div>
-                    <div className="text-right text-xs text-slate-500 mt-1">{activeSkill.year} {t("untilYear")}</div>
-                  </div>
-
-                  <div>
                     <div className="text-sm text-slate-600 mb-1">{t("description")}</div>
                     <p className="text-sm text-slate-700">{activeSkill.description}</p>
                   </div>
                 </motion.div>
+
               ) : (
                 <div className="h-full flex items-center justify-center text-center p-4">
                   <p className="text-slate-500 text-sm">{t("clickSkill")}</p>
+
+              
                 </div>
+
               )}
             </motion.div>
           </div>
@@ -307,7 +337,7 @@ export default function Skills() {
                       <span className="text-sm text-slate-700">{skill.name}</span>
                     </div>
                     <span className="text-xs font-medium px-2 py-1 bg-blue-100 text-blue-700 rounded-full">
-                      {skill.year} {t("untilYear")}
+                      {skill.year} {t("years")}
                     </span>
                   </div>
                 ))}
@@ -319,4 +349,3 @@ export default function Skills() {
     </section>
   )
 }
-
