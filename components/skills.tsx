@@ -22,99 +22,98 @@ const skills: Skill[] = [
     year: yearsOfExperience,
     icon: <Code className="w-6 h-6" />,
     category: "Linguagens",
-    description: "Criação de APIs RESTful e serviços escaláveis",
+    description: "Desenvolvimento de APIs RESTful escaláveis, arquitetura limpa e design patterns em .NET.",
   },
   {
     name: "Go",
-    year: yearsOfExperience - 6,
+    year: yearsOfExperience - 5,
     icon: <Code className="w-6 h-6" />,
     category: "Linguagens",
-    description: "Criação de APIs RESTful e serviços escaláveis",
+    description: "Criação de serviços backend de alta performance e concorrência eficiente.",
   },
   {
     name: "TypeScript",
     year: yearsOfExperience,
     icon: <Code className="w-6 h-6" />,
     category: "Linguagens",
-    description: "Tipagem estática para desenvolvimento mais seguro e produtivo",
+    description: "Desenvolvimento front e backend com tipagem segura e escalabilidade.",
   },
   {
     name: "Angular",
     year: yearsOfExperience,
     icon: <Layers className="w-6 h-6" />,
     category: "Frontend",
-    description: "Desenvolvimento de interfaces modernas com hooks e componentes reutilizáveis",
+    description: "Criação de aplicações SPA modulares e performáticas com RxJS e state management.",
   },
   {
     name: "Ionic",
     year: yearsOfExperience - 5,
     icon: <Smartphone className="w-6 h-6" />,
     category: "Mobile",
-    description: "Criação de aplicativos móveis multiplataforma",
+    description: "Desenvolvimento de apps híbridos com Angular e Capacitor para iOS e Android.",
   },
   {
     name: "SwiftUI",
     year: yearsOfExperience - 7.5,
     icon: <Smartphone className="w-6 h-6" />,
     category: "Mobile",
-    description: "Criação de aplicativos móveis nativos para iOS",
+    description: "Criação de interfaces fluidas e reativas para iOS com SwiftUI e Combine.",
   },
   {
     name: "StencilJS",
     year: yearsOfExperience - 5,
     icon: <Layers className="w-6 h-6" />,
     category: "Frontend",
-    description: "Desenvolvimento de aplicações React com SSR e SSG",
+    description: "Criação de Web Components reutilizáveis e performáticos para aplicações escaláveis.",
   },
   {
     name: "MongoDB",
     year: yearsOfExperience - 5,
     icon: <Database className="w-6 h-6" />,
     category: "Banco de Dados",
-    description: "Modelagem de dados NoSQL e operações de CRUD",
+    description: "Modelagem e otimização de consultas em bancos NoSQL para alta escalabilidade.",
   },
   {
-    name: "SqlServer",
+    name: "SQLServer",
     year: yearsOfExperience - 2,
     icon: <Database className="w-6 h-6" />,
     category: "Banco de Dados",
-    description: "Modelagem de dados SQL e operações de CRUD",
+    description: "Administração de bancos SQL, otimização de queries e procedures.",
   },
   {
     name: "Oracle",
     year: yearsOfExperience - 6,
     icon: <Database className="w-6 h-6" />,
     category: "Banco de Dados",
-    description: "Modelagem de dados SQL e operações de CRUD",
+    description: "Gerenciamento de grandes volumes de dados e PL/SQL para automação.",
   },
   {
     name: "Docker",
     year: yearsOfExperience - 4,
     icon: <Cloud className="w-6 h-6" />,
     category: "DevOps",
-    description: "Criação de ambientes de desenvolvimento e produção isolados",
+    description: "Criação e orquestração de contêineres para ambientes escaláveis e isolados.",
   },
   {
     name: "Kubernetes",
     year: yearsOfExperience - 7,
     icon: <Cloud className="w-6 h-6" />,
     category: "DevOps",
-    description: "Orquestração de contêineres e escalabilidade de aplicações",
+    description: "Orquestração de contêineres, autoescalabilidade e deploys resilientes.",
   },
-
   {
     name: "Bicep",
-    year: yearsOfExperience - 7,
+    year: yearsOfExperience - 7.5,
     icon: <Cloud className="w-6 h-6" />,
     category: "Cloud",
-    description: "Criação de infraestrutura como código para Azure",
+    description: "Infraestrutura como código para provisionamento automatizado no Azure.",
   },
   {
     name: "Terraform",
     year: yearsOfExperience - 6,
     icon: <Cloud className="w-6 h-6" />,
     category: "Cloud",
-    description: "Criação de infraestrutura como código para Cloud",
+    description: "Automação de infraestrutura multi-cloud e gerenciamento de estado.",
   },
 ]
 
@@ -125,10 +124,9 @@ export default function Skills() {
   const [isLoaded, setIsLoaded] = useState<boolean>(false)
   const { t } = useLanguage()
 
-
   // Agrupar habilidades por categoria
   const categories = skills.reduce(
-    (acc, skill) => {
+    (acc: Record<string, Skill[]>, skill: Skill) => {
       if (!acc[skill.category]) {
         acc[skill.category] = []
       }
@@ -203,8 +201,8 @@ export default function Skills() {
                     boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
                   }}
                   className="relative group"
-                  onMouseEnter={() => setActiveSkill(skill)}
-                  onMouseLeave={() => setActiveSkill(null)}
+                  onClick={() => setActiveSkill(skill)}
+                  // onMouseLeave={() => setActiveSkill(null)}
                   onAnimationComplete={() => index === skills.length - 1 ? setIsLoaded(true) : null}
                 >
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 h-full border border-blue-100 transition-all duration-300 hover:border-blue-300">
@@ -224,7 +222,7 @@ export default function Skills() {
                             className="h-full bg-gradient-to-r from-blue-400 to-blue-600"
                             initial={{ width: 0 }}
                             animate={isInView ? { width: `${(skill.year / yearsOfExperience) * 100}%` } : {}}
-                            transition={{ duration: 1, delay: 0.3 + 0.1 * index }}/>
+                            transition={{ duration: 1, delay: 0.3 + 0.1 * index }} />
                         </div>
 
                         {/* Skill Years progress bar */}
@@ -272,7 +270,6 @@ export default function Skills() {
                       <div
                         className="h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full"
                         style={{ width: `${(activeSkill.year / yearsOfExperience) * 100}%` }}
-
                       />
                     </div>
                     <div className="text-right text-xs text-slate-500 mt-1">{activeSkill.year} {t("untilYear")}</div>
@@ -285,7 +282,7 @@ export default function Skills() {
                 </motion.div>
               ) : (
                 <div className="h-full flex items-center justify-center text-center p-4">
-                  <p className="text-slate-500 text-sm">{t("hoverSkill")}</p>
+                  <p className="text-slate-500 text-sm">{t("clickSkill")}</p>
                 </div>
               )}
             </motion.div>

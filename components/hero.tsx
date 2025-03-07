@@ -217,10 +217,10 @@ export default function Hero({ name, title, photoUrl }: HeroProps) {
             href="https://github.com/vinirossado"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600/90 hover:bg-blue-600 text-white rounded-lg font-medium transition-all shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600/90 hover:bg-blue-600 text-white rounded-full border border-white/30 font-medium transition-all shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40"
           >
             <Linkedin size={18} />
-            <span>{t("checkoutMyLinkedIn")}</span>
+            <span>Let's Connect</span>
           </a>
 
           {/* <a
@@ -237,8 +237,8 @@ export default function Hero({ name, title, photoUrl }: HeroProps) {
 
       {/* Tech keywords floating */}
       <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
-        {["Bicep", "Azure", "SqlServer", "Ionic", "StencilJS", "Angular", ".Net", "TypeScript", "Go", "MongoDB", "Git", "SwiftUI"].map(
-          (tech, index) => (
+        {["Bicep", "Azure", "SQLServer", "Ionic", "StencilJS", "Angular", ".Net", "TypeScript", "Go", "MongoDB", "Git", "SwiftUI"].map(
+          (tech: string, index: number) => (
             <motion.div
               key={tech}
               className="absolute text-blue-200/30 font-mono text-sm md:text-base"

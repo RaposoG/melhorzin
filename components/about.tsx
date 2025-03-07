@@ -111,12 +111,10 @@ export default function About() {
                 Olá! Sou um desenvolvedor FullStack apaixonado por criar soluções web elegantes e funcionais.
               </p>
               <p>
-                Com experiência em desenvolvimento front-end e back-end, trabalho com as tecnologias mais modernas para
-                entregar projetos de alta qualidade que atendam às necessidades dos clientes.
+                Hi, I'm Vinicius. Currently working with Stencil and .NET Core at a financial company. One of my favorite things to do on my free time (besides playing the guitar) is to build new architectures in order to challenge myself with new development patterns. Besides, one of my hobbies includes learning new stacks, for instance, right now I'm quite interested in Golang.
               </p>
               <p>
-                Minha abordagem combina design intuitivo com código limpo e eficiente, sempre buscando a melhor
-                experiência para o usuário final.
+                For the past few years I've also been interested in learning new languages and cultures, specially the nordic ones. You can reach me at my e-mail, if you want to see my personal projects, check out projects section.
               </p>
             </div>
 
