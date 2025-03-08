@@ -27,19 +27,19 @@
     "description": {
       "default": "Non trouvé",
       "react": "J'ai de l'expérience avec React dans la création de landing pages et de pages web complexes. J'ai travaillé avec la componentisation en utilisant ShadCN pour les UI modernes et Framer Motion pour les animations. J'ai développé des graphiques interactifs avec Chart.js, Recharts et D3.js et créé des formulaires dynamiques avec validation en utilisant React Hook Form et Zod. Je m'efforce toujours de suivre les meilleures pratiques et l'optimisation pour améliorer la performance et l'utilisabilité des applications.",
-      "go": "Un langage efficace et concis pour les systèmes haute performance, avec une excellente concurrence.",
-      "javascript": "Un langage de programmation largement utilisé pour le développement web. Il prend en charge la programmation asynchrone et est essentiel pour créer des interfaces dynamiques et interactives tant en front-end qu'en back-end.",
-      "typescript": "Une surcouche de JavaScript qui ajoute le typage statique et des fonctionnalités avancées de développement, rendant le code plus sûr et plus facile à maintenir.",
-      "nextjs": "Un framework React qui permet le rendu hybride (SSR et SSG), le routage avancé et des optimisations pour une meilleure performance et SEO.",
-      "nodejs": "Un runtime JavaScript asynchrone et basé sur les événements, idéal pour le développement backend évolutif, les API REST et les applications en temps réel.",
-      "aws_lambda": "Service de calcul serverless AWS permettant d'exécuter du code sans gérer de serveurs, ne facturant que pour le temps d'exécution.",
-      "amazon_s3": "Un service de stockage d'objets AWS évolutif et sécurisé utilisé pour stocker des fichiers, sauvegardes et contenus statiques.",
-      "dynamodb": "Une base de données NoSQL AWS avec haute disponibilité et évolutivité, optimisée pour le stockage de données distribuées et les performances.",
-      "postgresql": "Une base de données relationnelle open-source avec un solide support SQL, connue pour sa fiabilité, son extensibilité et sa performance.",
-      "mysql": "Une base de données relationnelle populaire largement utilisée pour les applications web et les systèmes nécessitant un stockage structuré et des transactions ACID.",
-      "redis": "Une base de données en mémoire extrêmement rapide utilisée pour le cache, les files d'attente et le stockage de session pour améliorer la performance des applications.",
-      "rust": "Un langage de programmation axé sur la sécurité, la performance et la concurrence, largement utilisé pour les systèmes bas niveau et les applications haute performance.",
-      "python": "Un langage polyvalent et facile à apprendre utilisé pour le développement web, la science des données, l'automatisation et l'intelligence artificielle."
+      "go": "J'ai 1 an d'expérience avec Go dans des projets de microservices et systèmes distribués, assurant haute performance et évolutivité.",
+      "javascript": "J'utilise JavaScript depuis plus de 2 ans, principalement dans des projets de développement web full-stack, créant des interfaces interactives et des API REST.",
+      "typescript": "J'ai 2 ans d'expérience avec TypeScript, l'appliquant dans de grands projets frontend avec React et des projets backend avec Node.js, améliorant la maintenance et la sécurité du code.",
+      "nextjs": "J'ai 2 ans d'expérience avec Next.js dans des projets front-end, optimisant la performance et le SEO des applications web.",
+      "nodejs": "J'utilise Node.js depuis 2 ans, développant des API REST robustes et évolutives, ainsi que des applications en temps réel.",
+      "aws_lambda": "J'ai de l'expérience dans la création de fonctions Lambda pour le traitement de données et l'intégration avec d'autres services AWS.",
+      "amazon_s3": "J'utilise S3 pour le stockage de données et l'intégration avec d'autres solutions AWS.",
+      "dynamodb": "J'ai de l'expérience en modélisation de données et optimisation de requêtes dans DynamoDB.",
+      "postgresql": "J'utilise PostgreSQL dans des projets nécessitant des transactions complexes et une haute fiabilité.",
+      "mysql": "J'ai de l'expérience dans l'utilisation de MySQL pour le développement de systèmes web et d'applications d'entreprise.",
+      "redis": "J'utilise Redis pour les optimisations de performance et la gestion de sessions dans les applications web.",
+      "rust": "Je m'intéresse à Rust et j'étudie ce langage pour l'appliquer dans des projets futurs.",
+      "python": "J'ai des connaissances en Python et je l'utilise pour des scripts d'automatisation et l'analyse de données."
     }
   },
   "timeline": {

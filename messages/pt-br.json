@@ -12,7 +12,7 @@
     "about": "Sobre mim",
     "iAm": "Eu sou",
     "position": "Full-stack Developer",
-    "description": " Sou um desenvolvedor full-stack apaixonado por criar sistemasrobustos e escaláveis, especialmente utilizando Golang e Node.js.Embora também tenha experiência no desenvolvimento front-end com React e Next.js, minha principal atuação é no back-end, garantindo eficiência, performance e escalabilidade nas aplicações qudesenvolvo."
+    "description": " Sou um desenvolvedor full-stack apaixonado por criar sistemas robustos e escaláveis, especialmente utilizando Golang e Node.js.Embora também tenha experiência no desenvolvimento front-end com React e Next.js, minha principal atuação é no back-end, garantindo eficiência, performance e escalabilidade nas aplicações que desenvolvo."
   },
   "about-me": {
     "title": "Sobre mim",
@@ -27,19 +27,19 @@
     "description": {
       "default": "Não encontrado",
       "react": "Tenho experiência com React criando sites landing pages e páginas complexas Trabalhei com componentização utilizando ShadCN para UI moderna e Framer Motion para animações Desenvolvi gráficos interativos com Chartjs Recharts e D3js e criei formulários dinâmicos com validação usando React Hook Form e Zod Busco sempre boas práticas e otimização para melhorar a performance e usabilidade das aplicações",
-      "go": "Linguagem eficiente e concisa para sistemas de alta performance, com excelente concorrência",
-      "javascript": "Linguagem de programação amplamente utilizada para desenvolvimento web. Possui suporte a programação assíncrona e é essencial para criar interfaces dinâmicas e interativas no frontend e backend.",
-      "typescript": "Superset do JavaScript que adiciona tipagem estática e recursos avançados de desenvolvimento, tornando o código mais seguro e fácil de manter.",
-      "nextjs": "Framework para React que permite renderização híbrida (SSR e SSG), roteamento avançado e otimizações para melhor performance e SEO.",
-      "nodejs": "Runtime JavaScript assíncrono e baseado em eventos, ideal para desenvolvimento backend escalável, APIs REST e aplicações em tempo real.",
-      "aws_lambda": "Serviço de computação serverless da AWS que permite executar código sem gerenciar servidores, cobrando apenas pelo tempo de execução.",
-      "amazon_s3": "Serviço de armazenamento de objetos escalável e seguro da AWS, usado para armazenar arquivos, backups e conteúdo estático.",
-      "dynamodb": "Banco de dados NoSQL da AWS com alta disponibilidade e escalabilidade, utilizado para armazenar dados de forma distribuída e otimizada para performance.",
-      "postgresql": "Banco de dados relacional open-source com forte suporte a SQL, conhecido por sua confiabilidade, extensibilidade e desempenho.",
-      "mysql": "Banco de dados relacional popular, amplamente usado para aplicações web e sistemas que exigem armazenamento estruturado e transações ACID.",
-      "redis": "Banco de dados em memória extremamente rápido, utilizado para caching, filas e armazenamento de sessão para melhorar a performance de aplicações.",
-      "rust": "Linguagem de programação focada em segurança, desempenho e concorrência, muito utilizada em sistemas de baixo nível e aplicações de alta performance.",
-      "python": "Linguagem versátil e de fácil aprendizado, usada para desenvolvimento web, ciência de dados, automação e inteligência artificial."
+      "go": "Tenho 1 anos de experiência utilizando Go em projetos de microsserviços e sistemas distribuídos, garantindo alta performance e escalabilidade.",
+      "javascript": "Utilizo JavaScript há mais de 2 anos, principalmente em projetos de desenvolvimento web full-stack, criando interfaces interativas e APIs REST.",
+      "typescript": " Tenho 2 anos de experiência com TypeScript, aplicando em grandes projetos de frontend com React e projetos backend com Node.js, melhorando a manutenção e segurança do código.",
+      "nextjs": "Tenho 2 anos de experiência utilizando Next.js em projetos de front-end, otimizando a performance e SEO das aplicações web.",
+      "nodejs": "Utilizo Node.js há 2 anos, desenvolvendo APIs REST robustas e escaláveis, além de aplicações em tempo real.",
+      "aws_lambda": "Tenho experiência na criação de funções Lambda para processamento de dados e integração com outros serviços AWS.",
+      "amazon_s3": "Utilizo S3 para armazenamento de dados e integração com outras soluções AWS.",
+      "dynamodb": "Tenho experiência na modelagem de dados e otimização de consultas em DynamoDB.",
+      "postgresql": "Utilizo PostgreSQL em projetos que requerem transações complexas e alta confiabilidade.",
+      "mysql": "Tenho experiência no uso de MySQL para desenvolvimento de sistemas web e aplicações empresariais.",
+      "redis": " Utilizo Redis para otimizações de performance e gerenciamento de sessões em aplicações web.",
+      "rust": "Tenho interesse em Rust e estou estudando a linguagem para aplicá-la em projetos futuros.",
+      "python": " Tenho conhecimento em Python e o utilizo para scripts de automação e análise de dados."
     }
   },
   "timeline": {
@@ -65,7 +65,7 @@
         "specification": [
           "• Criação, integração e manutenção de páginas web com React e Next.js.",
           "• Desenvolvimento e otimização do back-end com Express e Prisma.",
-          "• Criação de microserviços em Golang para cálculos pesados de estatísticas.",
+          "• Criação de microsserviços em Golang para cálculos pesados de estatísticas.",
           "• Desenvolvimento de bots para Telegram.",
           "• Scraping de páginas web utilizando Playwright.",
           "• Criação de dashboards interativos com gráficos e tabelas responsivas.",
