@@ -15,7 +15,7 @@ import {
   SiReact,
 } from "react-icons/si";
 
-type Icon = {
+export type Icon = {
   name:
     | "JavaScript"
     | "TypeScript"
@@ -58,7 +58,7 @@ export const icon: Icon[] = [
   {
     name: "Next.js",
     IconComponent: SiNextdotjs,
-    colorDark: "#FFFFFF",
+    colorDark: "#ffffff",
     colorLight: "#000000",
   },
   {

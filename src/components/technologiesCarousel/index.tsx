@@ -1,160 +1,162 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
-import useEmblaCarousel from "embla-carousel-react";
-import AutoScroll from "embla-carousel-auto-scroll";
-import { useTheme } from "next-themes";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
+import { icon, Icon } from "./moke";
 import { useTranslations } from "next-intl";
-import { icon } from "./moke";
+import React, { useState, useEffect, useRef } from "react";
+import SVGComponent from "../logo";
+import { useTheme } from "next-themes";
 
 function TechnologiesCarousel() {
+  const [rotationAngle, setRotationAngle] = useState<number>(0);
+  const [hoveredItem, setHoveredItem] = useState<Icon | null>(null);
+  const [isSpinning, setIsSpinning] = useState<boolean>(true);
   const { theme } = useTheme();
   const isDarkMode = theme === "dark";
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const spinSpeedRef = useRef<number>(0.5);
   const t = useTranslations("technologiesCarousel.description");
-  const [isMobile, setIsMobile] = useState(false);
-  const [openCardId, setOpenCardId] = useState<number | null>(null);
 
-  // Verifica se está em uma tela mobile
+  const radius = 220;
+  const angleStep = (2 * Math.PI) / icon.length;
+
   useEffect(() => {
-    const checkIsMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
     };
 
-    checkIsMobile();
-    window.addEventListener("resize", checkIsMobile);
-
-    return () => window.removeEventListener("resize", checkIsMobile);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    {
-      loop: true,
-      watchFocus: false,
-      active: true,
-      dragFree: isMobile,
-    },
-    [
-      AutoScroll({
-        startDelay: 2,
-        speed: isMobile ? 1 : 2,
-      }),
-    ]
-  );
-
-  const handleMouseEnter = useCallback(() => {
-    emblaApi?.plugins()?.autoScroll?.stop();
-  }, [emblaApi]);
-
-  const handleMouseLeave = useCallback(() => {
-    emblaApi?.plugins()?.autoScroll?.play();
-  }, [emblaApi]);
-
   useEffect(() => {
-    if (!emblaApi) return;
+    let animationId: number;
 
-    const autoScroll = emblaApi.plugins()?.autoScroll;
-    if (!autoScroll) return;
-
-    autoScroll.play();
-  }, [emblaApi]);
-
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (openCardId !== null) {
-        const target = e.target as Element;
-        if (!target.closest("[data-hover-card]")) {
-          setOpenCardId(null);
-          emblaApi?.plugins()?.autoScroll?.play();
-        }
+    const animate = () => {
+      if (isSpinning) {
+        setRotationAngle((prevAngle) => prevAngle + spinSpeedRef.current);
       }
+      animationId = requestAnimationFrame(animate);
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [emblaApi, openCardId]);
+    animationId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationId);
+  }, [isSpinning]);
+
+  const handleMouseEnter = (icon: Icon) => {
+    setHoveredItem(icon);
+    setIsSpinning(false);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredItem(null);
+    setIsSpinning(true);
+  };
+
+  const getTranslationKey = (name: string): string => {
+    return name.toLowerCase().replace(/\s/g, "_").replace(/\./g, "");
+  };
 
   return (
-    <>
-      <div className="w-full p-2">
+    <div className="flex flex-col justify-center items-center p-4">
+      <div className="relative w-[500px] h-[500px]">
+        {/* Orbit lines for visual effect (optional) */}
+        <div className="absolute w-[450px] h-[450px] rounded-full left-[25px] top-[25px]" />
+        <div className="absolute w-[350px] h-[350px] rounded-full left-[75px] top-[75px]" />
+        <div className="absolute w-[250px] h-[250px] rounded-full left-[125px] top-[125px]" />
+
+        {/* Rotating wheel with icons */}
         <div
-          className={`overflow-hidden ${isMobile ? "h-[300px]" : "h-[600px]"}`}
-          ref={emblaRef}
+          className="absolute w-[450px] h-[450px] rounded-full  backdrop-blur-sm"
+          style={{
+            transform: `rotate(${rotationAngle}deg)`,
+            transition: isSpinning ? "none" : "transform 0.3s ease-out",
+            left: "25px",
+            top: "25px",
+          }}
         >
-          <div className="flex">
-            {icon.map((item, index) => {
-              const IconComponent = item.IconComponent;
-              return (
+          {icon.map((icon, index) => {
+            const angle = index * angleStep;
+            const x = Math.cos(angle) * radius;
+            const y = Math.sin(angle) * radius;
+            const { IconComponent } = icon;
+
+            return (
+              <div
+                key={icon.name}
+                className="absolute w-20 h-20 rounded-full flex items-center justify-center cursor-pointer transform -translate-x-1/2 -translate-y-1/2 shadow-lg transition-all duration-300 hover:scale-110"
+                style={{
+                  left: `calc(50% + ${x}px)`,
+                  top: `calc(50% + ${y}px)`,
+                  zIndex: hoveredItem === icon ? 30 : 10,
+                  border: `2px solid ${
+                    isDarkMode ? icon.colorDark : icon.colorLight
+                  }`,
+                  boxShadow: `0 0 15px rgba(${parseInt(
+                    icon.colorDark.slice(1, 3),
+                    16
+                  )}, ${parseInt(icon.colorDark.slice(3, 5), 16)}, ${parseInt(
+                    icon.colorDark.slice(5, 7),
+                    16
+                  )}, 0.3)`,
+                }}
+                onMouseEnter={() => handleMouseEnter(icon)}
+                onMouseLeave={handleMouseLeave}
+              >
                 <div
-                  key={index}
-                  className="flex-[0_0_auto] min-w-0 px-4 md:flex-[0_0_10%]"
-                  onMouseLeave={isMobile ? undefined : handleMouseLeave}
-                  onMouseEnter={isMobile ? undefined : handleMouseEnter}
+                  className="w-full h-full flex items-center justify-center"
+                  style={{ transform: `rotate(${-rotationAngle}deg)` }}
                 >
-                  <div data-hover-card>
-                    <HoverCard
-                      open={isMobile ? openCardId === index : undefined}
-                    >
-                      <HoverCardTrigger asChild>
-                        <div
-                          className="flex flex-col items-center"
-                          onClick={
-                            isMobile
-                              ? () =>
-                                  setOpenCardId(
-                                    openCardId === index ? null : index
-                                  )
-                              : undefined
-                          }
-                        >
-                          <p className="text-foreground select-none text-xs md:text-base">
-                            {item.name}
-                          </p>
-                          <div
-                            className="w-12 h-12 md:w-20 md:h-20 flex items-center justify-center bg-background/30 rounded-full shadow-lg"
-                            style={{
-                              filter: `drop-shadow(0 0 8px ${
-                                isDarkMode ? item.colorDark : item.colorLight
-                              }40)`,
-                            }}
-                          >
-                            <IconComponent
-                              size={isMobile ? 24 : 40}
-                              color={
-                                isDarkMode ? item.colorDark : item.colorLight
-                              }
-                            />
-                          </div>
-                        </div>
-                      </HoverCardTrigger>
-                      <HoverCardContent className="flex flex-col gap-2 left-0 top-full p-4 bg-background shadow-lg w-64 md:w-96">
-                        <h2 className="text-sm md:text-xl text-foreground">
-                          Minha experiência com{" "}
-                          <span className="text-primary">{item.name}</span>
-                        </h2>
-                        <p className="text-xs md:text-base">
-                          {(() => {
-                            const key: any = item.name
-                              .toLowerCase()
-                              .replace(/\s/g, "_")
-                              .replace(/\./g, "");
-                            return t(key) || t("default");
-                          })()}
-                        </p>
-                      </HoverCardContent>
-                    </HoverCard>
-                  </div>
+                  <IconComponent
+                    size={isMobile ? 24 : 40}
+                    color={isDarkMode ? icon.colorDark : icon.colorLight}
+                  />
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Center circle with technology information */}
+        <div
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 rounded-full z-20 flex items-center justify-center text-center  backdrop-blur-md transition-all duration-300"
+          style={{
+            borderColor: isDarkMode
+              ? hoveredItem?.colorDark
+              : hoveredItem?.colorLight,
+          }}
+        >
+          {hoveredItem ? (
+            <div className="flex flex-col items-center p-4 max-h-full">
+              <hoveredItem.IconComponent
+                size={30}
+                color={hoveredItem.colorDark}
+                className="mb-3"
+              />
+              <h3
+                className="text-2xl font-bold mb-2"
+                style={{ color: hoveredItem.colorDark }}
+              >
+                {hoveredItem.name}
+              </h3>
+              <p className="text-sm text-foreground line-clamp-4">
+                {(() => {
+                  const key: any = hoveredItem.name
+                    .toLowerCase()
+                    .replace(/\s/g, "_")
+                    .replace(/\./g, "");
+                  return t(key) || t("default");
+                })()}
+              </p>
+            </div>
+          ) : (
+            <div className="text-center opacity-70">
+              <SVGComponent className="w-[100px] h-[100px] sm:w-[100px] sm:h-[100px]" />
+            </div>
+          )}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
