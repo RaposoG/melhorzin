@@ -3,6 +3,13 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useState } from "react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const socialLinks = [
   { Icon: Github, likes: "https://github.com/lkgiovani" },
@@ -12,6 +19,17 @@ const socialLinks = [
 
 export default function Hero() {
   const t = useTranslations("hero");
+
+  const handleDownload = (lang: string) => {
+    const fileUrl = lang === "pt" ? "/cv_pt_br.pdf" : "/cv_en.pdf";
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    const fileName = fileUrl.split("/").pop() || "download.pdf";
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <section id="home" className="h-screen flex items-center relative mt-10">
@@ -42,9 +60,21 @@ export default function Hero() {
             ))}
           </div>
           <div className="flex gap-4">
-            <Button className="bg-primary hover:bg-primary/70 text-background text-sm md:text-base">
-              Download CV
-            </Button>
+            <DropdownMenu modal={false}>
+              <DropdownMenuTrigger asChild>
+                <Button className="bg-primary hover:bg-primary/70 text-background text-sm md:text-base">
+                  Download CV
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem onClick={() => handleDownload("pt")}>
+                  PT-BR
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => handleDownload("en")}>
+                  EN
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </div>
         <div className="flex justify-center items-center ">

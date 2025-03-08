@@ -167,7 +167,7 @@ function TechnologiesCarousel() {
               <p
                 className={`${
                   isMobile ? "text-xs" : "text-2xl"
-                } text-foreground line-clamp-4`}
+                } text-foreground line-clamp-5`}
               >
                 {(() => {
                   const key: any = hoveredItem.name
