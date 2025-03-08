@@ -5,7 +5,6 @@ import { motion, useInView } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
 import { Cloud, Code, Database, ExternalLink, Layers, Smartphone, Star } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
-import { GithubRepository } from "@/models/github-repository"
 
 interface Skill {
   name: string
@@ -118,36 +117,6 @@ const skills: Skill[] = [
   },
 ]
 
-const fetchRepos = async () => {
-  // setIsLoadingRepos(true)
-  // setError(null)
-
-  try {
-    // Substitua "vinirossado" pelo seu usuário do GitHub ou use uma variável de ambiente
-    const response = await fetch("https://api.github.com/users/vinirossado/repos?per_page=100")
-
-    if (!response.ok) {
-      const errorData = await response.json()
-      throw new Error(errorData.message || "Erro ao buscar repositórios")
-    }
-
-    const data: GithubRepository[] = await response.json()
-    console.dir(data, { depth: null })
-    // setRepos(data)
-
-    // Inicialmente, exibir todos os repositórios
-    // setFilteredRepos(data)
-
-  } catch (err) {
-    console.error("Erro ao buscar repositórios:", err)
-    // setError(err instanceof Error ? err.message : "Erro desconhecido")
-  } finally {
-    // setIsLoadingRepos(false)
-  }
-}
-
-
-
 export default function Skills() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
@@ -194,7 +163,6 @@ export default function Skills() {
   )
 
   return (
-
     <section id="skills" className="py-20 px-4 md:px-8 relative overflow-hidden">
       {/* Background grid pattern */}
       <div className="absolute inset-0 bg-blue-50 opacity-70">
@@ -207,31 +175,8 @@ export default function Skills() {
         ></div>
       </div>
 
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(5)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-blue-200/20 backdrop-blur-sm"
-            style={{
-              width: Math.random() * 300 + 50,
-              height: Math.random() * 300 + 50,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              x: [0, Math.random() * 100 - 50],
-              y: [0, Math.random() * 100 - 50],
-            }}
-            transition={{
-              duration: Math.random() * 20 + 10,
-              repeat: Number.POSITIVE_INFINITY,
-              repeatType: "reverse",
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-      </div>
+      {/* Client-only animated background */}
+      {/* <AnimatedBackground /> */}
 
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.h2
@@ -260,8 +205,6 @@ export default function Skills() {
                   }}
                   className="relative group"
                   onClick={() => setActiveSkill(skill)}
-                  // onMouseEnter={() => setActiveSkill(skill)}
-                  // onMouseLeave={() => setActiveSkill(null)}
                   onAnimationComplete={() => index === skills.length - 1 ? setIsLoaded(true) : null}
                 >
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 h-full border border-blue-100 transition-all duration-300 hover:border-blue-300">
@@ -444,7 +387,7 @@ export default function Skills() {
                 </motion.div>
               ) : (
                 <div className="h-full flex items-center justify-center text-center p-4">
-                  <p className="text-slate-500 text-sm">{t("hoverSkill")}</p>
+                  <p className="text-slate-500 text-sm">{t("clickSkill")}</p>
                 </div>
               )}
             </motion.div>

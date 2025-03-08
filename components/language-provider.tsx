@@ -46,6 +46,10 @@ const translations = {
     backendDev: "Desenvolvimento Backend",
     database: "Banco de Dados",
     fullWebApps: "Aplicações Web Completas",
+    yearsExperience: "anos de experiência",
+    seniorAchievement1: "Liderança técnica em projetos de grande escala",
+    seniorAchievement2: "Arquitetura de soluções escaláveis e resilientes",
+    seniorAchievement3: "Mentoria de desenvolvedores e equipes",
   },
   en: {
     welcome: "Welcome to my portfolio",
@@ -81,6 +85,10 @@ const translations = {
     backendDev: "Backend Development",
     database: "Database",
     fullWebApps: "Full Web Applications",
+    yearsExperience: "years of experience",
+    seniorAchievement1: "Technical leadership in large-scale projects",
+    seniorAchievement2: "Architecture of scalable and resilient solutions",
+    seniorAchievement3: "Mentoring developers and teams",
   },
   ru: {
     welcome: "Добро пожаловать в мое портфолио",
@@ -115,6 +123,10 @@ const translations = {
     backendDev: "Бэкенд-разработка",
     database: "Базы данных",
     fullWebApps: "Полные веб-приложения",
+    yearsExperience: "лет опыта",
+    seniorAchievement1: "Техническое руководство в крупномасштабных проектах",
+    seniorAchievement2: "Архитектура масштабируемых и отказоустойчивых решений",
+    seniorAchievement3: "Наставничество разработчиков и команд",
   },
   et: {
     welcome: "Tere tulemast minu portfooliosse",
@@ -150,6 +162,10 @@ const translations = {
     backendDev: "Backendi arendus",
     database: "Andmebaasid",
     fullWebApps: "Täielikud veebirakendused",
+    yearsExperience: "aastat kogemust",
+    seniorAchievement1: "Tehniline juhtimine suuremahulistes projektides",
+    seniorAchievement2: "Skaleeritavate ja vastupidavate lahenduste arhitektuur",
+    seniorAchievement3: "Arendajate ja meeskondade juhendamine",
   },
 }
 

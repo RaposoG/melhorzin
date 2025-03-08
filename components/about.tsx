@@ -1,15 +1,14 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef } from "react"
+import { motion, useInView} from "framer-motion"
+import { useRef, } from "react"
 import { Code, Database, Globe, Server, Zap } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 
 export default function About() {
+  const { t } = useLanguage()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
-  const { t } = useLanguage()
 
   const services = [
     {
