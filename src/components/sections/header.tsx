@@ -51,8 +51,8 @@ export default function Header({ activeSection }: HeaderProps) {
       }`}
     >
       <nav className="container mx-auto px-4 py-4 md:py-6">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center">
+        <div className="relative flex items-center justify-between">
+          <div className="absolute left-0 flex items-center">
             <SVGComponent className="w-8 h-8 md:w-10 md:h-10" />
           </div>
           <button
@@ -67,7 +67,6 @@ export default function Header({ activeSection }: HeaderProps) {
             )}
           </button>
 
-          {/* Desktop menu */}
           <ul className="hidden md:flex mx-auto gap-4 md:space-x-8">
             {navItems.map((item) => (
               <li key={item.value}>
@@ -85,7 +84,7 @@ export default function Header({ activeSection }: HeaderProps) {
             ))}
           </ul>
 
-          <div className="hidden md:flex items-center gap-2 ml-auto">
+          <div className="absolute md:flex items-center gap-2 ml-auto right-0">
             <ModeToggle />
             <Language />
           </div>
