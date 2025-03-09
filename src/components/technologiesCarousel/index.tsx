@@ -10,16 +10,19 @@ function TechnologiesCarousel() {
   const [rotationAngle, setRotationAngle] = useState<number>(0);
   const [hoveredItem, setHoveredItem] = useState<Icon | null>(null);
   const [isSpinning, setIsSpinning] = useState<boolean>(true);
-  const { theme } = useTheme();
-  const isDarkMode = theme === "dark";
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const spinSpeedRef = useRef<number>(0.5);
   const t = useTranslations("technologiesCarousel.description");
-
   const radius = isMobile ? 110 : 220;
   const angleStep = (2 * Math.PI) / icon.length;
 
+  const { theme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  const isDarkMode = mounted && (resolvedTheme === "dark" || theme === "dark");
+
   useEffect(() => {
+    setMounted(true);
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
@@ -53,10 +56,6 @@ function TechnologiesCarousel() {
     setIsSpinning(true);
   };
 
-  const getTranslationKey = (name: string): string => {
-    return name.toLowerCase().replace(/\s/g, "_").replace(/\./g, "");
-  };
-
   return (
     <div className="flex flex-col justify-center items-center p-4">
       <div
@@ -64,7 +63,6 @@ function TechnologiesCarousel() {
           isMobile ? "w-[250px] h-[250px]" : "w-[500px] h-[500px]"
         }`}
       >
-        {/* Orbit lines for visual effect (optional) */}
         <div
           className={`absolute ${
             isMobile
@@ -87,7 +85,6 @@ function TechnologiesCarousel() {
           }`}
         />
 
-        {/* Rotating wheel with icons */}
         <div
           className={`absolute ${
             isMobile ? "w-[225px] h-[225px]" : "w-[450px] h-[450px]"
@@ -143,7 +140,6 @@ function TechnologiesCarousel() {
           })}
         </div>
 
-        {/* Center circle with technology information */}
         <div
           className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${
             isMobile ? "w-30 h-30" : "w-60 h-60"
