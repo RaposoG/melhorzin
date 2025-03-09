@@ -51,10 +51,7 @@ export default function Header({ activeSection }: HeaderProps) {
       }`}
     >
       <nav className="container mx-auto px-4 py-4 md:py-6">
-        <div className="relative flex items-center justify-between">
-          <div className="absolute left-0 flex items-center">
-            <SVGComponent className="w-8 h-8 md:w-10 md:h-10" />
-          </div>
+        <div className="flex items-center justify-between">
           <button
             className="block md:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -67,26 +64,33 @@ export default function Header({ activeSection }: HeaderProps) {
             )}
           </button>
 
-          <ul className="hidden md:flex mx-auto gap-4 md:space-x-8">
-            {navItems.map((item) => (
-              <li key={item.value}>
-                <button
-                  onClick={() => scrollToSection(item.value)}
-                  className={`capitalize ${
-                    activeSection === item.value
-                      ? "text-primary"
-                      : "text-foreground hover:text-primary/75"
-                  } transition-colors`}
-                >
-                  {t(item.value)}
-                </button>
-              </li>
-            ))}
-          </ul>
-
-          <div className="absolute md:flex items-center gap-2 ml-auto right-0">
-            <ModeToggle />
-            <Language />
+          <div className="flex items-center justify-between w-full">
+            <div className="hidden md:flex items-center">
+              <SVGComponent className="w-8 h-8 md:w-10 md:h-10" />
+            </div>
+            <ul className="hidden md:flex mx-auto gap-4 md:space-x-8">
+              {navItems.map((item) => (
+                <li key={item.value}>
+                  <button
+                    onClick={() => scrollToSection(item.value)}
+                    className={`capitalize ${
+                      activeSection === item.value
+                        ? "text-primary"
+                        : "text-foreground hover:text-primary/75"
+                    } transition-colors`}
+                  >
+                    {t(item.value)}
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <div className="hidden md:flex items-center gap-2">
+              <ModeToggle />
+              <Language />
+            </div>
+            <div className="md:hidden flex items-center justify-end w-full">
+              <SVGComponent className="w-8 h-8 md:w-10 md:h-10" />
+            </div>
           </div>
         </div>
 
