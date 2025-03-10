@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useInView} from "framer-motion"
+import { motion, useInView } from "framer-motion"
 import { useRef, } from "react"
 import { Code, Database, Globe, Server, Zap } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
@@ -36,9 +36,9 @@ export default function About() {
   return (
     <section id="about" className="py-20 px-4 md:px-8 relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-white">
+      <div className="absolute inset-0 bg-white dark:bg-slate-900">
         <div
-          className="absolute inset-0 opacity-5"
+          className="absolute inset-0 opacity-5 dark:opacity-10"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%231E40AF' fillOpacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}
@@ -47,7 +47,7 @@ export default function About() {
 
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.h2
-          className="text-3xl md:text-4xl font-bold text-slate-800 mb-8 text-center"
+          className="text-3xl md:text-4xl font-bold text-slate-800 mb-8 text-center dark:text-white"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
@@ -64,7 +64,7 @@ export default function About() {
           >
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full blur-md opacity-70"></div>
-              <div className="relative aspect-square max-w-md mx-auto rounded-full overflow-hidden border-4 border-white shadow-xl">
+              <div className="relative aspect-square max-w-md mx-auto rounded-full overflow-hidden border-4 border-white dark:border-slate-800 shadow-xl">
                 <img
                   src="/profilepic.jpeg"
                   alt="Foto de perfil"
@@ -74,21 +74,21 @@ export default function About() {
 
               {/* Tech badges */}
               <motion.div
-                className="absolute -bottom-5 -right-5 bg-white rounded-full shadow-lg p-3 border border-blue-100"
+                className="absolute -bottom-5 -right-5 bg-white dark:bg-slate-800 rounded-full shadow-lg p-3 border border-blue-100 dark:border-slate-700"
                 initial={{ scale: 0 }}
                 animate={isInView ? { scale: 1 } : {}}
                 transition={{ duration: 0.4, delay: 0.6, type: "spring" }}
               >
-                <Zap className="w-6 h-6 text-blue-500" />
+                <Code className="w-6 h-6 text-blue-500 dark:text-orange-500" />
               </motion.div>
 
               <motion.div
-                className="absolute -top-5 -left-5 bg-white rounded-full shadow-lg p-3 border border-blue-100"
+                className="absolute -top-5 -left-5 bg-white dark:bg-slate-800  rounded-full shadow-lg p-3 border border-blue-100  dark:border-slate-700"
                 initial={{ scale: 0 }}
                 animate={isInView ? { scale: 1 } : {}}
                 transition={{ duration: 0.4, delay: 0.7, type: "spring" }}
               >
-                <Code className="w-6 h-6 text-blue-500" />
+                <Code className="w-6 h-6 text-blue-500 dark:text-orange-500" />
               </motion.div>
             </div>
           </motion.div>
@@ -99,13 +99,13 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="space-y-6"
           >
-            <div className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+            <div className="inline-block px-3 py-1 bg-blue-100 dark:bg-orange-900/50 text-blue-700 dark:text-orange-400 rounded-full text-sm font-medium">
               {t("fullstackDev")}
             </div>
 
-            <h3 className="text-2xl font-bold text-slate-800">{t("transformingIdeas")}</h3>
+            <h3 className="text-2xl font-bold text-slate-800 dark:text-white">{t("transformingIdeas")}</h3>
 
-            <div className="space-y-4 text-slate-700">
+            <div className="space-y-4 text-slate-700 dark:text-slate-300">
               <p className="text-lg">
                 Olá! Sou um desenvolvedor FullStack apaixonado por criar soluções web elegantes e funcionais.
               </p>
@@ -126,8 +126,11 @@ export default function About() {
               </a> */}
               <a
                 href="#projects"
-                className="px-6 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-lg font-medium transition-all border border-slate-200"
-              >
+                className="px-6 py-3 bg-slate-100 hover:bg-slate-200
+                 dark:bg-slate-800 dark:hover:bg-slate-700
+                  text-slate-800 dark:text-white
+                   rounded-lg font-medium transition-all
+                    border border-slate-200 dark:border-slate-700">
                 {t("seeProjects")}
               </a>
             </div>
@@ -147,17 +150,17 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
-              className="bg-white rounded-xl p-6 shadow-lg border border-slate-100 hover:border-blue-200 transition-all hover:shadow-xl group"
+              className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-orange-800 transition-all hover:shadow-xl group"
             >
               <div className="flex flex-col h-full">
-                <div className="p-3 rounded-lg bg-blue-100 text-blue-600 w-fit mb-4 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                <div className="p-3 rounded-lg bg-blue-100 dark:bg-slate-700 text-blue-600 dark:text-orange-500 w-fit mb-4 group-hover:bg-blue-600 dark:group-hover:bg-orange-600 group-hover:text-white transition-colors">
                   {service.icon}
                 </div>
 
-                <h3 className="font-bold text-slate-800 mb-2">{service.title}</h3>
-                <p className="text-sm text-slate-600 flex-grow">{service.description}</p>
+                <h3 className="font-bold text-slate-800 dark:text-white mb-2">{service.title}</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400 flex-grow">{service.description}</p>
 
-                <div className="mt-4 h-0.5 w-12 bg-blue-200 group-hover:w-full transition-all duration-300"></div>
+                <div className="mt-4 h-0.5 w-12 bg-blue-200 dark:bg-orange-700 group-hover:w-full transition-all duration-300"></div>
               </div>
             </motion.div>
           ))}

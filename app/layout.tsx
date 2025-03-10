@@ -17,9 +17,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en-US">
+    <html lang="en-US" suppressHydrationWarning>
       <body className={inter.className}>
-        <LanguageProvider>{children}</LanguageProvider>
+        <ThemeProvider defaultTheme="light">
+          <LanguageProvider>{children}</LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   )
@@ -28,3 +30,4 @@ export default function RootLayout({
 
 
 import './globals.css'
+import { ThemeProvider } from "@/components/theme-provider"
