@@ -35,7 +35,8 @@ export default function Hero({ name, title, photoUrl, yearsOfExperience = 7 }: H
     '            "Architecture",',
     '            "Leadership",',
     '            "Mentoring",',
-    '            "Clean Code"',
+    '            "Problem Solving",',
+    '            "Teamwork"',
     "        };",
     "\n",
     "        public IEnumerable<Solution> SolveComplexProblems()",
@@ -183,7 +184,9 @@ export default function Hero({ name, title, photoUrl, yearsOfExperience = 7 }: H
               {t("viewWork")}
             </a>
             <a
-              href="#contact"
+              href="https://www.linkedin.com/in/viniciusrossado/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 py-3 bg-blue-600/90 hover:bg-blue-600 text-white rounded-full font-medium transition-all shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40"
             >
               {t("contactMe")}
@@ -201,7 +204,7 @@ export default function Hero({ name, title, photoUrl, yearsOfExperience = 7 }: H
       </div>
 
       {/* Tech stack badges */}
-      <div className="absolute bottom-12 left-0 right-0 z-20 flex justify-center">
+      <div className="absolute bottom-20 left-0 right-0 z-20 flex justify-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

@@ -13,7 +13,7 @@ const projects = [
     title: "URL-Shortener",
     description: "Plataforma para encurtar URLS sendo capaz de suportar um grade volume de dados, tendo sido feito deploy na Azure.",
     image: "/placeholder.svg?height=600&width=800",
-    tags: ["C#", ".Net", "CosmosDB", "Azure", "Bicep", "GitHub Actions"],
+    tags: ["C#", ".Net", "CosmosDB", "Azure", "Bicep", "PostgreSQL"],
     liveUrl: "#",
     githubUrl: "https://github.com/vinirossado/URL-Shortener",
     features: [
@@ -44,7 +44,7 @@ const projects = [
     title: "MTG Card Inventory",
     description: "Aplicativo para gerenciamento de inventário e decks de cartas de Magic The Gathering.",
     image: "/placeholder.svg?height=600&width=800",
-    tags: ["SwiftUI", "Swift", "PostgreSQL"],
+    tags: ["SwiftUI", "Swift", "PostgreSQL", ".Net"],
     liveUrl: "#",
     githubUrl: "https://github.com/vinirossado/MTG-Card-Inventory",
     features: [
@@ -58,7 +58,7 @@ const projects = [
     title: "MTG Life Counter",
     description: "Aplicativo para gerenciamento de vida e histórico de partidas de Magic The Gathering.",
     image: "/placeholder.svg?height=600&width=800",
-    tags: ["SwiftUI", "Swift", "PostgreSQL"],
+    tags: ["SwiftUI", "Swift", "PostgreSQL", ".Net"],
     liveUrl: "#",
     githubUrl: "https://github.com/vinirossado/MTG-LifeCounter",
     features: [
@@ -87,7 +87,7 @@ const projects = [
     title: "Portfolio Website",
     description: "Site de portfolio responsivo com animações suaves e design moderno.",
     image: "/placeholder.svg?height=600&width=800",
-    tags: ["React", "Framer Motion", "Tailwind CSS"],
+    tags: ["Next.Js", "React", "Framer Motion", "Tailwind CSS"],
     liveUrl: "rossado.melhorzin.com",
     githubUrl: "#",
     features: ["Animações suaves", "Design responsivo", "Modo escuro", "Formulário de contato"],

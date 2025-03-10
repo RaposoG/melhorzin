@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
 import { Cloud, Code, Database, ExternalLink, Layers, Smartphone, Star } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
+import { GithubRepository } from "@/models/github-repository"
 
 interface Skill {
   name: string
@@ -105,14 +106,14 @@ const skills: Skill[] = [
     name: "Bicep",
     year: yearsOfExperience - 7.5,
     icon: <Cloud className="w-6 h-6" />,
-    category: "Cloud",
+    category: "DevOps",
     description: "Infraestrutura como código para provisionamento automatizado no Azure.",
   },
   {
     name: "Terraform",
     year: yearsOfExperience - 6,
     icon: <Cloud className="w-6 h-6" />,
-    category: "Cloud",
+    category: "DevOps",
     description: "Automação de infraestrutura multi-cloud e gerenciamento de estado.",
   },
 ]
@@ -122,7 +123,7 @@ export default function Skills() {
   const isInView = useInView(ref, { once: true, amount: 0.2 })
   const [activeSkill, setActiveSkill] = useState<Skill | null>(null)
   const [isLoaded, setIsLoaded] = useState<boolean>(false)
-  const [repos, setRepos] = useState<any[]>([])
+  const [repos, setRepos] = useState<GithubRepository[]>([])
   const [isLoading, setIsLoading] = useState(false)
 
   const { t } = useLanguage()
@@ -316,7 +317,7 @@ export default function Skills() {
                         </div>
                       ) : filteredRepos.length > 0 ? (
                         <div className="space-y-3 max-h-64 overflow-y-auto pr-1 custom-scrollbar">
-                          {filteredRepos.slice(0, 5).map((repo) => (
+                          {filteredRepos.sort((a,b) => b.stargazers_count - a.stargazers_count).slice(0, 5).map((repo) => (
                             <motion.div
                               key={repo.id}
                               initial={{ opacity: 0, y: 10 }}

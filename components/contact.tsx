@@ -64,11 +64,11 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-sm font-medium text-slate-500">{t("email")}</h4>
-                  <p className="text-slate-800">seuemail@exemplo.com</p>
+                  <p className="text-slate-800">vinirossado@gmail.com</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
+              {/* <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
                   <Phone size={20} />
                 </div>
@@ -76,7 +76,7 @@ export default function Contact() {
                   <h4 className="text-sm font-medium text-slate-500">{t("phone")}</h4>
                   <p className="text-slate-800">(00) 12345-6789</p>
                 </div>
-              </div>
+              </div> */}
 
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
@@ -84,7 +84,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-sm font-medium text-slate-500">{t("location")}</h4>
-                  <p className="text-slate-800">São Paulo, Brasil</p>
+                  <p className="text-slate-800">Tallinn, Estonia</p>
                 </div>
               </div>
             </div>
@@ -124,7 +124,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-300 focus:border-blue-500 outline-none transition-all"
-                  placeholder="seu.email@exemplo.com"
+                  placeholder="your.email@exemplo.com"
                 />
               </div>
 
@@ -140,7 +140,7 @@ export default function Contact() {
                   required
                   rows={5}
                   className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-300 focus:border-blue-500 outline-none transition-all resize-none"
-                  placeholder="Sua mensagem..."
+                  placeholder="Your message..."
                 />
               </div>
 
