@@ -349,7 +349,13 @@ export default function Skills() {
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.3 }}
-                            className="bg-gradient-to-br from-white to-blue-50 rounded-lg shadow-sm border border-blue-100 overflow-hidden hover:shadow-md transition-all"
+                            className="bg-gradient-to-br
+                             from-white to-blue-50
+                              dark:from-slate-900 dark:to-slate-800
+                              rounded-lg shadow-sm
+                              border border-blue-100
+                            dark:border-slate-700
+                              overflow-hidden hover:shadow-md transition-all"
                           >
                             <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="block p-3">
                               <div className="flex items-start justify-between">
@@ -428,16 +434,21 @@ export default function Skills() {
           transition={{ duration: 0.6, delay: 0.7 }}
         >
           {Object.entries(categories).map(([category, categorySkills], index) => (
-            <div key={category} className="bg-white/70 backdrop-blur-sm shadow-xl rounded-xl p-5 border border-blue-100">
-              <h3 className="font-bold text-slate-800 mb-3">{category}</h3>
+            <div key={category} className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm shadow-xl rounded-xl p-5 border border-blue-100 dark:border-slate-700">
+              <h3 className="font-bold text-slate-800  dark:text-white mb-3">{category}</h3>
               <div className="space-y-2">
                 {categorySkills.map((skill) => (
                   <div key={skill.name} className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <div className="text-blue-600">{skill.icon}</div>
-                      <span className="text-sm text-slate-700">{skill.name}</span>
+                    <div className="mb-3 p-3 rounded-full
+                     bg-blue-100/50 dark:bg-slate-700/50
+                     text-blue-600 dark:text-orange-500">
+                      {skill.icon}
                     </div>
-                    <span className="text-xs font-medium px-2 py-1 bg-blue-100 text-blue-700 rounded-full">
+                      <span className="text-sm text-slate-700 dark:text-slate-300">{skill.name}</span>
+                    </div>
+                    
+                    <span className="text-xs font-medium px-2 py-1 bg-blue-100 dark:bg-slate-700 text-blue-700 dark:text-orange-400 rounded-full">
                       {skill.year} {t("years")}
                     </span>
                   </div>
