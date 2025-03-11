@@ -3,19 +3,19 @@ import { ArrowTopRightSvg } from "@/svgs/arrow-top-right.svg";
 import { TargetSvg } from "@/svgs/target.svg";
 import Link from "next/link";
 
-interface BenefitsCardViewProps {
+interface CompetenceCardViewProps {
   title: string;
   subtitle: string;
   description: string;
   icon: React.ReactNode;
 }
 
-export function BenefitsCardView({
+export function CompetenceCardView({
   title,
   subtitle,
   description,
   icon,
-}: BenefitsCardViewProps) {
+}: CompetenceCardViewProps) {
   return (
     <div className="col-span-1 flex flex-col  py-12 gap-7 px-20 h-full border-r last:border-none">
       {icon}

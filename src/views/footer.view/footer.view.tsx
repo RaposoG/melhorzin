@@ -5,7 +5,7 @@ export function FooterView() {
   return (
     <footer>
       <div className="flex flex-col w-full content-box">
-        <div className="grid grid-cols-5 w-full gap-20 py-20">
+        {/* <div className="grid grid-cols-5 w-full gap-20 py-20">
           {["Home", "News", "Blogs", "Podcasts", "Resources"].map((item, i) => (
             <div key={i} className="flex flex-col gap-9">
               <h2 className="text-xl font-semibold">{item}</h2>
@@ -35,7 +35,7 @@ export function FooterView() {
               </ul>
             </div>
           ))}
-        </div>
+        </div> */}
 
         <div className="flex items-center justify-between py-10 border-t">
           <div className="flex items-center">

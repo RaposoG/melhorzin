@@ -31,7 +31,7 @@ const Skills: {
 
 const SkillsHeading = ({ icon, title, description }: SkillsHeadingProps) => {
   return (
-    <div className="flex flex-col gap-12 w-[40%]">
+    <div className="flex flex-col gap-12 w-[40%] ml-4">
       {icon}
 
       <div className="flex flex-col w-full gap-4">

@@ -2,12 +2,27 @@
   "Index": {
     "title": ""
   },
+  "nav-menu": {
+    "contact": "Contato",
+    "welcome": "Bem-Vindo(a)",
+    "technology": "Tecnologia",
+    "competence": "Competência",
+    "journey": "Jornada",
+    "career": "Carreira",
+    "testimonials": "Testemunhos",
+    "projects": "Projetos"
+  },
   "header": {
     "pretitle": "Bem-vindo ao meu Portfólio",
     "title": "Dev Front-End Especializado em React, React Native e Next.js",
-    "description": "Entregue de corpo e alma ao universo da tecnologia e desenvolvimento, dedicando horas e horas a aprimorar minhas habilidades e conhecimentos nessa área."
+    "description": "Entregue de corpo e alma ao universo da tecnologia e desenvolvimento, dedicando horas e horas a aprimorar minhas habilidades e conhecimentos nessa área.",
+    "right": {
+      "title": "Tecnologias que eu domino",
+      "description": "Sou apaixonado por transformar ideias em produtos digitais inovadores.",
+      "button": "Conheça meus projetos"
+    }
   },
-  "features": {
+  "competence": {
     "discover": {
       "title": "Descobrir",
       "subtitle": "Soluções Inovadoras",
@@ -25,7 +40,7 @@
     }
   },
   "journey": {
-    "pretitle": "Jornada",
+    "pretitle": "Para crescer é preciso estar disposto a errar",
     "title": "Viva a Jornada",
     "description": "Cada empresa por onde passei foi uma nova oportunidade de crescer e aprender. Minha vivência me ensinou a valorizar cada etapa do processo, desde a descoberta até a entrega, garantindo que cada solução seja não apenas eficaz, mas también enriquecedora",
     "company_one": {
@@ -44,5 +59,9 @@
       "name": "Mútua Assessoria",
       "description": "Na Mútua Assessoria, fui responsável pelo desenvolvimento de um app mobile que se tornou a principal ferramenta da empresa. Atuei no desenvolvimento de soluções de programação, incluindo front-end, back-end, desenvolvimento mobile e UI/UX design, desde 2021."
     }
+  },
+  "projects": {
+    "pretitle": "Alegria de ver e entender é o mais perfeito dom da natureza",
+    "title": "Projetos"
   }
 }

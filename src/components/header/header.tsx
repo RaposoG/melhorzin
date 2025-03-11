@@ -5,8 +5,11 @@ import Link from 'next/link'
 import { Button } from '../ui/button'
 import { ArrowTopRightSvg } from '@/svgs/arrow-top-right.svg'
 import { TECHNOLOGIES } from '@/mocks/technologies'
+import { useTranslations } from 'next-intl'
 
 export function Header() {
+  const t = useTranslations("header.right");
+
   return (
     <section className="flex w-full">
       <div className="flex flex-col w-[55%] items-end gap-28 mt-36">
@@ -15,6 +18,19 @@ export function Header() {
       </div>
 
       <div className="border flex w-[45%] pb-20 pl-20 flex-col justify-end gap-7 bg-[url('/img/cover.jpeg')] bg-cover bg-no-repeat bg-top relative">
+
+
+        <div className="flex flex-col gap-3" id="technology">
+          <h2 className="font-semibold text-2xl bg-black/30 w-fit px-2 backdrop-blur-sm">
+            Tecnologias que eu domino
+          </h2>
+
+          <p className="text-foreground text-base drop-shadow-md bg-black/30 px-2 w-fit backdrop-blur-sm">
+            Sou apaixonado por transformar ideias em produtos digitais
+            inovadores.
+          </p>
+        </div>
+
         <div>
           <ul className="inline-flex border-[1px] border-zinc-800 rounded-full p-2">
             {TECHNOLOGIES.map((link) => (
@@ -39,17 +55,6 @@ export function Header() {
           </ul>
         </div>
 
-        <div className="flex flex-col gap-3">
-          <h2 className="font-semibold text-2xl bg-black/30 w-fit px-2 backdrop-blur-sm">
-            Tecnologias que eu domino
-          </h2>
-
-          <p className="text-foreground text-base drop-shadow-md bg-black/30 px-2 w-fit backdrop-blur-sm">
-            Sou apaixonado por transformar ideias em produtos digitais
-            inovadores.
-          </p>
-        </div>
-
         <Button
           variant={'outline'}
           asChild
@@ -57,10 +62,10 @@ export function Header() {
           size={'lg'}
         >
           <Link
-            href="/#jobs"
+            href="#jobs"
             className="text-muted-foreground"
           >
-            Conheça meus projetos
+            {t("button")}
             <ArrowTopRightSvg className="ml-3 rotate-90" />
           </Link>
         </Button>

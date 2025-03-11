@@ -14,7 +14,7 @@ type JobsListViewProps = {
   jobDate: string;
 };
 
-export function JobsListView({ data }: { data: JobsListViewProps[] }) {
+export function CareerListView({ data }: { data: JobsListViewProps[] }) {
   return (
     <>
       {data.map((item) => (

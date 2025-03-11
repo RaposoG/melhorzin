@@ -4,11 +4,11 @@ import theme from "@/lib/tw-resolve-colors";
 import { ArrowTopRightSvg } from "@/svgs/arrow-top-right.svg";
 import Link from "next/link";
 
-export function SocialView() {
+export function ProjectsView() {
   return (
-    <section className="w-full py-28 bg-zinc-900">
+    <section className="w-full py-28 bg-zinc-900" id="projects">
       <div className="flex w-full flex-col content-box gap-24">
-        <div className="flex items-center w-full gap-20">
+        <div className="flex items-center w-full gap-10 px-4">
           <AvatarWithInfo>
             <AvatarWithInfo.Avatar
               avatarImage="https://github.com/henriqueteixeiradev.png"
@@ -18,18 +18,11 @@ export function SocialView() {
 
           <div className="flex flex-col gap-5">
             <span className="p-3 bg-zinc-700 w-fit rounded-md">
-              Learn, Connect, and Innovate
+              A vida deve ser um crescimento e aprendizado constantes!
             </span>
             <h2 className="font-semibold text-5xl">
-              Be Part of the Future Tech Revolution
+              Projects
             </h2>
-
-            <p className="text-muted-foreground text-lg mt-4">
-              Immerse yourself in the world of future technology. Explore our
-              comprehensive resources, connect with fellow tech enthusiasts, and
-              drive innovation in the industry. Join a dynamic community of
-              forward-thinkers.
-            </p>
           </div>
         </div>
 

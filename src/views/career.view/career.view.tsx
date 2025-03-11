@@ -1,11 +1,11 @@
 "use client";
 
 import { SectionHeading } from "@/components/partials/section-heading/section-heading";
-import { JobsListView } from "./jobs-list.view";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { CareerListView } from "./career-list.view";
 
-export function JobsView() {
+export function CareerView() {
   const [stack, setStack] = useState("FrontEnd");
 
   const filteredData = data.filter((item) => item.category === stack);
@@ -17,7 +17,7 @@ export function JobsView() {
   };
 
   return (
-    <section className="w-full" id="jobs">
+    <section className="w-full" id="career">
       <SectionHeading pretitle="Competence" title="Meus Projetos Recentes" />
 
       <div className="w-full py-12 border-y">
@@ -38,7 +38,7 @@ export function JobsView() {
         </ul>
       </div>
 
-      <JobsListView data={filteredData} />
+      <CareerListView data={filteredData} />
     </section>
   );
 }

@@ -1,12 +1,12 @@
 import { BookA, Computer, PackageCheck } from "lucide-react";
-import { BenefitsCardView } from "./benefits.card.view";
 import theme from "@/lib/tw-resolve-colors";
 import { useTranslations } from "next-intl";
+import { CompetenceCardView } from "./competence.card.view";
 
-export function BenefitsView() {
-  const discover = useTranslations("features.discover");
-  const define = useTranslations("features.define");
-  const deliver = useTranslations("features.deliver");
+export function CompetenceView() {
+  const discover = useTranslations("competence.discover");
+  const define = useTranslations("competence.define");
+  const deliver = useTranslations("competence.deliver");
 
   const DATA = [
     {
@@ -33,10 +33,10 @@ export function BenefitsView() {
   ];
 
   return (
-    <section className="w-full border-b">
+    <section className="w-full border-b" id="competence">
       <div className="grid grid-cols-3 items-center w-full mx-auto max-w-[1696px]">
         {DATA.map((benefit) => (
-          <BenefitsCardView
+          <CompetenceCardView
             key={benefit.id}
             title={benefit.title}
             subtitle={benefit.subtitle}

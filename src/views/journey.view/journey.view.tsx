@@ -3,8 +3,9 @@ import { Skills } from "@/components/partials/skills/skils";
 import { TargetSvg } from "@/svgs/target.svg";
 import { useTranslations } from "next-intl";
 
-export function CompetenceView() {
+export function JourneyView() {
   const t = useTranslations("journey");
+
   const company_one = useTranslations("journey.company_one")
   const company_two = useTranslations("journey.company_two")
   const company_three = useTranslations("journey.company_three")
@@ -34,10 +35,10 @@ export function CompetenceView() {
   ];
 
   return (
-    <div>
+    <div id="journey">
       <SectionHeading pretitle={t("pretitle")} title={t("title")} />
 
-      <div className="bg-[url(/img/svgs/sun-rays.svg)] bg-no-repeat bg-left-top bg-contain bg-clip-content ">
+      <div className="bg-[url(/img/svgs/sun-rays.svg)] bg-no-repeat bg-left-top bg-contain bg-clip-content">
         <Skills>
           <Skills.Heading
             icon={<TargetSvg />}

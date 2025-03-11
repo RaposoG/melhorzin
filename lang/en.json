@@ -2,12 +2,27 @@
   "Index": {
     "title": "Welcome to Vue.js"
   },
+  "nav-menu": {
+    "contact": "Contact",
+    "welcome": "Welcome",
+    "technology": "Technology",
+    "competence": "Competence",
+    "journey": "Journey",
+    "career": "Career",
+    "testimonials": "Testimonials",
+    "projects": "Projects"
+  },
   "header": {
     "pretitle": "Welcome to Portfolio",
     "title": "FrontEnd Developer Specialized in React, React Native and Next.js",
-    "description": "Dedicated body and soul to the universe of technology and development, spending hours and hours improving my skills and knowledge in this area."
+    "description": "Dedicated body and soul to the universe of technology and development, spending hours and hours improving my skills and knowledge in this area.",
+    "right": {
+      "title": "Technologies I master",
+      "description": "I'm passionate about turning ideas into innovative digital products.",
+      "button": "See my projects"
+    }
   },
-  "features": {
+  "competence": {
     "discover": {
       "title": "Discover",
       "subtitle": "Innovative Solutions",
@@ -25,7 +40,7 @@
     }
   },
   "journey": {
-    "pretitle": "Journey",
+    "pretitle": "To grow, one must be willing to err",
     "title": "Live the Journey",
     "description": "Each company I've been through has been a new opportunity to grow and learn. My experience has taught me to value each step of the process, from discovery to delivery, ensuring that each solution is not only effective but also enriching",
     "company_one": {
@@ -44,5 +59,9 @@
       "name": "Mútua Assessoria",
       "description": "At Mútua Assessoria, I was responsible for developing a mobile app that became the company's main tool. I worked on developing programming solutions, including front-end, back-end, mobile development and UI/UX design, since 2021."
     }
+  },
+  "projects": {
+    "pretitle": "The joy of seeing and understanding is the most perfect gift of nature",
+    "title": "Projects"
   }
 }

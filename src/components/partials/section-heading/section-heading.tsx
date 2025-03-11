@@ -16,7 +16,7 @@ export function SectionHeading({
   url,
 }: SectionHeadingProps) {
   return (
-    <div className="w-full py-28 bg-zinc-900">
+    <div className="w-full py-14 bg-zinc-900 px-4" >
       <div className="flex items-center w-full content-box justify-between">
         <div className="flex flex-col gap-5">
           {pretitle && (
