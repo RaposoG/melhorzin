@@ -83,6 +83,8 @@ const technologyTypes: Record<string, "language" | "framework" | "tool" | "datab
   TypeScript: "language",
   JavaScript: "language",
   Elixir: "language",
+  Ruby: "language",
+  Swift: "language",
   "C#": "language",
   ".NET": "framework",
   Flutter: "framework",
@@ -112,27 +114,28 @@ export default function Experience() {
 
   const getTechnologyColor = (tech: string) => {
     const type = technologyTypes[tech] || "framework"
+    const isDark = typeof window !== "undefined" && document.documentElement.classList.contains("dark")
 
     switch (type) {
       case "language":
-        return "bg-blue-100 text-blue-700"
+        return isDark ? "bg-blue-900/40 text-blue-300" : "bg-blue-100 text-blue-700"
       case "framework":
-        return "bg-purple-100 text-purple-700"
+        return isDark ? "bg-purple-900/40 text-purple-300" : "bg-purple-100 text-purple-700"
       case "tool":
-        return "bg-amber-100 text-amber-700"
+        return isDark ? "bg-amber-900/40 text-amber-300" : "bg-amber-100 text-amber-700"
       case "database":
-        return "bg-green-100 text-green-700"
+        return isDark ? "bg-green-900/40 text-green-300" : "bg-green-100 text-green-700"
       case "cloud":
-        return "bg-cyan-100 text-cyan-700"
+        return isDark ? "bg-cyan-900/40 text-cyan-300" : "bg-cyan-100 text-cyan-700"
       default:
-        return "bg-slate-100 text-slate-700"
+        return isDark ? "bg-slate-700 text-slate-300" : "bg-slate-100 text-slate-700"
     }
   }
 
   return (
     <section
       id="experience"
-      className="py-20 px-4 md:px-8 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden"
+      className="py-20 px-4 md:px-8 bg-gradient-to-b from-blue-50 dark:from-slate-800 to-white dark:to-slate-900 relative overflow-hidden"
     >
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -153,11 +156,11 @@ export default function Experience() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
+          <div className="inline-block px-3 py-1 bg-blue-100 dark:bg-orange-900/50 text-blue-700 dark:text-orange-400 rounded-full text-sm font-medium mb-4">
             {t("careerJourney")}
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-800">{t("professionalExperience")}</h2>
-          <p className="mt-4 text-slate-600 max-w-2xl mx-auto">{t("experienceDescription")}</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white">{t("professionalExperience")}</h2>
+          <p className="mt-4 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">{t("experienceDescription")}</p>
         </motion.div>
 
         <div className="space-y-8">
@@ -167,25 +170,28 @@ export default function Experience() {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 * index }}
-              className={`bg-white rounded-xl shadow-md overflow-hidden border ${exp.featured ? "border-blue-200" : "border-slate-200"}`}
+              className={`bg-white dark:bg-slate-800 rounded-xl shadow-md overflow-hidden border ${exp.featured ? "border-blue-200 dark:border-orange-900/50" : "border-slate-200 dark:border-slate-700"}`}
             >
               {/* Experience header */}
-              <div className={`p-6 ${exp.featured ? "bg-gradient-to-r from-blue-50 to-white" : ""}`}>
+              <div className={`p-6 ${exp.featured ? "bg-gradient-to-r from-blue-50 to-white dark:from-slate-800 dark:to-slate-800" : ""}`}>
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                   <div className="flex items-start gap-4">
                     <div
-                      className={`p-3 rounded-lg ${exp.featured ? "bg-blue-100 text-blue-600" : "bg-slate-100 text-slate-600"} flex-shrink-0`}
+                      className={`p-3 rounded-lg ${exp.featured 
+                        ? "bg-blue-100 text-blue-600 dark:bg-slate-700 dark:text-orange-500"
+                        : "bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-400"
+                      } flex-shrink-0`}
                     >
                       <Briefcase className="w-6 h-6" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-slate-800">{exp.title}</h3>
+                      <h3 className="text-xl font-bold text-slate-800 dark:text-white">{exp.title}</h3>
                       <div className="flex items-center mt-1">
                         <a
                           href={exp.companyUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-lg font-medium text-blue-600 hover:text-blue-700 transition-colors flex items-center"
+                          className="text-lg font-medium text-blue-600 dark:text-orange-500 hover:text-blue-700 dark:hover:text-orange-400 transition-colors flex items-center"
                         >
                           {exp.company}
                           <ExternalLink size={14} className="ml-1.5 opacity-70" />
@@ -194,20 +200,20 @@ export default function Experience() {
                     </div>
                   </div>
 
-                  <div className="flex flex-col sm:flex-row gap-3 text-sm text-slate-500">
+                  <div className="flex flex-col sm:flex-row gap-3 text-sm text-slate-500 dark:text-slate-400">
                     <div className="flex items-center gap-1.5">
-                      <Calendar size={16} className="text-slate-400" />
+                      <Calendar size={16} className="text-slate-400 dark:text-slate-500" />
                       <span>{exp.period}</span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <MapPin size={16} className="text-slate-400" />
+                      <MapPin size={16} className="text-slate-400 dark:text-slate-500" />
                       <span>{exp.location}</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="mt-4">
-                  <p className="text-slate-600">{exp.description}</p>
+                  <p className="text-slate-600 dark:text-slate-400">{exp.description}</p>
                 </div>
 
                 {/* Technologies */}
@@ -227,7 +233,9 @@ export default function Experience() {
                 {/* Toggle button */}
                 <button
                   onClick={() => toggleExperience(exp.id)}
-                  className={`mt-4 flex items-center gap-1 text-sm font-medium ${exp.featured ? "text-blue-600 hover:text-blue-700" : "text-slate-600 hover:text-slate-800"} transition-colors`}
+                  className={`mt-4 flex items-center gap-1 text-sm font-medium ${exp.featured ?
+                    "text-blue-600 hover:text-blue-700 dark:text-orange-500 dark:hover:text-orange-400" :
+                    "text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white"} transition-colors`}
                 >
                   {expandedExperience === exp.id ? (
                     <>
@@ -243,7 +251,7 @@ export default function Experience() {
                 </button>
               </div>
 
-              {/* Expanded content - Poderia ser preenchido com mais detalhes se disponíveis */}
+              {/* Expanded content  */}
               {expandedExperience === exp.id && (
                 <motion.div
                   initial={{ opacity: 0, height: 0 }}
@@ -266,21 +274,6 @@ export default function Experience() {
             </motion.div>
           ))}
         </div>
-
-        {/* Call to action */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-12 text-center"
-        >
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-all shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40"
-          >
-            <span>{t("discussYourProject")}</span>
-          </a>
-        </motion.div> */}
       </div>
     </section>
   )

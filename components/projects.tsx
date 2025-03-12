@@ -101,11 +101,11 @@ export default function Projects() {
   const { t } = useLanguage()
 
   return (
-    <section id="projects" className="py-20 px-4 md:px-8 bg-gradient-to-b from-white to-blue-50 relative">
+    <section id="projects" className="py-20 px-4 md:px-8 bg-gradient-to-b from-white dark:from-slate-900 to-blue-50 dark:to-slate-800 relative">
 
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.h2
-          className="text-3xl md:text-4xl font-bold text-slate-800 mb-4 text-center"
+          className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white mb-4 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
@@ -115,7 +115,7 @@ export default function Projects() {
         </motion.h2>
 
         <motion.p
-          className="text-slate-600 text-center max-w-2xl mx-auto mb-12"
+          className="text-slate-600 dark:text-slate-400 text-center max-w-2xl mx-auto mb-12"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -130,7 +130,11 @@ export default function Projects() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 * index }}
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 group"
+              className="bg-white dark:bg-slate-800 rounded-xl 
+               overflow-hidden shadow-lg hover:shadow-xl transition-all
+               duration-300
+               border border-slate-100 dark:border-slate-700
+               group"
               onMouseEnter={() => setActiveProject(index)}
               onMouseLeave={() => setActiveProject(null)}
             >
@@ -203,14 +207,14 @@ export default function Projects() {
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-bold text-slate-800 mb-2 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-orange-500 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-slate-600 mb-4 text-sm">{project.description}</p>
+                <p className="text-slate-600 dark:text-slate-400 mb-4 text-sm">{project.description}</p>
 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
-                    <span key={tag} className="px-3 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">
+                    <span key={tag} className="px-3 py-1 bg-blue-100 dark:bg-slate-700 text-blue-700 dark:text-orange-400 text-xs rounded-full">
                       {tag}
                     </span>
                   ))}
@@ -218,11 +222,11 @@ export default function Projects() {
 
                 {/* Features list */}
                 <div className="mt-4 space-y-2">
-                  <h4 className="text-sm font-medium text-slate-700">{t("mainFeatures")}</h4>
+                  <h4 className="text-sm font-medium text-slate-700 dark:text-slate-700">{t("mainFeatures")}</h4>
                   <ul className="grid grid-cols-2 gap-x-2 gap-y-1">
                     {project.features.map((feature, i) => (
-                      <li key={i} className="text-xs text-slate-600 flex items-center gap-1">
-                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                      <li key={i} className="text-xs text-slate-600 dark:text-slate-400 flex items-center gap-1">
+                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500 dark:bg-orange-500"></div>
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -244,7 +248,7 @@ export default function Projects() {
             href="https://github.com/vinirossado"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-lg font-medium transition-all shadow-lg hover:shadow-xl "
+            className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-900 dark:bg-orange-600 dark:hover:bg-orange-700 text-white rounded-lg font-medium transition-all shadow-lg hover:shadow-xl "
           >
             <Github size={18} />
             <span>{t("seeMoreGithub")}</span>

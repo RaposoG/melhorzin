@@ -13,7 +13,7 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-to-b from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
       <ThemeToggle />
       <LanguageSwitcher />
-      <Hero name="Vinicius Rossado" title="Senior Software Engineer" photoUrl="../public/profilepic.jpeg" />
+      <Hero name="Vinicius Rossado" title="Senior Software Engineer" photoUrl="/profilepic.jpeg" />
       <About />
       <Skills />
       <Projects />
