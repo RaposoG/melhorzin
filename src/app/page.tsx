@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default async function Home() {
 
-  const result = await fetch("https://api.github.com/users/matheusvp2");
+  const result = await fetch("https://api.github.com/users/daltonfontes");
   const userData = await result.json()
   console.log(userData);
 
@@ -16,20 +16,12 @@ export default async function Home() {
           className="rounded-full"
           alt="Picture of the author"
         />
-        <h1 className="text-4xl font-bold mt-4">Matheus Oliveira</h1>
+        <h1 className="text-4xl font-bold mt-4">Dalton Fontes</h1>
       </div>
       <div className="flex flex-col items-center">
         <h2 className="text-2xl font-bold mt-4">Sobre mim</h2>
         <p className="text-lg mt-2">
-          Olá, meu nome é Matheus e sou um arquiteto de software, com experiência em desenvolvimento de software voltado para o back-end.
-        </p>
-        <p className="text-lg mt-2">
-          Estou sempre buscando aprender novas tecnologias e melhorar minhas
-          habilidades.
-        </p>
-        <p className="text-lg mt-2">
-          Estou animado para compartilhar meu conhecimento e aprender com
-          outros.
+          pedreiro da web
         </p>
       </div>
     </main>
