@@ -15,6 +15,7 @@ export default function CodeTerminal({ codeLines, name, title, yearsOfExperience
     const [cursorVisible, setCursorVisible] = useState(true)
     const [terminalLines, setTerminalLines] = useState<string[]>([])
     const [currentLineIndex, setCurrentLineIndex] = useState(0)
+    const [isTypingComplete, setIsTypingComplete] = useState(false)
     const terminalRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
@@ -40,6 +41,8 @@ export default function CodeTerminal({ codeLines, name, title, yearsOfExperience
                 }
 
                 type()
+            } else {
+                setIsTypingComplete(true)
             }
         }
 
@@ -111,7 +114,7 @@ export default function CodeTerminal({ codeLines, name, title, yearsOfExperience
                     ))}
                     <div className="whitespace-pre">
                         <span className="text-blue-300 dark:text-orange-300">{terminalText}</span>
-                        {cursorVisible && <span className="text-blue-300 dark:text-orange-300 animate-pulse">|</span>}
+                        {!isTypingComplete && cursorVisible && <span className="text-blue-300 dark:text-orange-300 animate-pulse">|</span>}
                     </div>
                 </div>
             </div>
