@@ -53,7 +53,8 @@ export const translations = {
     'modalButtonSend': 'Enviar',
     'modalButtonClose': 'Fechar',
     'yourEmail': 'Seu Email',
-
+    'carrer.enterprise': 'Empresa',
+    'carrer.position': 'Cargo',
     // Carreira
     
     'career.learning_growth': 'Aprendizado e Crescimento',
@@ -65,12 +66,8 @@ export const translations = {
     ],
     'career.experience.items': [
       {
-        period: '2022 - 2023',
-        description: 'Desenvolvedor Back-End Jr. APIs RESTful com Java e Spring Boot. Implementação de autenticação JWT.',
-      },
-      {
-        period: '2023 - Presente',
-        description: 'Desenvolvedor Full Stack. Trabalhando com React, TypeScript e Spring Boot, criando interfaces responsivas.',
+        period: '2025 - Projeto Voluntário Ong de Proteção Animal',
+        description: 'Desenvolvimento de um sistema de gestão para Ong de proteção animal, com controle de animais, financeiro, estoque e adoções.',
       },
     ],
     'career.learning_growth.items': [
@@ -79,8 +76,8 @@ export const translations = {
     ],
     'career.currently.items': [
       {
-        period: 'JAN-2025 - Presente',
-        description: 'Cargo: Desenvolvedor Full Stack. Trabalhando em um time ágil para criar e melhorar aplicações web e APIs utilizando React, TypeScript, Spring Boot e PostgreSQL. Desenvolvimento de interfaces responsivas e integração com sistemas de pagamento. Responsável por implementar funcionalidades de segurança com JWT e otimizar processos no back-end.',
+        period: 'JAN-2025 - Desenvolvedor Full Stack JR',
+        description: 'Cargo: Desenvolvedor Full Stack. Backend N8N e Frontend React, Weweb e aplicações em python',
         technologies: ['React', 'TypeScript', 'Spring Boot', 'PostgreSQL', 'Docker', 'AWS', 'Jenkins', 'CI/CD'],
       },
     ],
@@ -139,12 +136,16 @@ export const translations = {
     'modalButtonClose': 'Close',
     'yourEmail': 'Your Email',
 
+
+
   // Carreira 
 
   'career.education': 'Education',
     'career.experience': 'Experience',
     'career.learning_growth': 'Learning and Growth',
     'career.currently': 'Currently',
+    'carrer.enterprise': 'enterprise',
+    'carrer.position': 'position',
     'career.education.items': [
       { period: '2022 - 2023', description: 'Self-taught and Bootcamp student seeking content.' },
       { period: '2024 - 2025', description: 'DevSuperior Bootcamp - Java Spring Expert.' },
@@ -152,12 +153,8 @@ export const translations = {
     ],
     'career.experience.items': [
       {
-        period: '2022 - 2023',
-        description: 'Junior Back-End Developer. RESTful APIs with Java and Spring Boot. JWT authentication implementation.',
-      },
-      {
-        period: '2023 - Present',
-        description: 'Full Stack Developer. Working with React, TypeScript, and Spring Boot, creating responsive interfaces.',
+        period: '2025 - Volunteer Project Animal Protection Ong',
+        description: 'Development of a management system for an animal protection Ong, with animal control, financial, stock and adoptions.',
       },
     ],
     'career.learning_growth.items': [
@@ -166,8 +163,8 @@ export const translations = {
     ],
     'career.currently.items': [
       {
-        period: 'JAN-2025 - Present',
-        description: 'Position: Full Stack Developer. Working in an agile team to build and improve web applications and APIs using React, TypeScript, Spring Boot, and PostgreSQL. Developing responsive interfaces and integrating with payment systems. Responsible for implementing security features with JWT and optimizing back-end processes.',
+        period: 'JAN-2025 - Full Stack Developer JR',
+        description: 'Position: Full Stack Developer. Backend N8N and Frontend React, Weweb and python applications',
         technologies: ['React', 'TypeScript', 'Spring Boot', 'PostgreSQL', 'Docker', 'AWS', 'Jenkins', 'CI/CD'],
       },
     ],
@@ -223,6 +220,8 @@ export const translations = {
     'fieldsError': 'Rellena todos los campos.',
     'emailSent': '¡Email enviado con éxito!',
     'emailFailed': 'Error al enviar el email. Inténtalo de nuevo más tarde.',
+    'enterprise': 'Empresa',
+    'position': 'Cargo',
     'modalButtonSend': 'Enviar',
     'modalButtonClose': 'Cerrar',
       'career.education': 'Educación',
@@ -236,12 +235,8 @@ export const translations = {
       ],
       'career.experience.items': [
         {
-          period: '2022 - 2023',
-          description: 'Desarrollador Back-End Jr. APIs RESTful con Java y Spring Boot. Implementación de autenticación JWT.',
-        },
-        {
-          period: '2023 - Presente',
-          description: 'Desarrollador Full Stack. Trabajando con React, TypeScript y Spring Boot, creando interfaces responsivas.',
+          period: '2025 - Proyecto Voluntario Ong de Protección Animal',
+          description: 'Desarrollo de un sistema de gestión para una Ong de protección animal, con control de animales, financiero, inventario y adopciones.',
         },
       ],
       'career.learning_growth.items': [
@@ -250,8 +245,8 @@ export const translations = {
       ],
       'career.currently.items': [
         {
-          period: 'ENE-2025 - Presente',
-          description: 'Cargo: Desarrollador Full Stack. Trabajando en un equipo ágil para crear y mejorar aplicaciones web y APIs utilizando React, TypeScript, Spring Boot y PostgreSQL. Desarrollo de interfaces responsivas e integración con sistemas de pago. Responsable de implementar funcionalidades de seguridad con JWT y optimizar procesos en el back-end.',
+          period: 'ENE-2025 - Full Stack Developer JR',
+          description: 'Cargo: Desarrollador Full Stack. Backend N8N y Frontend React, Weweb y aplicaciones en python',
           technologies: ['React', 'TypeScript', 'Spring Boot', 'PostgreSQL', 'Docker', 'AWS', 'Jenkins', 'CI/CD'],
         },
       ],

@@ -17,8 +17,6 @@ interface TimelineNode {
 
 const TimelineItem: React.FC<{ node: TimelineNode }> = ({ node }) => {
   const { themeColors } = useTheme();
-  
-  console.log('Node items:', node.items); // Debug log para verificar os itens
 
   return (
     <div className={`relative flex ${node.isLeft ? 'justify-start' : 'justify-end'} w-full`}>
@@ -64,6 +62,7 @@ const TimelineItem: React.FC<{ node: TimelineNode }> = ({ node }) => {
                     {item.period}
                   </span>
                 )}
+        
                 <p
                   className="text-sm sm:text-base mt-1"
                   style={{ color: themeColors.text }}
@@ -94,7 +93,7 @@ export const Roadmap: React.FC = () => {
   const nodes = useMemo(
     () => {
       const currentTranslations = translations[language as keyof typeof translations];
-      
+
       return [
         {
           id: currentTranslations['career.education'] as string,
@@ -114,6 +113,8 @@ export const Roadmap: React.FC = () => {
         {
           id: currentTranslations['career.currently'] as string,
           title: currentTranslations['career.currently'] as string,
+          enterprise: 'Reconecta',
+          position: 'Full Stack Developer',
           items: currentTranslations['career.currently.items'] as any[],
         }
       ];
