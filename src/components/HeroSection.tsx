@@ -138,7 +138,7 @@ export function HeroSection({ id }: HeroSectionProps) {
                   }}></div>
 
                 <img
-                  src="/../public/me2.png"
+                  src="/me2.png"
                   alt="Vitor Lana"
                   className="w-full h-full object-cover"
                 />
