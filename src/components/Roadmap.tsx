@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
 import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations';
 
 interface TimelineNode {
   id: string;
@@ -16,6 +17,8 @@ interface TimelineNode {
 
 const TimelineItem: React.FC<{ node: TimelineNode }> = ({ node }) => {
   const { themeColors } = useTheme();
+  
+  console.log('Node items:', node.items); // Debug log para verificar os itens
 
   return (
     <div className={`relative flex ${node.isLeft ? 'justify-start' : 'justify-end'} w-full`}>
@@ -50,7 +53,7 @@ const TimelineItem: React.FC<{ node: TimelineNode }> = ({ node }) => {
 
         {/* Lista de períodos e descrições, com linha separadora entre itens */}
         <div className="flex flex-col">
-          {Array.isArray(node.items) ? node.items.map((item, index) => (
+          {node.items && Array.isArray(node.items) ? node.items.map((item, index) => (
             <div key={index} className="flex flex-col items-start">
               <div className="w-full">
                 {item.period && (
@@ -75,7 +78,9 @@ const TimelineItem: React.FC<{ node: TimelineNode }> = ({ node }) => {
                 ></div>
               )}
             </div>
-          )) : null}
+          )) : (
+            <p>Nenhum item encontrado</p>
+          )}
         </div>
       </motion.div>
     </div>
@@ -84,32 +89,36 @@ const TimelineItem: React.FC<{ node: TimelineNode }> = ({ node }) => {
 
 export const Roadmap: React.FC = () => {
   const { themeColors } = useTheme();
-  const { t } = useLanguage();
+  const { language } = useLanguage();
 
   const nodes = useMemo(
-    () => [
-      {
-        id: t('career.education'),
-        title: t('career.education'),
-        items: t('career.education.items'),
-      },
-      {
-        id: 'career.experience',
-        title: t('career.experience'),
-        items: t('career.experience.items'),
-      },
-      {
-        id: 'career.learning_growth',
-        title: t('career.learning_growth'),
-        items: t('career.learning_growth.items'),
-      },
-      {
-        id: 'currently',
-        title: t('career.currently'),
-        items: t('career.currently.items'),
-      },
-    ],
-    [t]
+    () => {
+      const currentTranslations = translations[language as keyof typeof translations];
+      
+      return [
+        {
+          id: currentTranslations['career.education'] as string,
+          title: currentTranslations['career.education'] as string,
+          items: currentTranslations['career.education.items'] as any[],
+        },
+        {
+          id: currentTranslations['career.experience'] as string,
+          title: currentTranslations['career.experience'] as string,
+          items: currentTranslations['career.experience.items'] as any[],
+        },
+        {
+          id: currentTranslations['career.learning_growth'] as string,
+          title: currentTranslations['career.learning_growth'] as string,
+          items: currentTranslations['career.learning_growth.items'] as any[],
+        },
+        {
+          id: currentTranslations['career.currently'] as string,
+          title: currentTranslations['career.currently'] as string,
+          items: currentTranslations['career.currently.items'] as any[],
+        }
+      ];
+    },
+    [language]
   );
 
   return (
@@ -125,6 +134,7 @@ export const Roadmap: React.FC = () => {
           }}
         />
         {/* Mobile Timeline - visível apenas em telas pequenas */}
+        {/* esconde a div abaixo ver depois se retiro ela ou nao */}
         <div
           className={`absolute hidden sm:hidden top-0 bottom-0 left-4 w-1 block md:hidden`}
           style={{
