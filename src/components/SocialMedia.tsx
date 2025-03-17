@@ -1,6 +1,5 @@
 import { motion } from "framer-motion"
 import { useTheme } from "../contexts/ThemeContext";
-import { useState } from "react";
 
 interface SocialMediaProps {
   onEmailClick: () => void;
@@ -9,7 +8,6 @@ interface SocialMediaProps {
 export const SocialMedia: React.FC<SocialMediaProps> = ({ onEmailClick }) => {
 
   const { themeColors } = useTheme();
-  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <motion.div
