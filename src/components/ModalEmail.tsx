@@ -196,7 +196,7 @@ const EmailModal: React.FC<EmailModalProps> = ({ isOpen, onClose }) => {
         {/* Imagem ao lado */}
         <div className="w-full md:w-1/3 p-4">
           <img
-            src="java-surf.png"
+            src="grind-grinding.gif"
             alt="Ilustração do email"
             className="object-contain w-full h-full rounded-lg"
           />
