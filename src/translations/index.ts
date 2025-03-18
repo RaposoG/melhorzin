@@ -57,8 +57,10 @@ export const translations = {
     'carrer.position': 'Cargo',
     // Carreira
     
-    'career.learning_growth': 'Aprendizado e Crescimento',
+    'career.learning_growth': 'Estudando',
     'career.currently': 'Atualmente',
+    'career.enterprise': 'Reconecta',
+    'career.position': 'Full Stack Developer',
     'career.education.items': [
       { period: '2022 - 2023', description: 'Estudante de forma autodidata e em Bootcamps buscando conteúdos.' },
       { period: '2024 - 2025', description: 'Bootcamp DevSuperior - Java Spring Expert.' },
@@ -66,20 +68,19 @@ export const translations = {
     ],
     'career.experience.items': [
       {
-        period: '2025 - Projeto Voluntário Ong de Proteção Animal',
-        description: 'Desenvolvimento de um sistema de gestão para Ong de proteção animal, com controle de animais, financeiro, estoque e adoções.',
+        period: 'JAN-2025 - Desenvolvedor Full Stack JR',
+        description: 'Cargo: Desenvolvedor Full Stack. Backend N8N e Frontend React, Weweb e aplicações em python',
+        currentWork: true,
       },
+      {
+        period: 'NOV-2024 - JAN-2025 - Projeto Voluntário Ong de Proteção Animal',
+        description: 'Desenvolvimento de um sistema de gestão para Ong de proteção animal, com controle de animais, financeiro, estoque e adoções.',
+        currentWork: false,
+      }
     ],
     'career.learning_growth.items': [
       { description: 'Microservices e Arquitetura Orientada a Eventos: Aprofundamento em sistemas distribuídos com Spring Cloud, Kafka, RabbitMQ.' },
       { description: 'React Avançado: Aprofundamento em React, Hooks, Context API, Redux, Next.js, Gatsby.' },
-    ],
-    'career.currently.items': [
-      {
-        period: 'JAN-2025 - Desenvolvedor Full Stack JR',
-        description: 'Cargo: Desenvolvedor Full Stack. Backend N8N e Frontend React, Weweb e aplicações em python',
-        technologies: ['React', 'TypeScript', 'Spring Boot', 'PostgreSQL', 'Docker', 'AWS', 'Jenkins', 'CI/CD'],
-      },
     ],
   },
   en: {
@@ -153,20 +154,17 @@ export const translations = {
     ],
     'career.experience.items': [
       {
-        period: '2025 - Volunteer Project Animal Protection Ong',
-        description: 'Development of a management system for an animal protection Ong, with animal control, financial, stock and adoptions.',
+        period: 'JAN-2025 - Full Stack Developer JR',
+        description: 'Position: Full Stack Developer. Backend N8N and Frontend React, Weweb and python applications',
       },
+      {
+        period: 'NOV-2024 - JAN-2025 - Volunteer Project Animal Protection Ong',
+        description: 'Development of a management system for an animal protection Ong, with animal control, financial, stock and adoptions.',
+      }
     ],
     'career.learning_growth.items': [
       { description: 'Microservices and Event-Driven Architecture: In-depth knowledge of distributed systems with Spring Cloud, Kafka, RabbitMQ.' },
       { description: 'Advanced React: In-depth knowledge of React, Hooks, Context API, Redux, Next.js, Gatsby.' },
-    ],
-    'career.currently.items': [
-      {
-        period: 'JAN-2025 - Full Stack Developer JR',
-        description: 'Position: Full Stack Developer. Backend N8N and Frontend React, Weweb and python applications',
-        technologies: ['React', 'TypeScript', 'Spring Boot', 'PostgreSQL', 'Docker', 'AWS', 'Jenkins', 'CI/CD'],
-      },
     ],
   },
   es: {
@@ -235,20 +233,20 @@ export const translations = {
       ],
       'career.experience.items': [
         {
-          period: '2025 - Proyecto Voluntario Ong de Protección Animal',
-          description: 'Desarrollo de un sistema de gestión para una Ong de protección animal, con control de animales, financiero, inventario y adopciones.',
+          period: 'ENE-2025 - Full Stack Developer JR',
+          description: 'Cargo: Desarrollador Full Stack. Backend N8N y Frontend React, Weweb y aplicaciones en python',
         },
+        {
+          period: 'NOV-2024 - ENE-2025 - Proyecto Voluntario Ong de Protección Animal',
+          description: 'Desarrollo de un sistema de gestión para una Ong de protección animal, con control de animales, financiero, inventario y adopciones.',
+        }
       ],
       'career.learning_growth.items': [
         { description: 'Microservicios y Arquitectura Orientada a Eventos: Profundización en sistemas distribuidos con Spring Cloud, Kafka, RabbitMQ.' },
         { description: 'React Avanzado: Profundización en React, Hooks, Context API, Redux, Next.js, Gatsby.' },
       ],
       'career.currently.items': [
-        {
-          period: 'ENE-2025 - Full Stack Developer JR',
-          description: 'Cargo: Desarrollador Full Stack. Backend N8N y Frontend React, Weweb y aplicaciones en python',
-          technologies: ['React', 'TypeScript', 'Spring Boot', 'PostgreSQL', 'Docker', 'AWS', 'Jenkins', 'CI/CD'],
-        },
+     
       ],
     }
 };

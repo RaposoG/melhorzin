@@ -62,7 +62,7 @@ const themes: Record<Theme, ThemeColors> = {
     buttonHover: '#1565C0',
     sendButtonBackground: '#4CAF50',
     sendButtonHover: '#388E3C',
-    separatorItemRoadMap: '#E0E0E0',
+    separatorItemRoadMap: 'bg-yellow-400',
     buttonResume: '#2196F3',
     scrollBarThumb: "#B0B0B0",
     scrollBarTrack: "#E0E0E0"
