@@ -85,7 +85,6 @@ const TimelineItem: React.FC<{ node: TimelineNode }> = ({ node }) => {
     </div>
   );
 };
-
 export const Roadmap: React.FC = () => {
   const { themeColors } = useTheme();
   const { language } = useLanguage();
@@ -110,13 +109,6 @@ export const Roadmap: React.FC = () => {
           title: currentTranslations['career.learning_growth'] as string,
           items: currentTranslations['career.learning_growth.items'] as any[],
         },
-        {
-          id: currentTranslations['career.currently'] as string,
-          title: currentTranslations['career.currently'] as string,
-          enterprise: 'Reconecta',
-          position: 'Full Stack Developer',
-          items: currentTranslations['career.currently.items'] as any[],
-        }
       ];
     },
     [language]
@@ -124,22 +116,12 @@ export const Roadmap: React.FC = () => {
 
   return (
     <div className="py-8 sm:py-16 relative" id="jornada">
-      {/* Container da timeline */}
       <div className="relative container mx-auto px-2">
-        {/* Linha vertical principal - visível apenas em telas médias e maiores */}
         <div
           className={`absolute top-0 bottom-0 left-4 xs:left-0 md:left-[50%] w-1 hidden md:block`}
           style={{
             backgroundColor: themeColors.accent,
             marginLeft: '-2px',
-          }}
-        />
-        {/* Mobile Timeline - visível apenas em telas pequenas */}
-        {/* esconde a div abaixo ver depois se retiro ela ou nao */}
-        <div
-          className={`absolute hidden sm:hidden top-0 bottom-0 left-4 w-1 block md:hidden`}
-          style={{
-            backgroundColor: themeColors.accent,
           }}
         />
         <div className="space-y-8 sm:space-y-12">
