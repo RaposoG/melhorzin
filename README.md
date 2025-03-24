@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Melhorzin
+Sobre o Projeto
 
-## Getting Started
+Melhorzin é uma plataforma colaborativa exclusiva para seus usuários, onde cada um pode expor seu portfólio de forma personalizada. Imagine subdomínios como raposo.melhorzin.com ou lk.melhorzin.com, onde cada um é um espaço próprio para mostrar trabalhos, habilidades e projetos.
+Funcionalidades
 
-First, run the development server:
+    Portfólios Personalizados: Cada usuário tem seu subdomínio para um portfólio único.
+    Projeto Colaborativo: Junte-se aos amigos que estão moldando essa ideia com muita criatividade.
+    Desenvolvido com Next.js: Experiência moderna e rápida para aplicações React.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Tecnologias Utilizadas
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    Next.js para renderização e desenvolvimento do front-end.
+    Outras tecnologias (a definir).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Estrutura do Repositório
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+    pages/ - Páginas do aplicativo Next.js.
+    components/ - Componentes React reutilizáveis.
+    Outros diretórios e arquivos para suporte ao projeto.
 
-## Learn More
+Como Contribuir
 
-To learn more about Next.js, take a look at the following resources:
+    Faça o fork do repositório.
+    Crie uma nova branch com a sua feature: git checkout -b minha-feature.
+    Commit suas mudanças: git commit -m 'Adiciona nova feature'.
+    Envie ao repositório remoto: git push origin minha-feature.
+    Abra um Pull Request.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Licença
+Distribuído sob a licença MIT. Veja LICENSE para mais informações.
