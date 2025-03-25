@@ -1,31 +1,46 @@
-Melhorzin
-Sobre o Projeto
 
-Melhorzin é uma plataforma colaborativa exclusiva para seus usuários, onde cada um pode expor seu portfólio de forma personalizada. Imagine subdomínios como raposo.melhorzin.com ou lk.melhorzin.com, onde cada um é um espaço próprio para mostrar trabalhos, habilidades e projetos.
-Funcionalidades
+# José Marinho - Portfolio
 
-    Portfólios Personalizados: Cada usuário tem seu subdomínio para um portfólio único.
-    Projeto Colaborativo: Junte-se aos amigos que estão moldando essa ideia com muita criatividade.
-    Desenvolvido com Next.js: Experiência moderna e rápida para aplicações React.
+## Project info
 
-Tecnologias Utilizadas
+Personal portfolio website for José Marinho, Software Engineer.
 
-    Next.js para renderização e desenvolvimento do front-end.
-    Outras tecnologias (a definir).
+## How to run this project locally
 
-Estrutura do Repositório
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-    pages/ - Páginas do aplicativo Next.js.
-    components/ - Componentes React reutilizáveis.
-    Outros diretórios e arquivos para suporte ao projeto.
+Follow these steps:
 
-Como Contribuir
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone https://github.com/jusemarinho/portfolio-web.git
 
-    Faça o fork do repositório.
-    Crie uma nova branch com a sua feature: git checkout -b minha-feature.
-    Commit suas mudanças: git commit -m 'Adiciona nova feature'.
-    Envie ao repositório remoto: git push origin minha-feature.
-    Abra um Pull Request.
+# Step 2: Navigate to the project directory.
+cd porfolio-web
 
-Licença
-Distribuído sob a licença MIT. Veja LICENSE para mais informações.
+# Step 3: Install the necessary dependencies.
+npm i
+
+# Step 4: Start the development server with auto-reloading and an instant preview.
+npm run dev
+```
+
+## What technologies are used for this project?
+
+This project is built with:
+
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
+
+## Building for production
+
+To build the project for production, run:
+
+```sh
+npm run build
+```
+
+The output will be in the `dist` directory.
